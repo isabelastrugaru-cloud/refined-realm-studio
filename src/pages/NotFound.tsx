@@ -1,5 +1,7 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Home, ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -9,13 +11,64 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
-        </a>
+    <div className="min-h-screen bg-background flex items-center justify-center px-6">
+      <div className="text-center max-w-2xl">
+        <div className="mb-8">
+          <h1 className="font-playfair text-8xl md:text-9xl font-bold text-luxury mb-4 animate-fade-in">
+            404
+          </h1>
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-foreground mb-4 animate-fade-in-up">
+            Pagina nu a fost găsită
+          </h2>
+          <p className="font-inter text-xl text-muted-foreground mb-12 animate-fade-in-up">
+            Ne pare rău, dar pagina pe care o căutați nu există sau a fost mutată.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+          <Button asChild variant="luxury" size="lg">
+            <Link to="/">
+              <Home className="mr-2 h-5 w-5" />
+              Înapoi la pagina principală
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="lg" onClick={() => window.history.back()}>
+            <button type="button">
+              <ArrowLeft className="mr-2 h-5 w-5" />
+              Înapoi
+            </button>
+          </Button>
+        </div>
+
+        <div className="mt-16 p-8 bg-premium rounded-2xl animate-scale-in">
+          <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">
+            Poate te interesează
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-4 text-left">
+            <Link 
+              to="/portofoliu" 
+              className="p-4 bg-background rounded-lg hover:shadow-subtle transition-all duration-300 group"
+            >
+              <h4 className="font-inter font-semibold text-foreground mb-2 group-hover:text-luxury">
+                Portofoliul nostru
+              </h4>
+              <p className="font-inter text-sm text-muted-foreground">
+                Descoperă proiectele exclusive realizate
+              </p>
+            </Link>
+            <Link 
+              to="/servicii" 
+              className="p-4 bg-background rounded-lg hover:shadow-subtle transition-all duration-300 group"
+            >
+              <h4 className="font-inter font-semibold text-foreground mb-2 group-hover:text-luxury">
+                Serviciile noastre
+              </h4>
+              <p className="font-inter text-sm text-muted-foreground">
+                Pachete complete de design interior
+              </p>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
