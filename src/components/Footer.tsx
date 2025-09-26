@@ -2,39 +2,63 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   const footerLinks = {
-    servicii: [
-      { name: 'Design Interior Complet', href: '/servicii' },
-      { name: 'Consultanță Design', href: '/servicii' },
-      { name: 'Mobilier Premium', href: '/servicii' },
-      { name: 'Design Comercial', href: '/servicii' },
-    ],
-    despre: [
-      { name: 'Povestea noastră', href: '/despre' },
-      { name: 'Echipa', href: '/despre' },
-      { name: 'Filosofia', href: '/despre' },
-      { name: 'Certificări', href: '/despre' },
-    ],
-    resurse: [
-      { name: 'Portofoliu', href: '/portofoliu' },
-      { name: 'Testimoniale', href: '/testimoniale' },
-      { name: 'Blog Design', href: '#' },
-      { name: 'Ghid Stiluri', href: '#' },
-    ]
+    servicii: [{
+      name: 'Design Interior Complet',
+      href: '/servicii'
+    }, {
+      name: 'Consultanță Design',
+      href: '/servicii'
+    }, {
+      name: 'Mobilier Premium',
+      href: '/servicii'
+    }, {
+      name: 'Design Comercial',
+      href: '/servicii'
+    }],
+    despre: [{
+      name: 'Povestea noastră',
+      href: '/despre'
+    }, {
+      name: 'Echipa',
+      href: '/despre'
+    }, {
+      name: 'Filosofia',
+      href: '/despre'
+    }, {
+      name: 'Certificări',
+      href: '/despre'
+    }],
+    resurse: [{
+      name: 'Portofoliu',
+      href: '/portofoliu'
+    }, {
+      name: 'Testimoniale',
+      href: '/testimoniale'
+    }, {
+      name: 'Blog Design',
+      href: '#'
+    }, {
+      name: 'Ghid Stiluri',
+      href: '#'
+    }]
   };
-
-  const socialLinks = [
-    { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Linkedin, href: '#', name: 'LinkedIn' },
-  ];
-
-  return (
-    <footer className="bg-primary text-white">
+  const socialLinks = [{
+    icon: Instagram,
+    href: '#',
+    name: 'Instagram'
+  }, {
+    icon: Facebook,
+    href: '#',
+    name: 'Facebook'
+  }, {
+    icon: Linkedin,
+    href: '#',
+    name: 'LinkedIn'
+  }];
+  return <footer className="bg-primary text-white">
       {/* Newsletter Section */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
@@ -47,11 +71,7 @@ const Footer = () => {
               tendințe și sfaturi de la experții LuxInterior
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Adresa ta de email"
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm"
-              />
+              <input type="email" placeholder="Adresa ta de email" className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm" />
               <Button variant="luxury">
                 Abonează-te
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -71,11 +91,7 @@ const Footer = () => {
                 LuxInterior
               </h2>
             </Link>
-            <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">
-              De peste 15 ani, creăm spații exclusive care îmbină eleganța 
-              cu funcționalitatea, oferind servicii complete de design interior 
-              de lux pentru clienți exigenți.
-            </p>
+            <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">De peste 5 ani, creăm spații exclusive care îmbină eleganța cu funcționalitatea, oferind servicii complete de design interior de lux pentru clienți exigenți.</p>
 
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
@@ -85,7 +101,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
-                <span className="font-inter text-white/90">office@luxinterior.ro</span>
+                <span className="font-inter text-white/90">office@designinteriorbucuresti.ro</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-luxury mr-3 flex-shrink-0 mt-0.5" />
@@ -98,16 +114,9 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-luxury/20 transition-colors duration-300 group"
-                  aria-label={social.name}
-                >
+              {socialLinks.map(social => <a key={social.name} href={social.href} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-luxury/20 transition-colors duration-300 group" aria-label={social.name}>
                   <social.icon className="w-5 h-5 text-white/80 group-hover:text-luxury transition-colors" />
-                </a>
-              ))}
+                </a>)}
             </div>
           </div>
 
@@ -117,16 +126,11 @@ const Footer = () => {
               Servicii
             </h4>
             <ul className="space-y-3">
-              {footerLinks.servicii.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="font-inter text-white/80 hover:text-luxury transition-colors duration-300"
-                  >
+              {footerLinks.servicii.map(link => <li key={link.name}>
+                  <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
                     {link.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -136,16 +140,11 @@ const Footer = () => {
               Despre noi
             </h4>
             <ul className="space-y-3">
-              {footerLinks.despre.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="font-inter text-white/80 hover:text-luxury transition-colors duration-300"
-                  >
+              {footerLinks.despre.map(link => <li key={link.name}>
+                  <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
                     {link.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -155,16 +154,11 @@ const Footer = () => {
               Resurse
             </h4>
             <ul className="space-y-3">
-              {footerLinks.resurse.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="font-inter text-white/80 hover:text-luxury transition-colors duration-300"
-                  >
+              {footerLinks.resurse.map(link => <li key={link.name}>
+                  <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
                     {link.name}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -178,30 +172,19 @@ const Footer = () => {
               © {currentYear} LuxInterior Studio. Toate drepturile rezervate.
             </p>
             <div className="flex space-x-8">
-              <Link
-                to="/politica-confidentialitate"
-                className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300"
-              >
+              <Link to="/politica-confidentialitate" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
                 Politica de confidențialitate
               </Link>
-              <Link
-                to="/termeni-conditii"
-                className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300"
-              >
+              <Link to="/termeni-conditii" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
                 Termeni și condiții
               </Link>
-              <Link
-                to="/cookies"
-                className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300"
-              >
+              <Link to="/cookies" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
                 Politica cookies
               </Link>
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
