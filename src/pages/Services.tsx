@@ -7,7 +7,6 @@ const Services = () => {
     {
       icon: Home,
       title: 'Design Interior Complet',
-      price: 'De la 150€/mp',
       features: [
         'Concept și planuri detaliate',
         'Mobilier și decorațiuni premium',
@@ -22,7 +21,6 @@ const Services = () => {
     {
       icon: Building,
       title: 'Consultanță Design',
-      price: 'De la 200€/oră',
       features: [
         'Analiză detaliată a spațiului',
         'Concept de design personalizat',
@@ -37,7 +35,6 @@ const Services = () => {
     {
       icon: ShoppingBag,
       title: 'Achiziție Mobilier Premium',
-      price: 'Comision 15%',
       features: [
         'Acces la branduri exclusive',
         'Mobilier italian și european',
@@ -120,9 +117,6 @@ const Services = () => {
                   <h3 className="font-playfair text-2xl font-bold text-foreground mb-4">
                     {service.title}
                   </h3>
-                  <div className="font-inter text-3xl font-bold text-luxury mb-2">
-                    {service.price}
-                  </div>
                   <p className="font-inter text-muted-foreground">
                     {service.description}
                   </p>
