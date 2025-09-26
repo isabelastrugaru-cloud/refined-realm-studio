@@ -139,7 +139,7 @@ const Home = () => {
           </h2>
           
           <Button variant="luxury" size="xl" className="animate-luxury-glow">
-            Programează consultația gratuită
+            Programează consultația
             <ArrowRight className="ml-2 h-6 w-6" />
           </Button>
         </div>
