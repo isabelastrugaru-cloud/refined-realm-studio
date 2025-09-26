@@ -10,7 +10,7 @@ const Testimonials = () => {
       role: 'CEO & Founder',
       company: 'Tech Innovation SRL',
       rating: 5,
-      text: 'LuxInterior a transformat complet apartamentul nostru. Atenția la detalii și calitatea materialelor folosite au depășit cu mult așteptările. Echipa a fost profesionistă și s-a respectat perfect cronogramul stabilit.',
+      text: '**Jubilee Luxury Design** a transformat complet apartamentul nostru. Atenția la detalii și calitatea materialelor folosite au depășit cu mult așteptările. Echipa a fost profesionistă și s-a respectat perfect cronogramul stabilit.',
       project: 'Penthouse 280mp, Herastrau',
       image: '/api/placeholder/80/80'
     },
@@ -40,7 +40,7 @@ const Testimonials = () => {
       role: 'Antreprenor',
       company: 'Private Investor',
       rating: 5,
-      text: 'Am lucrat cu multe firme de design, dar LuxInterior se distinge prin profesionalism și rezultate. Casa noastră este acum exact cum am visat, iar prietenii sunt mereu impresionați.',
+      text: 'Am lucrat cu multe firme de design, dar **Jubilee Luxury Design** se distinge prin profesionalism și rezultate. Casa noastră este acum exact cum am visat, iar prietenii sunt mereu impresionați.',
       project: 'Casa 380mp, Snagov',
       image: '/api/placeholder/80/80'
     },
@@ -60,7 +60,7 @@ const Testimonials = () => {
       role: 'Arhitect',
       company: 'Design Studio',
       rating: 5,
-      text: 'Ca arhitect, am standarde foarte înalte. LuxInterior a depășit toate așteptările prin creativitate, execuție impecabilă și respectul pentru arhitectura existentă.',
+      text: 'Ca arhitect, am standarde foarte înalte. **Jubilee Luxury Design** a depășit toate așteptările prin creativitate, execuție impecabilă și respectul pentru arhitectura existentă.',
       project: 'Apartament 200mp, Aviatorilor',
       image: '/api/placeholder/80/80'
     }
@@ -83,7 +83,7 @@ const Testimonials = () => {
           </h1>
           <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
             Mărturiile celor care și-au transformat spațiile<br />
-            alături de echipa LuxInterior Studio
+            alături de echipa **Jubilee Luxury Design** Studio
           </p>
         </div>
       </section>
@@ -173,7 +173,7 @@ const Testimonials = () => {
             Testimoniale <span className="text-luxury">Video</span>
           </h2>
           <p className="font-inter text-xl text-muted-foreground mb-12 animate-fade-in-up">
-            Ascultă direct de la clienții noștri experiența colaborării cu LuxInterior
+            Ascultă direct de la clienții noștri experiența colaborării cu **Jubilee Luxury Design**
           </p>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -257,7 +257,7 @@ const Testimonials = () => {
           </h2>
           <p className="font-inter text-xl text-white/90 mb-10 animate-fade-in-up">
             Alătură-te celor peste 150 de clienți mulțumiți<br />
-            și descoperă diferența LuxInterior
+            și descoperă diferența **Jubilee Luxury Design**
           </p>
           <Button variant="luxury" size="xl" className="animate-luxury-glow">
             Începe cu o consultație gratuită

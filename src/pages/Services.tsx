@@ -198,7 +198,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
-              Garanțiile <span className="text-luxury">LuxInterior</span>
+              Garanțiile <span className="text-luxury font-bold">Jubilee Luxury Design</span>
             </h2>
           </div>
           

@@ -36,7 +36,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['office@luxinterior.ro', 'alexandra@luxinterior.ro'],
+      details: ['office@jubileeluxury.ro', 'alexandra@jubileeluxury.ro'],
       action: 'Trimite email'
     },
     {
@@ -229,7 +229,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
-              Showroom <span className="text-luxury">LuxInterior</span>
+              Showroom <span className="text-luxury font-bold">Jubilee Luxury Design</span>
             </h2>
             <p className="font-inter text-xl text-muted-foreground">
               Vizitează showroom-ul nostru pentru a experimenta direct<br />
@@ -285,7 +285,7 @@ const Contact = () => {
               <div className="aspect-square bg-gradient-hero rounded-2xl shadow-luxury flex items-center justify-center">
                 <div className="text-center text-white">
                   <MapPin className="w-16 h-16 mx-auto mb-4 text-luxury" />
-                  <h4 className="font-playfair text-2xl font-bold mb-2">Showroom LuxInterior</h4>
+                  <h4 className="font-playfair text-2xl font-bold mb-2">Showroom **Jubilee Luxury Design**</h4>
                   <p className="font-inter">Calea Victoriei 48-50<br />Sector 1, București</p>
                   <Button variant="outline-light" className="mt-6">
                     Deschide în Google Maps

@@ -68,7 +68,7 @@ const Footer = () => {
             </h3>
             <p className="font-inter text-white/80 mb-8 text-lg">
               Primește lunar idei exclusive de design interior,<br />
-              tendințe și sfaturi de la experții LuxInterior
+              tendințe și sfaturi de la experții **Jubilee Luxury Design**
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input type="email" placeholder="Adresa ta de email" className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm" />
@@ -88,7 +88,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
               <h2 className="font-playfair text-3xl font-bold text-white">
-                LuxInterior
+                **Jubilee Luxury Design**
               </h2>
             </Link>
             <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">De peste 5 ani, creăm spații exclusive care îmbină eleganța cu funcționalitatea, oferind servicii complete de design interior de lux pentru clienți exigenți.</p>
@@ -169,7 +169,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="font-inter text-white/60 text-sm mb-4 md:mb-0">
-              © {currentYear} LuxInterior Studio. Toate drepturile rezervate.
+              © {currentYear} **Jubilee Luxury Design** Studio. Toate drepturile rezervate.
             </p>
             <div className="flex space-x-8">
               <Link to="/politica-confidentialitate" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
