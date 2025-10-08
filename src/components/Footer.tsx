@@ -106,8 +106,7 @@ const Footer = () => {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-luxury mr-3 flex-shrink-0 mt-0.5" />
                 <span className="font-inter text-white/90">
-                  Calea Victoriei 48-50<br />
-                  Sector 1, București
+                  Str. Erou Iancu Nicolae 61, București
                 </span>
               </div>
             </div>
