@@ -34,12 +34,12 @@ const Contact = () => {
   const contactInfo = [{
     icon: Phone,
     title: 'Telefon',
-    details: ['+40 721 234 567', '+40 31 234 5678'],
+    details: ['+40 752 490 173'],
     action: 'Sună acum'
   }, {
     icon: Mail,
     title: 'Email',
-    details: ['office@jubileeluxury.ro', 'alexandra@jubileeluxury.ro'],
+    details: ['office@designinteriorbucuresti.ro'],
     action: 'Trimite email'
   }, {
     icon: MapPin,
@@ -106,7 +106,7 @@ const Contact = () => {
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Telefon *
                         </label>
-                        <Input type="tel" placeholder="+40 721 234 567" value={formData.phone} onChange={e => setFormData(prev => ({
+                        <Input type="tel" placeholder="+40 752 490 173" value={formData.phone} onChange={e => setFormData(prev => ({
                         ...prev,
                         phone: e.target.value
                       }))} required className="h-12" />
