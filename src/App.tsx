@@ -9,7 +9,7 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
-import Testimonials from "./pages/Testimonials";
+
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -28,7 +28,7 @@ const App = () => (
             <Route path="portofoliu" element={<Portfolio />} />
             <Route path="servicii" element={<Services />} />
             <Route path="blog" element={<Blog />} />
-            <Route path="testimoniale" element={<Testimonials />} />
+            
             <Route path="contact" element={<Contact />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
