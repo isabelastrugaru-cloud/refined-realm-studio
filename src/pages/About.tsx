@@ -48,7 +48,7 @@ const About = () => {
                 O Viziune Născută din Pasiune
               </h2>
               <div className="space-y-6 font-inter text-lg text-muted-foreground leading-relaxed">
-                <p>**Jubilee Luxury Design** Studio s-a născut în 2022 dintr-o pasiune pentru frumusețe, funcționalitate și dorința de a transforma fiecare spațiu într-o operă de artă unică.</p>
+                <p>**Jubilee Luxury Design** Studio s-a născut în 2020 dintr-o pasiune pentru frumusețe, funcționalitate și dorința de a transforma fiecare spațiu într-o operă de artă unică.</p>
                 <p>
                   Specializându-ne în design interior de lux, am dezvoltat o abordare holistică 
                   care îmbină eleganța atemporală cu inovația contemporană, creând interioare 
@@ -100,33 +100,14 @@ const About = () => {
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Echipa <span className="text-luxury">Premium</span>
-            </h2>
+            
             <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
               Profesioniști cu experiență internațională, dedicați excelentei în design
             </p>
           </div>
 
           {team.map((member, index) => <div key={index} className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-              <div className="animate-fade-in">
-                <h3 className="font-playfair text-3xl font-bold text-foreground mb-2">
-                  {member.name}
-                </h3>
-                <p className="font-inter text-xl text-luxury mb-6">{member.role}</p>
-                <p className="font-inter text-lg text-muted-foreground leading-relaxed mb-8">
-                  {member.description}
-                </p>
-                <div className="space-y-2">
-                  <h4 className="font-inter font-semibold text-foreground mb-3">
-                    Acreditări & Certificări:
-                  </h4>
-                  {member.credentials.map((credential, idx) => <div key={idx} className="flex items-center">
-                      <div className="w-2 h-2 bg-luxury rounded-full mr-3"></div>
-                      <span className="font-inter text-muted-foreground">{credential}</span>
-                    </div>)}
-                </div>
-              </div>
+              
               <div className="relative animate-scale-in">
                 <div className="aspect-[4/5] bg-gradient-beige rounded-lg shadow-luxury"></div>
               </div>
