@@ -5,7 +5,7 @@ const About = () => {
   const stats = [{
     icon: Award,
     label: 'Ani de experiență',
-    value: '15+'
+    value: '5+'
   }, {
     icon: Users,
     label: 'Proiecte finalizate',
@@ -109,7 +109,7 @@ const About = () => {
           {team.map((member, index) => <div key={index} className="grid lg:grid-cols-2 gap-16 items-center mb-16">
               
               <div className="relative animate-scale-in">
-                
+                <div className="aspect-[4/5] bg-gradient-beige rounded-lg shadow-luxury"></div>
               </div>
             </div>)}
         </div>
