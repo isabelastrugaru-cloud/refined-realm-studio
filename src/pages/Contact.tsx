@@ -5,9 +5,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { ArrowRight, Phone, Mail, MapPin, Clock, MessageSquare, Calendar } from 'lucide-react';
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,55 +16,44 @@ const Contact = () => {
     project: '',
     message: ''
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate form submission
     toast({
       title: "Mesaj trimis cu succes!",
-      description: "Vă vom contacta în maxim 24 de ore pentru programarea consultației.",
+      description: "Vă vom contacta în maxim 24 de ore pentru programarea consultației."
     });
-    setFormData({ name: '', email: '', phone: '', project: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      project: '',
+      message: ''
+    });
   };
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: 'Telefon',
-      details: ['+40 721 234 567', '+40 31 234 5678'],
-      action: 'Sună acum'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      details: ['office@jubileeluxury.ro', 'alexandra@jubileeluxury.ro'],
-      action: 'Trimite email'
-    },
-    {
-      icon: MapPin,
-      title: 'Showroom',
-      details: ['Calea Victoriei 48-50', 'Sector 1, București'],
-      action: 'Vezi pe hartă'
-    },
-    {
-      icon: Clock,
-      title: 'Program',
-      details: ['Lun-Vin: 10:00 - 19:00', 'Sâm: 10:00 - 16:00'],
-      action: 'Programează vizită'
-    }
-  ];
-
-  const services = [
-    'Design Interior Complet',
-    'Consultanță Design',
-    'Renovare & Reamenajare',
-    'Achiziție Mobilier Premium',
-    'Design Comercial',
-    'Altele'
-  ];
-
-  return (
-    <div className="pt-20">
+  const contactInfo = [{
+    icon: Phone,
+    title: 'Telefon',
+    details: ['+40 721 234 567', '+40 31 234 5678'],
+    action: 'Sună acum'
+  }, {
+    icon: Mail,
+    title: 'Email',
+    details: ['office@jubileeluxury.ro', 'alexandra@jubileeluxury.ro'],
+    action: 'Trimite email'
+  }, {
+    icon: MapPin,
+    title: 'Showroom',
+    details: ['Calea Victoriei 48-50', 'Sector 1, București'],
+    action: 'Vezi pe hartă'
+  }, {
+    icon: Clock,
+    title: 'Program',
+    details: ['Lun-Vin: 10:00 - 19:00', 'Sâm: 10:00 - 16:00'],
+    action: 'Programează vizită'
+  }];
+  const services = ['Design Interior Complet', 'Consultanță Design', 'Renovare & Reamenajare', 'Achiziție Mobilier Premium', 'Design Comercial', 'Altele'];
+  return <div className="pt-20">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
@@ -95,26 +85,19 @@ const Contact = () => {
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Nume complet *
                         </label>
-                        <Input
-                          placeholder="Numele tău"
-                          value={formData.name}
-                          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                          required
-                          className="h-12"
-                        />
+                        <Input placeholder="Numele tău" value={formData.name} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        name: e.target.value
+                      }))} required className="h-12" />
                       </div>
                       <div>
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Email *
                         </label>
-                        <Input
-                          type="email"
-                          placeholder="email@exemplu.com"
-                          value={formData.email}
-                          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                          required
-                          className="h-12"
-                        />
+                        <Input type="email" placeholder="email@exemplu.com" value={formData.email} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        email: e.target.value
+                      }))} required className="h-12" />
                       </div>
                     </div>
 
@@ -123,28 +106,21 @@ const Contact = () => {
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Telefon *
                         </label>
-                        <Input
-                          type="tel"
-                          placeholder="+40 721 234 567"
-                          value={formData.phone}
-                          onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                          required
-                          className="h-12"
-                        />
+                        <Input type="tel" placeholder="+40 721 234 567" value={formData.phone} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        phone: e.target.value
+                      }))} required className="h-12" />
                       </div>
                       <div>
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Tip proiect
                         </label>
-                        <select 
-                          className="w-full h-12 px-3 bg-background border border-input rounded-md font-inter"
-                          value={formData.project}
-                          onChange={(e) => setFormData(prev => ({ ...prev, project: e.target.value }))}
-                        >
+                        <select className="w-full h-12 px-3 bg-background border border-input rounded-md font-inter" value={formData.project} onChange={e => setFormData(prev => ({
+                        ...prev,
+                        project: e.target.value
+                      }))}>
                           <option value="">Selectează tipul proiectului</option>
-                          {services.map(service => (
-                            <option key={service} value={service}>{service}</option>
-                          ))}
+                          {services.map(service => <option key={service} value={service}>{service}</option>)}
                         </select>
                       </div>
                     </div>
@@ -153,13 +129,10 @@ const Contact = () => {
                       <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                         Detalii despre proiect
                       </label>
-                      <Textarea
-                        placeholder="Spune-ne mai multe despre viziunea ta..."
-                        rows={6}
-                        value={formData.message}
-                        onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                        className="resize-none"
-                      />
+                      <Textarea placeholder="Spune-ne mai multe despre viziunea ta..." rows={6} value={formData.message} onChange={e => setFormData(prev => ({
+                      ...prev,
+                      message: e.target.value
+                    }))} className="resize-none" />
                     </div>
 
                     <Button variant="luxury" size="lg" type="submit" className="w-full">
@@ -179,7 +152,7 @@ const Contact = () => {
                         <ul className="space-y-1 font-inter text-sm text-muted-foreground">
                           <li>• Te contactăm în maxim 24 de ore</li>
                           <li>• Programăm consultația la momentul potrivit</li>
-                          <li>• Vizită gratuită pentru evaluarea spațiului</li>
+                          
                           <li>• Primești o propunere personalizată</li>
                         </ul>
                       </div>
@@ -191,12 +164,9 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <Card 
-                  key={index} 
-                  className="shadow-subtle hover:shadow-luxury transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+              {contactInfo.map((info, index) => <Card key={index} className="shadow-subtle hover:shadow-luxury transition-all duration-300 animate-fade-in" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <CardContent className="p-6">
                     <div className="flex items-start">
                       <div className="w-12 h-12 bg-luxury/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -206,19 +176,16 @@ const Contact = () => {
                         <h3 className="font-playfair text-lg font-bold text-foreground mb-2">
                           {info.title}
                         </h3>
-                        {info.details.map((detail, idx) => (
-                          <p key={idx} className="font-inter text-muted-foreground mb-1">
+                        {info.details.map((detail, idx) => <p key={idx} className="font-inter text-muted-foreground mb-1">
                             {detail}
-                          </p>
-                        ))}
+                          </p>)}
                         <Button variant="ghost" className="mt-2 p-0 h-auto font-inter text-luxury hover:text-luxury/80">
                           {info.action}
                         </Button>
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -305,37 +272,28 @@ const Contact = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {[
-              {
-                question: 'Cât durează un proiect?',
-                answer: 'Între 4-12 săptămâni, în funcție de complexitatea proiectului și suprafața spațiului.'
-              },
-              {
-                question: 'Oferiți garanție?',
-                answer: 'Da, oferim 2 ani garanție completă pentru toate lucrările și materialele utilizate.'
-              },
-              {
-                question: 'Lucrați în toată țara?',
-                answer: 'Da, acceptăm proiecte în întreaga țară pentru suprafețe de minimum 150mp.'
-              },
-              {
-                question: 'Care este bugetul minim?',
-                answer: 'Bugetul minim pentru un proiect complet este de 25.000€, inclusiv mobilier și execuție.'
-              }
-            ].map((faq, index) => (
-              <div 
-                key={index} 
-                className="text-left p-6 bg-card rounded-xl shadow-subtle animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {[{
+            question: 'Cât durează un proiect?',
+            answer: 'Între 4-12 săptămâni, în funcție de complexitatea proiectului și suprafața spațiului.'
+          }, {
+            question: 'Oferiți garanție?',
+            answer: 'Da, oferim 2 ani garanție completă pentru toate lucrările și materialele utilizate.'
+          }, {
+            question: 'Lucrați în toată țara?',
+            answer: 'Da, acceptăm proiecte în întreaga țară pentru suprafețe de minimum 150mp.'
+          }, {
+            question: 'Care este bugetul minim?',
+            answer: 'Bugetul minim pentru un proiect complet este de 25.000€, inclusiv mobilier și execuție.'
+          }].map((faq, index) => <div key={index} className="text-left p-6 bg-card rounded-xl shadow-subtle animate-fade-in" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <h4 className="font-playfair text-lg font-bold text-foreground mb-3">
                   {faq.question}
                 </h4>
                 <p className="font-inter text-muted-foreground">
                   {faq.answer}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           <Button variant="outline" size="lg">
@@ -343,8 +301,6 @@ const Contact = () => {
           </Button>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
