@@ -40,7 +40,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="font-playfair text-2xl font-bold text-foreground hover:text-luxury transition-colors duration-300">Design Interior de Lux</Link>
+          <Link to="/" className="font-playfair text-2xl font-bold text-foreground hover:text-luxury transition-colors duration-300">Design Interior Bucuresti</Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
