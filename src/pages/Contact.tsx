@@ -176,7 +176,7 @@ const Contact = () => {
                         <h3 className="font-playfair text-lg font-bold text-foreground mb-2">
                           {info.title}
                         </h3>
-                        {info.details.map((detail, idx) => <p key={idx} className="font-inter text-sm text-muted-foreground mb-1 break-all">
+                        {info.details.map((detail, idx) => <p key={idx} className="font-inter text-xs text-muted-foreground mb-1 break-words">
                             {detail}
                           </p>)}
                         <Button variant="ghost" className="mt-2 p-0 h-auto font-inter text-luxury hover:text-luxury/80">
