@@ -44,7 +44,7 @@ const Contact = () => {
   }, {
     icon: MapPin,
     title: 'Showroom',
-    details: ['Calea Victoriei 48-50', 'Sector 1, București'],
+    details: ['Str. Erou Iancu Nicolae 61', 'București'],
     action: 'Vezi pe hartă'
   }, {
     icon: Clock,
@@ -176,7 +176,7 @@ const Contact = () => {
                         <h3 className="font-playfair text-lg font-bold text-foreground mb-2">
                           {info.title}
                         </h3>
-                        {info.details.map((detail, idx) => <p key={idx} className="font-inter text-muted-foreground mb-1">
+                        {info.details.map((detail, idx) => <p key={idx} className="font-inter text-sm text-muted-foreground mb-1 break-all">
                             {detail}
                           </p>)}
                         <Button variant="ghost" className="mt-2 p-0 h-auto font-inter text-luxury hover:text-luxury/80">
@@ -253,7 +253,7 @@ const Contact = () => {
                 <div className="text-center text-white">
                   <MapPin className="w-16 h-16 mx-auto mb-4 text-luxury" />
                   <h4 className="font-playfair text-2xl font-bold mb-2">Showroom **Jubilee Luxury Design**</h4>
-                  <p className="font-inter">Calea Victoriei 48-50<br />Sector 1, București</p>
+                  <p className="font-inter">Str. Erou Iancu Nicolae 61<br />București</p>
                   <Button variant="outline-light" className="mt-6">
                     Deschide în Google Maps
                   </Button>
