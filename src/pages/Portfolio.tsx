@@ -38,33 +38,6 @@ const Portfolio = () => {
       image: luxuryKitchen,
       description: 'Combinația perfectă între clasic și modern, cu atenție la fiecare detaliu.',
     },
-    {
-      id: 4,
-      title: 'Showroom Premium Center',
-      category: 'Comercial',
-      area: '320 mp',
-      year: '2023',
-      image: heroInterior,
-      description: 'Spațiu comercial elegant care reflectă identitatea brandului premium.',
-    },
-    {
-      id: 5,
-      title: 'Penthouse Aviatiei',
-      category: 'Penthouse',
-      area: '350 mp',
-      year: '2022',
-      image: luxuryBedroom,
-      description: 'Lux și confort într-o interpretare modernă a elegantei clasice.',
-    },
-    {
-      id: 6,
-      title: 'Villa Contemporană Snagov',
-      category: 'Villa',
-      area: '520 mp',
-      year: '2023',
-      image: luxuryKitchen,
-      description: 'Arhitectură contemporană îmbinată cu design interior sofisticat.',
-    },
   ];
 
   const filteredProjects = activeFilter === 'Toate' 
