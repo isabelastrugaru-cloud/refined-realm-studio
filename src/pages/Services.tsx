@@ -210,7 +210,7 @@ const Services = () => {
               },
               {
                 title: 'Livrare la Timp',
-                description: 'Respectarea cronogramului stabilit sau compensare pentru întârzieri',
+                description: 'Respectarea programului stabilit sau compensare pentru întârzieri',
                 icon: '⏰'
               }
             ].map((guarantee, index) => (
