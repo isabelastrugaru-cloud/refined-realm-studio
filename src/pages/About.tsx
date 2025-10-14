@@ -9,7 +9,7 @@ const About = () => {
   }, {
     icon: Users,
     label: 'Proiecte finalizate',
-    value: '200+'
+    value: '100+'
   }, {
     icon: Clock,
     label: 'Clienți mulțumiți',
