@@ -21,15 +21,6 @@ const Footer = () => {
     despre: [{
       name: 'Povestea noastră',
       href: '/despre'
-    }, {
-      name: 'Echipa',
-      href: '/despre'
-    }, {
-      name: 'Filosofia',
-      href: '/despre'
-    }, {
-      name: 'Certificări',
-      href: '/despre'
     }],
     resurse: [{
       name: 'Portofoliu',
