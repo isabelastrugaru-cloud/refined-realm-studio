@@ -106,7 +106,7 @@ const Contact = () => {
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Telefon *
                         </label>
-                        <Input type="tel" placeholder="+40 723 456 789" value={formData.phone} onChange={e => setFormData(prev => ({
+                        <Input type="tel" placeholder="+40 752 490 173" value={formData.phone} onChange={e => setFormData(prev => ({
                         ...prev,
                         phone: e.target.value
                       }))} required className="h-12" />
@@ -210,26 +210,16 @@ const Contact = () => {
                 O Experiență Unică te Așteaptă
               </h3>
               <div className="space-y-6 font-inter text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  Showroom-ul nostru de pe Calea Victoriei este conceput să îți ofere 
-                  o experiență completă a luxului și calității materialelor pe care 
-                  le folosim în proiectele noastre.
-                </p>
-                <p>
-                  Aici poți experimenta direct texturile, culorile și finisajele premium, 
-                  iar echipa noastră îți va prezenta portfoliul complet al proiectelor realizate.
-                </p>
+                
+                
               </div>
               
               <div className="mt-8 space-y-4">
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
-                  <span className="font-inter text-foreground">Expoziție materiale premium</span>
+                  
+                  
                 </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
-                  <span className="font-inter text-foreground">Mobilier și accesorii de lux</span>
-                </div>
+                
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
                   <span className="font-inter text-foreground">Consultanță personalizată</span>
