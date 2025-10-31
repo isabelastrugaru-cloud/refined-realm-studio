@@ -1,17 +1,17 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Award, Users, Clock, Star } from 'lucide-react';
+import { ArrowRight, Award, Users, Clock, Star, Sparkles, Home, Heart } from 'lucide-react';
 const About = () => {
   const stats = [{
-    icon: Award,
+    icon: Sparkles,
     label: 'Ani de experiență',
     value: '13+'
   }, {
-    icon: Users,
+    icon: Home,
     label: 'Proiecte finalizate',
     value: '100+'
   }, {
-    icon: Clock,
+    icon: Heart,
     label: 'Clienți mulțumiți',
     value: '150+'
   }];
@@ -79,6 +79,9 @@ const About = () => {
             {stats.map((stat, index) => <div key={index} className="text-center animate-fade-in" style={{
             animationDelay: `${index * 0.1}s`
           }}>
+                <div className="w-16 h-16 bg-luxury/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-luxury" />
+                </div>
                 <div className="font-playfair text-4xl font-bold mb-2">{stat.value}</div>
                 <div className="font-inter text-white/80">{stat.label}</div>
               </div>)}
