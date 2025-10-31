@@ -38,15 +38,15 @@ const Footer = () => {
   };
   const socialLinks = [{
     icon: Instagram,
-    href: 'https://www.instagram.com/designinteriorbucuresti/',
+    href: '#',
     name: 'Instagram'
   }, {
     icon: Facebook,
-    href: 'https://www.facebook.com/designinteriorbucuresti/',
+    href: '#',
     name: 'Facebook'
   }, {
     icon: Linkedin,
-    href: 'https://www.linkedin.com/company/designinteriorbucuresti/',
+    href: '#',
     name: 'LinkedIn'
   }];
   return <footer className="bg-primary text-white">
@@ -82,21 +82,17 @@ const Footer = () => {
                 Design Interior București
               </h2>
             </Link>
-            <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">De peste 5 ani, creăm spații exclusive care îmbină eleganța cu funcționalitatea, oferind servicii complete de design interior de lux pentru clienți exigenți.</p>
+            <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">De peste 13 ani, creăm spații exclusive care îmbină eleganța cu funcționalitatea, oferind servicii complete de design interior de lux pentru clienți exigenți.</p>
 
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
-                <a href="tel:+40752490173" className="font-inter text-white/90 hover:text-luxury transition-colors">
-                  +40 752 490 173
-                </a>
+                <span className="font-inter text-white/90">+40 752 490 173</span>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
-                <a href="mailto:office@designinteriorbucuresti.ro" className="font-inter text-white/90 hover:text-luxury transition-colors">
-                  office@designinteriorbucuresti.ro
-                </a>
+                <span className="font-inter text-white/90">office@designinteriorbucuresti.ro</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-luxury mr-3 flex-shrink-0 mt-0.5" />
@@ -116,9 +112,9 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h2 className="font-playfair text-xl font-bold text-white mb-6">
+            <h4 className="font-playfair text-xl font-bold text-white mb-6">
               Servicii
-            </h2>
+            </h4>
             <ul className="space-y-3">
               {footerLinks.servicii.map(link => <li key={link.name}>
                   <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
@@ -130,9 +126,9 @@ const Footer = () => {
 
           {/* About */}
           <div>
-            <h2 className="font-playfair text-xl font-bold text-white mb-6">
+            <h4 className="font-playfair text-xl font-bold text-white mb-6">
               Despre noi
-            </h2>
+            </h4>
             <ul className="space-y-3">
               {footerLinks.despre.map(link => <li key={link.name}>
                   <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
@@ -144,9 +140,9 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h2 className="font-playfair text-xl font-bold text-white mb-6">
+            <h4 className="font-playfair text-xl font-bold text-white mb-6">
               Resurse
-            </h2>
+            </h4>
             <ul className="space-y-3">
               {footerLinks.resurse.map(link => <li key={link.name}>
                   <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
