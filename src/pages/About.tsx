@@ -30,7 +30,7 @@ const About = () => {
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in mx-[2px]">
-            Povestea <span className="text-luxury">Jubilee Luxury Design</span>
+            Povestea noastră
           </h1>
           <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
             De peste 5 ani, creăm spații exclusive care reflectă<br />
