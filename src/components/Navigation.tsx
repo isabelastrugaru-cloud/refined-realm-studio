@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import logo from '@/assets/logo.svg';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,8 +53,11 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="luxury" size="lg">
-              Programează consultația
+            <Button variant="luxury" size="lg" asChild>
+              <a href="tel:+40752490173">
+                <Phone className="mr-2 h-5 w-5" />
+                Sună acum
+              </a>
             </Button>
           </div>
 
@@ -71,8 +74,11 @@ const Navigation = () => {
                   {item.name}
                 </Link>)}
               <div className="pt-4">
-                <Button variant="luxury" size="lg" className="w-full">
-                  Programează consultația
+                <Button variant="luxury" size="lg" className="w-full" asChild>
+                  <a href="tel:+40752490173">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Sună acum
+                  </a>
                 </Button>
               </div>
             </div>
