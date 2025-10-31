@@ -5,7 +5,7 @@ const About = () => {
   const stats = [{
     icon: Award,
     label: 'Ani de experiență',
-    value: '5+'
+    value: '13+'
   }, {
     icon: Users,
     label: 'Proiecte finalizate',
