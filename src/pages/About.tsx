@@ -5,7 +5,7 @@ const About = () => {
   const stats = [{
     icon: Award,
     label: 'Ani de experiență',
-    value: '5+'
+    value: '13+'
   }, {
     icon: Users,
     label: 'Proiecte finalizate',
@@ -14,10 +14,6 @@ const About = () => {
     icon: Clock,
     label: 'Clienți mulțumiți',
     value: '150+'
-  }, {
-    icon: Star,
-    label: 'Premii internaționale',
-    value: '12'
   }];
   const team = [{
     name: 'Alexandra Popescu',
@@ -79,13 +75,10 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-24 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {stats.map((stat, index) => <div key={index} className="text-center animate-fade-in" style={{
             animationDelay: `${index * 0.1}s`
           }}>
-                <div className="w-16 h-16 bg-luxury/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-luxury" />
-                </div>
                 <div className="font-playfair text-4xl font-bold mb-2">{stat.value}</div>
                 <div className="font-inter text-white/80">{stat.label}</div>
               </div>)}
