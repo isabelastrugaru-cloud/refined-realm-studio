@@ -79,7 +79,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
               <h2 className="font-playfair text-3xl font-bold text-white">
-                **Jubilee Luxury Design**
+                Design Interior București
               </h2>
             </Link>
             <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">De peste 5 ani, creăm spații exclusive care îmbină eleganța cu funcționalitatea, oferind servicii complete de design interior de lux pentru clienți exigenți.</p>
