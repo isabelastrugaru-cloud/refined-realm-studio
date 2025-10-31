@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import heroInterior from '@/assets/hero-interior.jpg';
 import luxuryBedroom from '@/assets/luxury-bedroom.jpg';
 import luxuryKitchen from '@/assets/luxury-kitchen.jpg';
@@ -38,16 +38,14 @@ const Home = () => {
             Transformăm spațiile în opere de artă prin eleganță,<br />
             rafinament și atenție la detalii
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{
+          <div className="flex justify-center animate-fade-in-up" style={{
           animationDelay: '0.4s'
         }}>
-            <Button variant="luxury" size="xl" className="group">
-              Programează o consultație
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline-light" size="xl" className="group">
-              <Play className="mr-2 h-5 w-5" />
-              Descoperă portofoliul
+            <Button variant="luxury" size="xl" className="group" asChild>
+              <a href="tel:+40752490173">
+                <Phone className="mr-2 h-5 w-5" />
+                Sună
+              </a>
             </Button>
           </div>
         </div>
@@ -139,7 +137,7 @@ const Home = () => {
           </h2>
           
           <Button variant="luxury" size="xl" className="animate-luxury-glow">
-            Programează consultația
+            Programează o consultație gratuită
             <ArrowRight className="ml-2 h-6 w-6" />
           </Button>
         </div>
