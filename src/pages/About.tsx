@@ -5,7 +5,7 @@ const About = () => {
   const stats = [{
     icon: Award,
     label: 'Ani de experiență',
-    value: '13+'
+    value: '5+'
   }, {
     icon: Users,
     label: 'Proiecte finalizate',
@@ -30,10 +30,10 @@ const About = () => {
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in mx-[2px]">
-            Povestea noastră
+            Povestea <span className="text-luxury">Jubilee Luxury Design</span>
           </h1>
           <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
-            De peste 13 ani, creăm spații exclusive care reflectă<br />
+            De peste 5 ani, creăm spații exclusive care reflectă<br />
             personalitatea și visurile clienților noștri
           </p>
         </div>
@@ -48,16 +48,13 @@ const About = () => {
                 O Viziune Născută din Pasiune
               </h2>
               <div className="space-y-6 font-inter text-lg text-muted-foreground leading-relaxed">
-                <p>**Jubilee Luxury Design** Studio s-a născut în 2020 dintr-o pasiune pentru frumusețe, funcționalitate și dorința de a transforma fiecare spațiu într-o operă de artă unică.</p>
+                <p>Jubilee Luxury Design Studio s-a născut în 2012 dintr-o pasiune pentru frumusețe, funcționalitate și dorința de a transforma fiecare spațiu într-o operă de artă unică.</p>
                 <p>
                   Specializându-ne în design interior de lux, am dezvoltat o abordare holistică 
                   care îmbină eleganța atemporală cu inovația contemporană, creând interioare 
                   care depășesc tendințele momentului.
                 </p>
-                <p>
-                  Filosofia noastră se bazează pe ideea că fiecare client este unic, 
-                  iar casa sa trebuie să reflecte personalitatea, stilul de viață și aspirațiile sale.
-                </p>
+                <p>Filozofia noastră se bazează pe ideea că fiecare client este unic, iar casa sa trebuie să reflecte personalitatea, stilul de viață și aspirațiile sale.</p>
               </div>
             </div>
             <div className="relative animate-scale-in">
@@ -116,9 +113,7 @@ const About = () => {
       {/* Philosophy Section */}
       <section className="py-24 bg-premium">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-8 animate-fade-in">
-            Filosofia Noastră
-          </h2>
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-8 animate-fade-in">Filozofia Noastră</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="animate-fade-in">
               <div className="w-16 h-16 bg-luxury/20 rounded-full flex items-center justify-center mx-auto mb-4">
