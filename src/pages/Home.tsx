@@ -41,11 +41,8 @@ const Home = () => {
           <div className="flex justify-center animate-fade-in-up" style={{
           animationDelay: '0.4s'
         }}>
-            <Button variant="luxury" size="xl" className="group" asChild>
-              <a href="tel:+40752490173">
-                <Phone className="mr-2 h-5 w-5" />
-                Sună
-              </a>
+            <Button variant="luxury" size="xl" className="group">
+              Programează o consultație gratuită
             </Button>
           </div>
         </div>
