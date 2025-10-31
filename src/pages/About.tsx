@@ -29,7 +29,7 @@ const About = () => {
             Povestea <span className="text-luxury">Jubilee Luxury Design</span>
           </h1>
           <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
-            De peste 5 ani, creăm spații exclusive care reflectă<br />
+            De peste 13 ani, creăm spații exclusive care reflectă<br />
             personalitatea și visurile clienților noștri
           </p>
         </div>

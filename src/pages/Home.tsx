@@ -57,7 +57,7 @@ const Home = () => {
                 Excelența în<br />
                 <span className="text-luxury">Design Interior</span>
               </h2>
-              <p className="font-inter text-lg text-muted-foreground mb-8 leading-relaxed">Cu peste 5 ani de experiență în crearea de spații exclusive, Jubilee Luxury Design îmbină artă, funcționalitate și eleganță pentru a realiza interioare care depășesc așteptările.</p>
+              <p className="font-inter text-lg text-muted-foreground mb-8 leading-relaxed">Cu peste 13 ani de experiență în crearea de spații exclusive, Jubilee Luxury Design îmbină artă, funcționalitate și eleganță pentru a realiza interioare care depășesc așteptările.</p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
