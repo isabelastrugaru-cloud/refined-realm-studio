@@ -9,9 +9,11 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
-
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PenthouseHerastrau from "./pages/projects/PenthouseHerastrau";
+import VillaPipera from "./pages/projects/VillaPipera";
+import ApartamentPrimaverii from "./pages/projects/ApartamentPrimaverii";
 
 const queryClient = new QueryClient();
 
@@ -26,9 +28,11 @@ const App = () => (
             <Route index element={<Home />} />
             <Route path="despre" element={<About />} />
             <Route path="portofoliu" element={<Portfolio />} />
+            <Route path="proiecte/penthouse-herastrau" element={<PenthouseHerastrau />} />
+            <Route path="proiecte/villa-pipera" element={<VillaPipera />} />
+            <Route path="proiecte/apartament-primaverii" element={<ApartamentPrimaverii />} />
             <Route path="servicii" element={<Services />} />
             <Route path="blog" element={<Blog />} />
-            
             <Route path="contact" element={<Contact />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

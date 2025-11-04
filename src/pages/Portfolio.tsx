@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Filter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroInterior from '@/assets/hero-interior.jpg';
 import luxuryBedroom from '@/assets/luxury-bedroom.jpg';
 import luxuryKitchen from '@/assets/luxury-kitchen.jpg';
@@ -50,7 +51,7 @@ const Portfolio = () => {
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Portofoliul <span className="text-luxury">Premium</span>
+            Portofoliu Premium
           </h1>
           <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
             Colecția noastră de proiecte exclusive care redefinesc<br />
@@ -109,10 +110,12 @@ const Portfolio = () => {
                     <p className="font-inter text-white/90 mb-4 leading-relaxed">
                       {project.description}
                     </p>
-                    <Button variant="outline-light" size="sm" className="self-start">
-                      Vezi detalii
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link to={`/proiecte/${project.id === 1 ? 'penthouse-herastrau' : project.id === 2 ? 'villa-pipera' : 'apartament-primaverii'}`}>
+                      <Button variant="outline-light" size="sm" className="self-start">
+                        Vezi detalii
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 
@@ -142,7 +145,7 @@ const Portfolio = () => {
       <section className="py-24 bg-premium">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-8 animate-fade-in">
-            Procesul Nostru <span className="text-luxury">Premium</span>
+            Procesul Nostru
           </h2>
           <p className="font-inter text-xl text-muted-foreground mb-16 animate-fade-in-up">
             Fiecare proiect urmează un proces riguros de la concept la finalizare
