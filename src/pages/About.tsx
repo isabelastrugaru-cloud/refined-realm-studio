@@ -94,7 +94,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">Profesioniști cu experiență internațională, dedicați excelenței în design</p>
+            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">Profesioniști cu experiență, dedicați excelenței în design</p>
           </div>
 
           {team.map((member, index) => <div key={index} className="grid lg:grid-cols-2 gap-16 items-center mb-16">
