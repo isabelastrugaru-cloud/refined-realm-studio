@@ -44,7 +44,7 @@ const About = () => {
                 O Viziune Născută din Pasiune
               </h2>
               <div className="space-y-6 font-inter text-lg text-muted-foreground leading-relaxed">
-                <p>Jubilee Luxury Design Studio s-a născut în 2012 dintr-o pasiune pentru frumusețe, funcționalitate și dorința de a transforma fiecare spațiu într-o operă de artă unică.</p>
+                <p>Jubilee Luxury Design s-a născut în 2012 dintr-o pasiune pentru frumusețe, funcționalitate și dorința de a transforma fiecare spațiu într-o operă de artă unică.</p>
                 <p>
                   Specializându-ne în design interior de lux, am dezvoltat o abordare holistică 
                   care îmbină eleganța atemporală cu inovația contemporană, creând interioare 
