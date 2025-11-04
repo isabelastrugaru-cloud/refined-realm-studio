@@ -41,7 +41,7 @@ const Blog = () => {
           </h1>
           <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
             Inspirație, sfaturi și tendințe în design interior<br />
-            de la experții **Jubilee Luxury Design**
+            de la experții Jubilee Luxury Design
           </p>
         </div>
       </section>
