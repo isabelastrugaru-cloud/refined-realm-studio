@@ -153,7 +153,7 @@ const Services = () => {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
-              Procesul Nostru de <span className="text-luxury">Lucru</span>
+            Procesul Nostru de <span className="text-luxury">Lucru</span>
             </h2>
             <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
               Un proces structurat și transparent pentru rezultate excepționale
@@ -195,7 +195,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
-              Garanțiile <span className="text-luxury font-bold">Jubilee Luxury Design</span>
+              Garanțiile <span className="text-luxury font-bold">Noastre</span>
             </h2>
           </div>
           
@@ -239,7 +239,7 @@ const Services = () => {
       <section className="py-24 bg-gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
-            Pregătit să începi proiectul?
+            Pregătit să Începi Proiectul?
           </h2>
           <p className="font-inter text-xl text-white/90 mb-10 animate-fade-in-up">
             Consultația inițială este gratuită și fără obligații.<br />
