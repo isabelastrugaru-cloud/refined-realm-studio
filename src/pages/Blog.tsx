@@ -1,47 +1,164 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, User, Tag } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+import tendinte2024 from '@/assets/blog/tendinte-2024.jpg';
+import minimalism from '@/assets/blog/minimalismul-scandinav.jpg';
+import biofil from '@/assets/blog/design-biofil.jpg';
+import buget from '@/assets/blog/buget-limitat.jpg';
+import spatii from '@/assets/blog/spatii-mici.jpg';
+import culori from '@/assets/blog/psihologia-culorilor.jpg';
+import iluminat from '@/assets/blog/iluminat-perfect.jpg';
+import openspace from '@/assets/blog/open-space.jpg';
+import artdeco from '@/assets/blog/art-deco.jpg';
+import materiale from '@/assets/blog/materiale-naturale.jpg';
+import finisaje from '@/assets/blog/finisaje-premium.jpg';
+import ecologic from '@/assets/blog/materiale-ecologice.jpg';
+
 const Blog = () => {
-  const articles = [{
-    id: 1,
-    title: 'Tendințele în Design Interior pentru 2024',
-    excerpt: 'Descoperă cele mai noi tendințe în design interior care vor domina în 2024, de la culori și materiale la concepte inovatoare.',
-    author: 'Alexandra Popescu',
-    date: '15 Martie 2024',
-    category: 'Tendințe',
-    image: '/src/assets/luxury-bedroom.jpg',
-    readTime: '5 min citire'
-  }, {
-    id: 2,
-    title: 'Cum să Creezi un Spațiu de Lux cu Buget Limitat',
-    excerpt: 'Ghid complet pentru transformarea locuinței tale într-un spațiu luxos fără a depăși bugetul planificat.',
-    author: 'Alexandra Popescu',
-    date: '10 Martie 2024',
-    category: 'Sfaturi',
-    image: '/src/assets/luxury-kitchen.jpg',
-    readTime: '7 min citire'
-  }, {
-    id: 3,
-    title: 'Importanța Iluminatului în Design Interior',
-    excerpt: 'Cum să folosești iluminatul pentru a crea atmosfera perfectă și a evidenția elementele de design din casa ta.',
-    author: 'Alexandra Popescu',
-    date: '5 Martie 2024',
-    category: 'Design',
-    image: '/src/assets/hero-interior.jpg',
-    readTime: '6 min citire'
-  }];
-  const categories = ['Toate', 'Tendințe', 'Sfaturi', 'Design', 'Materiale', 'Inspirație'];
-  return <div className="pt-20">
+  const [selectedCategory, setSelectedCategory] = useState('Toate');
+
+  const articles = [
+    {
+      id: 1,
+      title: 'Tendințele în Design Interior pentru 2024',
+      excerpt: 'Descoperă cele mai noi tendințe în design interior care vor domina în 2024, de la culori și materiale la concepte inovatoare.',
+      date: '15 Martie 2024',
+      category: 'Tendințe',
+      image: tendinte2024,
+      readTime: '8 min citire',
+      link: '/blog/tendinte-design-2024'
+    },
+    {
+      id: 2,
+      title: 'Minimalismul Scandinav: Tendința Care Rămâne',
+      excerpt: 'De ce designul scandinav continuă să fie relevant și cum să-l adaptezi pentru casa ta modernă.',
+      date: '12 Martie 2024',
+      category: 'Tendințe',
+      image: minimalism,
+      readTime: '7 min citire',
+      link: '/blog/minimalismul-scandinav'
+    },
+    {
+      id: 3,
+      title: 'Design Biofil: Natura în Casa Ta',
+      excerpt: 'Cum să aduci natura în spațiile interioare pentru bunăstare și frumusețe maximă.',
+      date: '8 Martie 2024',
+      category: 'Tendințe',
+      image: biofil,
+      readTime: '6 min citire',
+      link: '/blog/design-biofil'
+    },
+    {
+      id: 4,
+      title: 'Cum să Creezi un Spațiu de Lux cu Buget Limitat',
+      excerpt: 'Ghid complet pentru transformarea locuinței tale într-un spațiu luxos fără a depăși bugetul planificat.',
+      date: '10 Martie 2024',
+      category: 'Sfaturi',
+      image: buget,
+      readTime: '9 min citire',
+      link: '/blog/buget-limitat'
+    },
+    {
+      id: 5,
+      title: 'Maximizarea Spațiilor Mici: Trucuri și Soluții',
+      excerpt: 'Cum să transformi un apartament mic într-un spațiu funcțional, luminos și elegant.',
+      date: '6 Martie 2024',
+      category: 'Sfaturi',
+      image: spatii,
+      readTime: '7 min citire',
+      link: '/blog/spatii-mici'
+    },
+    {
+      id: 6,
+      title: 'Psihologia Culorilor în Design Interior',
+      excerpt: 'Cum influențează culorile starea ta de spirit și cum să le folosești strategic în fiecare cameră.',
+      date: '2 Martie 2024',
+      category: 'Sfaturi',
+      image: culori,
+      readTime: '8 min citire',
+      link: '/blog/psihologia-culorilor'
+    },
+    {
+      id: 7,
+      title: 'Ghidul Complet pentru Iluminatul Perfect',
+      excerpt: 'Cum să folosești iluminatul pentru a crea atmosfera perfectă și a evidenția elementele de design.',
+      date: '28 Februarie 2024',
+      category: 'Design',
+      image: iluminat,
+      readTime: '7 min citire',
+      link: '/blog/iluminat-perfect'
+    },
+    {
+      id: 8,
+      title: 'Designul Open Space: Spațiu Fluid și Funcțional',
+      excerpt: 'Cum să creezi un open space care să fie atât generos, cât și intim, atât social, cât și privat.',
+      date: '24 Februarie 2024',
+      category: 'Design',
+      image: openspace,
+      readTime: '6 min citire',
+      link: '/blog/open-space'
+    },
+    {
+      id: 9,
+      title: 'Art Deco: Glamour-ul Anilor \'20 în Casa Modernă',
+      excerpt: 'Cum să integrezi eleganța timeless a Art Deco în designul contemporan.',
+      date: '20 Februarie 2024',
+      category: 'Design',
+      image: artdeco,
+      readTime: '8 min citire',
+      link: '/blog/art-deco'
+    },
+    {
+      id: 10,
+      title: 'Ghidul Materialelor Naturale Premium',
+      excerpt: 'Tot ce trebuie să știi despre marmură, lemn masiv, piatră naturală și alte materiale de lux.',
+      date: '18 Februarie 2024',
+      category: 'Materiale',
+      image: materiale,
+      readTime: '7 min citire',
+      link: '/blog/materiale-naturale'
+    },
+    {
+      id: 11,
+      title: 'Finisajele Premium: Investiție în Durabilitate',
+      excerpt: 'Cum să alegi finisajele potrivite pentru fiecare cameră și buget.',
+      date: '14 Februarie 2024',
+      category: 'Materiale',
+      image: finisaje,
+      readTime: '6 min citire',
+      link: '/blog/finisaje-premium'
+    },
+    {
+      id: 12,
+      title: 'Materiale Ecologice: Lux Sustenabil',
+      excerpt: 'Designul responsabil fără compromisuri estetice sau de calitate.',
+      date: '10 Februarie 2024',
+      category: 'Materiale',
+      image: ecologic,
+      readTime: '7 min citire',
+      link: '/blog/materiale-ecologice'
+    }
+  ];
+
+  const categories = ['Toate', 'Tendințe', 'Sfaturi', 'Design', 'Materiale'];
+
+  const filteredArticles = selectedCategory === 'Toate' 
+    ? articles 
+    : articles.filter(article => article.category === selectedCategory);
+
+  return (
+    <div className="pt-20">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
             Blog <span className="text-luxury">Design</span>
-          </h1>
+          </h2>
           <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
             Inspirație, sfaturi și tendințe în design interior<br />
-            de la experții Jubilee Luxury Design
+            de la experții Design Interior București
           </p>
         </div>
       </section>
@@ -50,11 +167,17 @@ const Blog = () => {
       <section className="py-12 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category, index) => <Button key={index} variant={index === 0 ? "luxury" : "outline"} className="animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
+            {categories.map((category, index) => (
+              <Button
+                key={index}
+                variant={selectedCategory === category ? "luxury" : "outline"}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => setSelectedCategory(category)}
+              >
                 {category}
-              </Button>)}
+              </Button>
+            ))}
           </div>
         </div>
       </section>
@@ -63,11 +186,18 @@ const Blog = () => {
       <section className="pb-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article, index) => <article key={article.id} className="bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 overflow-hidden group animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
+            {filteredArticles.map((article, index) => (
+              <article
+                key={article.id}
+                className="bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 overflow-hidden group animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="relative overflow-hidden">
-                  <img src={article.image} alt={article.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   <div className="absolute top-4 left-4">
                     <span className="inline-flex items-center bg-luxury/90 text-luxury-foreground px-3 py-1 rounded-full text-sm font-medium">
                       <Tag className="w-3 h-3 mr-1" />
@@ -81,8 +211,8 @@ const Blog = () => {
                     <Calendar className="w-4 h-4 mr-2" />
                     <span>{article.date}</span>
                     <span className="mx-2">•</span>
-                    
-                    
+                    <Clock className="w-4 h-4 mr-2" />
+                    <span>{article.readTime}</span>
                   </div>
                   
                   <h3 className="font-playfair text-xl font-bold text-foreground mb-3 group-hover:text-luxury transition-colors">
@@ -93,23 +223,15 @@ const Blog = () => {
                     {article.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">{article.readTime}</span>
+                  <Link to={article.link}>
                     <Button variant="ghost" size="sm" className="group-hover:text-luxury">
                       Citește mai mult
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                  </div>
+                  </Link>
                 </div>
-              </article>)}
-          </div>
-          
-          {/* Load More Button */}
-          <div className="text-center mt-16">
-            <Button variant="outline" size="lg">
-              Încarcă mai multe articole
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -125,13 +247,19 @@ const Blog = () => {
             cele mai noi articole și sfaturi de design.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input type="email" placeholder="Adresa ta de email" className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50" />
+            <input
+              type="email"
+              placeholder="Adresa ta de email"
+              className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+            />
             <Button variant="luxury" size="lg">
               Abonează-te
             </Button>
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Blog;
