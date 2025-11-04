@@ -83,9 +83,12 @@ const Services = () => {
           <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
             Servicii <span className="text-luxury">Premium</span>
           </h1>
-          <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
-            Pachete complete de servicii adaptate pentru fiecare etapă<br />
-            a proiectului tău de design interior
+          <p className="font-inter text-xl text-muted-foreground animate-fade-in-up max-w-3xl mx-auto leading-relaxed">
+            Experiența noastră începe acolo unde visul tău prinde formă.<br />
+            Fiecare proiect este tratat cu atenția și eleganța pe care le merită, prin pachete complete de servicii, gândite să te însoțească în fiecare etapă — de la primele schițe până la ultimul detaliu de decor.
+            <br /><br />
+            Totul este personalizat: ritmul tău, stilul tău, povestea ta.<br />
+            Rezultatul? Un spațiu care nu doar arată bine, ci te face să simți că ești acasă.
           </p>
         </div>
       </section>
