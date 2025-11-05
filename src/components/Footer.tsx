@@ -158,7 +158,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-inter text-white/60 text-xs sm:text-sm text-center md:text-left">
-              © {currentYear} Jubilee Luxury Design Studio. Toate drepturile rezervate.
+              © {currentYear} Jubilee Luxury Design. Toate drepturile rezervate.
             </p>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
               <Link to="/politica-confidentialitate" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
