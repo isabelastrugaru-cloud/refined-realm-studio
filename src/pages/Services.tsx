@@ -79,12 +79,12 @@ const Services = () => {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             Servicii <span className="text-luxury">Premium</span>
           </h1>
-          <p className="font-inter text-xl text-muted-foreground animate-fade-in-up max-w-3xl mx-auto leading-relaxed">
-            Experiența noastră începe acolo unde visul tău prinde formă.<br />
+          <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-3xl mx-auto leading-relaxed">
+            Experiența noastră începe acolo unde visul tău prinde formă.
             Fiecare proiect este tratat cu atenția și eleganța pe care le merită, prin pachete complete de servicii, gândite să te însoțească în fiecare etapă — de la primele schițe până la ultimul detaliu de decor.
             <br /><br />
             Totul este personalizat: ritmul tău, stilul tău, povestea ta.<br />
@@ -95,13 +95,13 @@ const Services = () => {
 
       {/* Services Grid */}
       <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <div 
                 key={index} 
-                className={`relative bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 p-8 animate-fade-in ${
-                  service.popular ? 'ring-2 ring-luxury transform scale-105' : ''
+                 className={`relative bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 p-4 sm:p-6 md:p-8 animate-fade-in ${
+                  service.popular ? 'ring-2 ring-luxury lg:transform lg:scale-105' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -150,33 +150,33 @@ const Services = () => {
 
       {/* Process Section */}
       <section className="py-24 bg-premium">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             Procesul Nostru de <span className="text-luxury">Lucru</span>
             </h2>
-            <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
+            <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
               Un proces structurat și transparent pentru rezultate excepționale
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {process.map((phase, index) => (
               <div 
                 key={index} 
-                className="flex flex-col md:flex-row items-center gap-8 animate-fade-in"
+                className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-luxury/20 rounded-full flex items-center justify-center">
-                    <span className="font-playfair text-2xl font-bold text-luxury">{phase.step}</span>
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-luxury/20 rounded-full flex items-center justify-center">
+                    <span className="font-playfair text-xl sm:text-2xl font-bold text-luxury">{phase.step}</span>
                   </div>
                 </div>
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="font-playfair text-2xl font-bold text-foreground mb-3">
+                <div className="flex-1 text-center sm:text-left">
+                  <h3 className="font-playfair text-xl sm:text-2xl font-bold text-foreground mb-2 md:mb-3">
                     {phase.title}
                   </h3>
-                  <p className="font-inter text-lg text-muted-foreground mb-2">
+                  <p className="font-inter text-base sm:text-lg text-muted-foreground mb-2">
                     {phase.description}
                   </p>
                   <div className="inline-flex items-center bg-luxury/10 text-luxury px-4 py-2 rounded-full font-medium text-sm">
@@ -192,14 +192,14 @@ const Services = () => {
 
       {/* Guarantees Section */}
       <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6">
               Garanțiile <span className="text-luxury font-bold">Noastre</span>
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 title: 'Garanție Calitate',
@@ -237,17 +237,16 @@ const Services = () => {
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-hero">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 animate-fade-in leading-tight">
             Pregătit să Începi Proiectul?
           </h2>
-          <p className="font-inter text-xl text-white/90 mb-10 animate-fade-in-up">
-            Consultația inițială este gratuită și fără obligații.<br />
-            Descoperă cum putem transforma spațiul tău.
+          <p className="font-inter text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-fade-in-up max-w-2xl mx-auto">
+            Consultația inițială este gratuită și fără obligații. Descoperă cum putem transforma spațiul tău.
           </p>
-          <Button variant="luxury" size="xl" className="animate-luxury-glow">
+          <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
             Programează consultația gratuită
-            <ArrowRight className="ml-2 h-6 w-6" />
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </section>

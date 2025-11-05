@@ -52,20 +52,19 @@ const Footer = () => {
   return <footer className="bg-primary text-white">
       {/* Newsletter Section */}
       <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="font-playfair text-3xl font-bold mb-4">
+            <h3 className="font-playfair text-2xl sm:text-3xl font-bold mb-3 md:mb-4">
               Inspirație & <span className="text-luxury">Tendințe</span>
             </h3>
-            <p className="font-inter text-white/80 mb-8 text-lg">
-              Primește lunar idei exclusive de design interior,<br />
-              tendințe și sfaturi de la experții Jubilee Luxury Design
+            <p className="font-inter text-white/80 mb-6 md:mb-8 text-base sm:text-lg px-4">
+              Primește lunar idei exclusive de design interior, tendințe și sfaturi de la experții Jubilee Luxury Design
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input type="email" placeholder="Adresa ta de email" className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm" />
-              <Button variant="luxury">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md mx-auto px-4">
+              <input type="email" placeholder="Adresa ta de email" className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm" />
+              <Button variant="luxury" className="text-sm sm:text-base">
                 Abonează-te
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </div>
           </div>
@@ -73,8 +72,8 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
@@ -156,12 +155,12 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="font-inter text-white/60 text-sm mb-4 md:mb-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="font-inter text-white/60 text-xs sm:text-sm text-center md:text-left">
               © {currentYear} Jubilee Luxury Design Studio. Toate drepturile rezervate.
             </p>
-            <div className="flex space-x-8">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
               <Link to="/politica-confidentialitate" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
                 Politica de confidențialitate
               </Link>

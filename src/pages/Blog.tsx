@@ -152,21 +152,20 @@ const Blog = () => {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             Blog <span className="text-luxury">Design</span>
           </h2>
-          <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
-            Inspirație, sfaturi și tendințe în design interior<br />
-            de la experții Design Interior București
+          <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
+            Inspirație, sfaturi și tendințe în design interior de la experții Design Interior București
           </p>
         </div>
       </section>
 
       {/* Categories Filter */}
-      <section className="py-12 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <section className="py-8 md:py-12 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12">
             {categories.map((category, index) => (
               <Button
                 key={index}
@@ -184,8 +183,8 @@ const Blog = () => {
 
       {/* Articles Grid */}
       <section className="pb-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredArticles.map((article, index) => (
               <article
                 key={article.id}
@@ -238,21 +237,20 @@ const Blog = () => {
 
       {/* Newsletter Subscription */}
       <section className="py-24 bg-gradient-hero">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 animate-fade-in leading-tight">
             Rămâi la curent cu noutățile
           </h2>
-          <p className="font-inter text-xl text-white/90 mb-10 animate-fade-in-up">
-            Abonează-te la newsletter-ul nostru pentru a primi<br />
-            cele mai noi articole și sfaturi de design.
+          <p className="font-inter text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-fade-in-up max-w-2xl mx-auto">
+            Abonează-te la newsletter-ul nostru pentru a primi cele mai noi articole și sfaturi de design.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Adresa ta de email"
-              className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
             />
-            <Button variant="luxury" size="lg">
+            <Button variant="luxury" size="lg" className="text-sm sm:text-base">
               Abonează-te
             </Button>
           </div>

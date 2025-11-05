@@ -49,21 +49,20 @@ const Portfolio = () => {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             Portofoliu Premium
           </h1>
-          <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
-            Colecția noastră de proiecte exclusive care redefinesc<br />
-            standardele de eleganță și rafinament
+          <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
+            Colecția noastră de proiecte exclusive care redefinesc standardele de eleganță și rafinament
           </p>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+      <section className="py-8 md:py-12 bg-background border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
             {filters.map((filter) => (
               <Button
                 key={filter}
@@ -81,8 +80,8 @@ const Portfolio = () => {
 
       {/* Projects Grid */}
       <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredProjects.map((project, index) => (
               <div 
                 key={project.id} 
@@ -143,15 +142,15 @@ const Portfolio = () => {
 
       {/* Process Section */}
       <section className="py-24 bg-premium">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-8 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 md:mb-8 animate-fade-in">
             Procesul Nostru
           </h2>
-          <p className="font-inter text-xl text-muted-foreground mb-16 animate-fade-in-up">
+          <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground mb-12 md:mb-16 animate-fade-in-up max-w-2xl mx-auto">
             Fiecare proiect urmează un proces riguros de la concept la finalizare
           </p>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
               { step: '01', title: 'Consultația', description: 'Analiză detaliată a nevoilor și visurilor tale' },
               { step: '02', title: 'Conceptul', description: 'Dezvoltarea unei viziuni unice și personalizate' },

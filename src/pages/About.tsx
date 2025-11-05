@@ -24,26 +24,25 @@ const About = () => {
   return <div className="pt-20">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in mx-[2px]">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             Povestea <span className="text-luxury">Jubilee Luxury Design</span>
           </h1>
-          <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
-            De peste 13 ani, creăm spații exclusive care reflectă<br />
-            personalitatea și visurile clienților noștri
+          <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
+            De peste 13 ani, creăm spații exclusive care reflectă personalitatea și visurile clienților noștri
           </p>
         </div>
       </section>
 
       {/* Story Section */}
       <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="animate-fade-in">
-              <h2 className="font-playfair text-4xl font-bold text-foreground mb-8">
+              <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 md:mb-8 leading-tight">
                 O Viziune Născută din Pasiune
               </h2>
-              <div className="space-y-6 font-inter text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-4 md:space-y-6 font-inter text-base md:text-lg text-muted-foreground leading-relaxed">
                 <p>Jubilee Luxury Design s-a născut în 2012 dintr-o pasiune pentru frumusețe, funcționalitate și dorința de a transforma fiecare spațiu într-o operă de artă unică.</p>
                 <p>
                   Specializându-ne în design interior de lux, am dezvoltat o abordare holistică 
@@ -74,8 +73,8 @@ const About = () => {
 
       {/* Stats Section */}
       <section className="py-24 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
             {stats.map((stat, index) => <div key={index} className="text-center animate-fade-in" style={{
             animationDelay: `${index * 0.1}s`
           }}>
@@ -108,9 +107,9 @@ const About = () => {
 
       {/* Philosophy Section */}
       <section className="py-24 bg-premium">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-8 animate-fade-in">Filozofia Noastră</h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 md:mb-8 animate-fade-in">Filozofia Noastră</h2>
+          <div className="grid sm:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
             <div className="animate-fade-in">
               <div className="w-16 h-16 bg-luxury/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-luxury" />

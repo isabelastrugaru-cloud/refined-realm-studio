@@ -56,31 +56,30 @@ const Contact = () => {
   return <div className="pt-20">
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             Să Începem <span className="text-luxury">Împreună</span>
           </h1>
-          <p className="font-inter text-xl text-muted-foreground animate-fade-in-up">
-            Consultația inițială este gratuită și fără obligații.<br />
-            Contactează-ne pentru a discuta despre visul tău
+          <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
+            Consultația inițială este gratuită și fără obligații. Contactează-ne pentru a discuta despre visul tău
           </p>
         </div>
       </section>
 
       {/* Contact Form & Info */}
       <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-16">
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card className="shadow-luxury">
-                <CardContent className="p-8">
-                  <h2 className="font-playfair text-3xl font-bold text-foreground mb-8">
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-foreground mb-6 md:mb-8 leading-tight">
                     Programează Consultația <span className="text-luxury">Gratuită</span>
                   </h2>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
                       <div>
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Nume complet *
@@ -101,7 +100,7 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
                       <div>
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Telefon *
@@ -135,10 +134,10 @@ const Contact = () => {
                     }))} className="resize-none" />
                     </div>
 
-                    <Button variant="luxury" size="lg" type="submit" className="w-full">
-                      <Calendar className="mr-2 h-5 w-5" />
+                    <Button variant="luxury" size="lg" type="submit" className="w-full text-sm sm:text-base">
+                      <Calendar className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                       Programează Consultația Gratuită
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                     </Button>
                   </form>
 
@@ -193,18 +192,17 @@ const Contact = () => {
 
       {/* Map Section */}
       <section className="py-24 bg-premium">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl font-bold text-foreground mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6 leading-tight px-2">
               Showroom <span className="text-luxury font-bold">Jubilee Luxury Design</span>
             </h2>
-            <p className="font-inter text-xl text-muted-foreground">
-              Vizitează showroom-ul nostru pentru a experimenta direct<br />
-              calitatea materialelor și a discuta față în față despre proiectul tău
+            <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+              Vizitează showroom-ul nostru pentru a experimenta direct calitatea materialelor și a discuta față în față despre proiectul tău
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="animate-fade-in">
               <h3 className="font-playfair text-2xl font-bold text-foreground mb-6">
                 O Experiență Unică te Așteaptă
@@ -256,12 +254,12 @@ const Contact = () => {
 
       {/* FAQ Quick Access */}
       <section className="py-24 bg-background">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-4xl font-bold text-foreground mb-8">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 md:mb-8">
             Întrebări <span className="text-luxury">Frecvente</span>
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid sm:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
             {[{
             question: 'Cât durează un proiect?',
             answer: 'Între 4-12 săptămâni, în funcție de complexitatea proiectului și suprafața spațiului.'

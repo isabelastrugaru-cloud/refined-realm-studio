@@ -28,15 +28,14 @@ const Home = () => {
     }}>
         <div className="absolute inset-0 bg-primary/40"></div>
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
-          <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="font-playfair text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 animate-fade-in-up leading-tight px-4">
             Design Interior București<br />
             <span className="text-luxury">de Lux</span>
           </h1>
-          <p className="font-inter text-xl md:text-2xl mb-8 text-white/90 animate-fade-in-up" style={{
+          <p className="font-inter text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 animate-fade-in-up px-4 max-w-2xl mx-auto" style={{
           animationDelay: '0.2s'
         }}>
-            Transformăm spațiile în opere de artă prin eleganță,<br />
-            rafinament și atenție la detalii
+            Transformăm spațiile în opere de artă prin eleganță, rafinament și atenție la detalii
           </p>
           <div className="flex justify-center animate-fade-in-up" style={{
           animationDelay: '0.4s'
@@ -53,11 +52,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
                 Excelența în<br />
                 <span className="text-luxury">Design Interior</span>
               </h2>
-              <p className="font-inter text-lg text-muted-foreground mb-8 leading-relaxed">Cu peste 13 ani de experiență în crearea de spații exclusive, Jubilee Luxury Design îmbină artă, funcționalitate și eleganță pentru a realiza interioare care depășesc așteptările.</p>
+              <p className="font-inter text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">Cu peste 13 ani de experiență în crearea de spații exclusive, Jubilee Luxury Design îmbină artă, funcționalitate și eleganță pentru a realiza interioare care depășesc așteptările.</p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
@@ -76,13 +75,13 @@ const Home = () => {
                 Citește povestea noastră
               </Button>
             </div>
-            <div className="grid grid-cols-2 gap-4 animate-scale-in">
-              <div className="space-y-4">
-                <img src={luxuryBedroom} alt="Interior design luxury bedroom" className="w-full h-64 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
-                <img src={luxuryKitchen} alt="Luxury kitchen interior design" className="w-full h-48 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+            <div className="grid grid-cols-2 gap-3 md:gap-4 animate-scale-in">
+              <div className="space-y-3 md:space-y-4">
+                <img src={luxuryBedroom} alt="Interior design luxury bedroom" className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src={luxuryKitchen} alt="Luxury kitchen interior design" className="w-full h-36 sm:h-40 md:h-48 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
               </div>
-              <div className="mt-8">
-                <img src={heroInterior} alt="Modern luxury interior design living room" className="w-full h-80 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+              <div className="mt-6 sm:mt-8">
+                <img src={heroInterior} alt="Modern luxury interior design living room" className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
               </div>
             </div>
           </div>
@@ -92,17 +91,16 @@ const Home = () => {
       {/* Featured Projects */}
       <section className="py-24 bg-premium">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in">
               Proiecte <span className="text-luxury">Exclusive</span>
             </h2>
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-              Fiecare proiect este o poveste unică de eleganță și rafinament,
-              creată special pentru clienții noștri exigenți
+            <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in px-4">
+              Fiecare proiect este o poveste unică de eleganță și rafinament, creată special pentru clienții noștri exigenți
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => <div key={project.id} className="group cursor-pointer animate-fade-in" style={{
             animationDelay: `${index * 0.1}s`
           }}>
@@ -128,14 +126,14 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-hero">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 animate-fade-in px-2">
             Pregătit să îți transformi spațiul?
           </h2>
           
-          <Button variant="luxury" size="xl" className="animate-luxury-glow">
+          <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
             Programează o consultație gratuită
-            <ArrowRight className="ml-2 h-6 w-6" />
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </section>
