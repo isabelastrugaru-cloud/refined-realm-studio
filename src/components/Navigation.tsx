@@ -36,14 +36,14 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Mobile Logo */}
           <Link to="/" className="md:hidden flex items-center hover:opacity-80 transition-opacity duration-300">
-            <img src={logo} alt="Design Interior Bucuresti" className="h-10 w-auto" />
+            <img src={logo} alt="Design Interior Bucuresti" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {/* Logo as Home button */}
             <Link to="/" className="flex items-center hover:opacity-80 transition-opacity duration-300 mr-4">
-              <img src={logo} alt="Design Interior Bucuresti" className="h-12 w-auto" />
+              <img src={logo} alt="Design Interior Bucuresti" className="h-16 w-auto drop-shadow-md" />
             </Link>
             {navigation.map(item => <Link key={item.name} to={item.href} className={`relative font-inter text-sm font-medium transition-colors duration-300 group ${isActive(item.href) ? 'text-luxury' : 'text-foreground hover:text-luxury'}`}>
                 {item.name}
