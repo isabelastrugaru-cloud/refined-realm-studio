@@ -43,7 +43,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             {/* Logo as Home button */}
             <Link to="/" className="flex items-center hover:opacity-80 transition-opacity duration-300 mr-4">
-              <img src={logo} alt="Design Interior Bucuresti" className="h-16 w-auto drop-shadow-md" />
+              <img src={logo} alt="Design Interior Bucuresti" className="h-20 w-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] brightness-105" />
             </Link>
             {navigation.map(item => <Link key={item.name} to={item.href} className={`relative font-inter text-sm font-medium transition-colors duration-300 group ${isActive(item.href) ? 'text-luxury' : 'text-foreground hover:text-luxury'}`}>
                 {item.name}
