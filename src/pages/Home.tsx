@@ -29,8 +29,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-primary/40"></div>
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
           <h1 className="font-playfair text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 animate-fade-in-up leading-tight px-4">
-            Design Interior București<br />
-            <span className="text-luxury">de Lux</span>
+            Design Interior București
           </h1>
           <p className="font-inter text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 animate-fade-in-up px-4 max-w-2xl mx-auto" style={{
           animationDelay: '0.2s'
