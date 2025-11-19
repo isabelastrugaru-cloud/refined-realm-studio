@@ -34,7 +34,7 @@ const Contact = () => {
   const contactInfo = [{
     icon: Phone,
     title: 'Telefon',
-    details: ['+40 752 490 173'],
+    details: ['+40 732 456 789'],
     action: 'Sună acum'
   }, {
     icon: Mail,
@@ -105,7 +105,7 @@ const Contact = () => {
                         <label className="font-inter text-sm font-medium text-foreground mb-2 block">
                           Telefon *
                         </label>
-                        <Input type="tel" placeholder="+40 752 490 173" value={formData.phone} onChange={e => setFormData(prev => ({
+                        <Input type="tel" placeholder="+40 732 456 789" value={formData.phone} onChange={e => setFormData(prev => ({
                         ...prev,
                         phone: e.target.value
                       }))} required className="h-12" />

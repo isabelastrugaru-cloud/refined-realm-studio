@@ -55,7 +55,7 @@ const Navigation = () => {
           {/* CTA Button - Right side */}
           <div className="hidden md:block absolute right-0">
             <Button variant="luxury" size="lg" asChild>
-              <a href="tel:+40752490173">
+              <a href="tel:+40732456789">
                 <Phone className="mr-2 h-5 w-5" />
                 Sună acum
               </a>
@@ -76,7 +76,7 @@ const Navigation = () => {
                 </Link>)}
               <div className="pt-4">
                 <Button variant="luxury" size="lg" className="w-full" asChild>
-                  <a href="tel:+40752490173">
+                  <a href="tel:+40732456789">
                     <Phone className="mr-2 h-5 w-5" />
                     Sună acum
                   </a>
