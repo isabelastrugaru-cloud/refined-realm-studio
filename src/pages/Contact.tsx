@@ -34,7 +34,7 @@ const Contact = () => {
   const contactInfo = [{
     icon: Phone,
     title: 'Telefon',
-    details: ['+40 732 456 789'],
+    details: ['+40 752 490 173'],
     action: 'Sună acum'
   }, {
     icon: Mail,
