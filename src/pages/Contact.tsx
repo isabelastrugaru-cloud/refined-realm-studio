@@ -43,7 +43,7 @@ const Contact = () => {
     action: 'Trimite email'
   }, {
     icon: MapPin,
-    title: 'Showroom',
+    title: 'Birou',
     details: ['Str. Erou Iancu Nicolae 61', 'București'],
     action: 'Vezi pe hartă'
   }, {
