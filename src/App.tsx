@@ -10,6 +10,7 @@ import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Shop from "./pages/Shop";
 import NotFound from "./pages/NotFound";
 import PenthouseHerastrau from "./pages/projects/PenthouseHerastrau";
 import VillaPipera from "./pages/projects/VillaPipera";
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="blog/finisaje-premium" element={<FinisajePremium />} />
             <Route path="blog/materiale-ecologice" element={<MaterialeEcologice />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="shop" element={<Shop />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
