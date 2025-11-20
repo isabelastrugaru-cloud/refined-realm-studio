@@ -56,6 +56,13 @@ const products: Product[] = [
     description: "Pachet complet alternativ pentru proiecte de băi: detalii tehnice, fișiere CAD + template premium pentru prezentări.",
     price: "€50",
     category: ["toate", "pachete", "ebook", "cad", "template"]
+  },
+  {
+    id: "millwork-guide",
+    title: "Millwork – Ghid complet pentru mobilier custom",
+    description: "Ghid premium cu dimensiuni standard, detalii tehnice, exemple concrete pentru bucătării, dressing-uri, biblioteci. Resursa perfectă pentru un flux de lucru mai rapid, mai coerent și mai sigur — fără erori, fără improvizații.",
+    price: "€50",
+    category: ["toate", "ebook"]
   }
 ];
 
@@ -102,61 +109,6 @@ const Shop = () => {
           alt="Manual de arhitectură" 
           className="w-full h-[400px] md:h-[600px] object-cover"
         />
-      </section>
-
-      {/* Millwork Featured Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-muted/30">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Millwork – Ghid complet pentru mobilier custom
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Un ghid premium dedicat designerilor și arhitecților care lucrează cu mobilier realizat la comandă — conceput pentru a-ți oferi claritate, precizie și inspirație în fiecare proiect.
-            </p>
-          </div>
-
-          <Card className="bg-card/50 backdrop-blur-sm border-2">
-            <CardHeader>
-              <CardTitle className="font-playfair text-2xl md:text-3xl">Despre ghid</CardTitle>
-              <CardDescription className="text-base leading-relaxed mt-4">
-                Acest ghid adună într-un singur loc tot ce ai nevoie pentru a crea millwork profesionist: dimensiuni standard, detalii tehnice clare, schițe conceptuale, exemple reale și principii esențiale de proiectare.
-                Este resursa perfectă pentru oricine dorește un flux de lucru mai rapid, mai coerent și mai sigur — fără erori, fără improvizații, fără stres.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4 mb-8">
-                {[
-                  "Dimensiuni standard pentru mobilier custom",
-                  "Detalii tehnice desenabile direct în proiect",
-                  "Exemple concrete pentru bucătării, dressing-uri, biblioteci etc.",
-                  "Erori comune de evitat în execuție",
-                  "Structuri logice pentru prezentări tehnice",
-                  "Inspirație vizuală + principii estetice aplicabile",
-                  "Ideal pentru proiecte rezidențiale și comerciale",
-                  "Resursă premium pentru designeri și arhitecți"
-                ].map((point, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-luxury/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 text-luxury" />
-                    </div>
-                    <p className="text-sm text-foreground">{point}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-            <CardFooter className="flex flex-col sm:flex-row gap-4">
-              <Button variant="luxury" size="lg" className="w-full sm:w-auto group">
-                Vezi ghidul complet
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-luxury">€75</span>
-                <span className="text-sm text-muted-foreground">ghid complet</span>
-              </div>
-            </CardFooter>
-          </Card>
-        </div>
       </section>
 
       {/* Categories Section */}
