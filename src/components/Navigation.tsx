@@ -72,13 +72,13 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border animate-fade-in">
-            <div className="px-6 py-6 space-y-4 text-center">
-              {navigation.map(item => <Link key={item.name} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`block font-inter text-base font-medium transition-colors duration-300 ${isActive(item.href) ? 'text-luxury' : 'text-foreground hover:text-luxury'}`}>
+        {isMobileMenuOpen && <div className="md:hidden fixed top-20 left-0 right-0 bottom-0 bg-background z-50 animate-fade-in overflow-y-auto">
+            <div className="px-6 py-8 space-y-6 text-center">
+              {navigation.map(item => <Link key={item.name} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`block font-inter text-lg font-medium transition-colors duration-300 py-2 ${isActive(item.href) ? 'text-luxury' : 'text-foreground hover:text-luxury'}`}>
                   {item.name}
                 </Link>)}
-              <div className="pt-4">
-                <Button variant="luxury" size="lg" className="w-full" asChild>
+              <div className="pt-6">
+                <Button variant="luxury" size="lg" className="w-full text-base py-6" asChild>
                   <a href="tel:+40752490173">
                     <Phone className="mr-2 h-5 w-5" />
                     Sună acum
