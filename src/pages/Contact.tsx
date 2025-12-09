@@ -194,12 +194,9 @@ const Contact = () => {
       <section className="py-24 bg-premium">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6 leading-tight px-2">
-              Showroom <span className="text-luxury font-bold">Jubilee Luxury Design</span>
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6 leading-tight px-2">Jubilee Luxury Design<span className="text-luxury font-bold">Jubilee Luxury Design</span>
             </h2>
-            <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Vizitează showroom-ul nostru pentru a experimenta direct calitatea materialelor și a discuta față în față despre proiectul tău
-            </p>
+            
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -240,7 +237,7 @@ const Contact = () => {
               <div className="aspect-square bg-gradient-hero rounded-2xl shadow-luxury flex items-center justify-center">
                 <div className="text-center text-white">
                   <MapPin className="w-16 h-16 mx-auto mb-4 text-luxury" />
-                  <h4 className="font-playfair text-2xl font-bold mb-2">Showroom **Jubilee Luxury Design**</h4>
+                  <h4 className="font-playfair text-2xl font-bold mb-2">Biroul Jubilee Luxury Design</h4>
                   <p className="font-inter">Str. Erou Iancu Nicolae 61<br />București</p>
                   <Button variant="outline-light" className="mt-6">
                     Deschide în Google Maps
