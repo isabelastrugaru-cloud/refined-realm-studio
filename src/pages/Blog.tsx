@@ -22,33 +22,33 @@ const Blog = () => {
   const articles = [
     {
       id: 1,
-      title: 'Tendințele în Design Interior pentru 2024',
-      excerpt: 'Descoperă cele mai noi tendințe în design interior care vor domina în 2024, de la culori și materiale la concepte inovatoare.',
-      date: '15 Martie 2024',
+      title: 'Tendințele în Design Interior pentru 2025',
+      excerpt: 'Descoperă cele mai importante tendințe care vor defini designul interior în 2025 — de la culori îndrăznețe la materiale inovatoare.',
+      date: '15 Ianuarie 2025',
       category: 'Tendințe',
       image: tendinte2024,
-      readTime: '8 min citire',
-      link: '/blog/tendinte-design-2024'
+      readTime: '10 min citire',
+      link: '/blog/tendinte-2025'
     },
     {
       id: 2,
-      title: 'Minimalismul Scandinav: Tendința Care Rămâne',
-      excerpt: 'De ce designul scandinav continuă să fie relevant și cum să-l adaptezi pentru casa ta modernă.',
-      date: '12 Martie 2024',
+      title: 'Casa Inteligentă în 2025: Design și Tehnologie',
+      excerpt: 'Cum să integrezi tehnologia smart în designul interior fără a compromite estetica și confortul.',
+      date: '22 Ianuarie 2025',
       category: 'Tendințe',
-      image: minimalism,
-      readTime: '7 min citire',
-      link: '/blog/minimalismul-scandinav'
+      image: iluminat,
+      readTime: '8 min citire',
+      link: '/blog/casa-inteligenta-2025'
     },
     {
       id: 3,
-      title: 'Design Biofil: Natura în Casa Ta',
-      excerpt: 'Cum să aduci natura în spațiile interioare pentru bunăstare și frumusețe maximă.',
-      date: '8 Martie 2024',
+      title: 'Culori și Texturi Dominante în 2025',
+      excerpt: 'Paleta cromatică și texturile care vor transforma interioarele în 2025 — de la tonuri pământii la accente metalice.',
+      date: '5 Februarie 2025',
       category: 'Tendințe',
-      image: biofil,
-      readTime: '6 min citire',
-      link: '/blog/design-biofil'
+      image: culori,
+      readTime: '7 min citire',
+      link: '/blog/culori-texturi-2025'
     },
     {
       id: 4,
