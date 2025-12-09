@@ -194,7 +194,9 @@ const Contact = () => {
       <section className="py-24 bg-premium">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6 leading-tight px-2">Jubilee Luxury Design<span className="text-luxury font-bold">Jubilee Luxury Design</span>
+            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6 leading-tight px-2">
+
+Jubilee Luxury Design<span className="text-luxury font-bold">Jubilee Luxury Design</span>
             </h2>
             
           </div>
