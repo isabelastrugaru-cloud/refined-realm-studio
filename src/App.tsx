@@ -18,6 +18,9 @@ import ApartamentPrimaverii from "./pages/projects/ApartamentPrimaverii";
 import TendinteDesign2024 from "./pages/blog/TendinteDesign2024";
 import MinimalismulScandinav from "./pages/blog/MinimalismulScandinav";
 import DesignBiofil from "./pages/blog/DesignBiofil";
+import Tendinte2025 from "./pages/blog/Tendinte2025";
+import CasaInteligenta2025 from "./pages/blog/CasaInteligenta2025";
+import CuloriSiTexturi2025 from "./pages/blog/CuloriSiTexturi2025";
 import BugetLimitat from "./pages/blog/BugetLimitat";
 import SpatiiMici from "./pages/blog/SpatiiMici";
 import PsihologiaCulorilor from "./pages/blog/PsihologiaCulorilor";
@@ -47,6 +50,9 @@ const App = () => (
             <Route path="servicii" element={<Services />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/tendinte-design-2024" element={<TendinteDesign2024 />} />
+            <Route path="blog/tendinte-2025" element={<Tendinte2025 />} />
+            <Route path="blog/casa-inteligenta-2025" element={<CasaInteligenta2025 />} />
+            <Route path="blog/culori-texturi-2025" element={<CuloriSiTexturi2025 />} />
             <Route path="blog/minimalismul-scandinav" element={<MinimalismulScandinav />} />
             <Route path="blog/design-biofil" element={<DesignBiofil />} />
             <Route path="blog/buget-limitat" element={<BugetLimitat />} />
