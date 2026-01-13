@@ -1,76 +1,79 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check, Star, Home, Building, ShoppingBag } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: Home,
-      title: 'Design Interior Complet',
+      title: t('services.completeDesignTitle'),
       features: [
-        'Concept și planuri detaliate',
-        'Mobilier și decorațiuni premium',
-        'Supraveghere completă execuție',
-        'Garanție 2 ani pentru toate lucrările',
-        'Materiale și finisaje de lux',
-        'Consultanță post-finalizare'
+        t('services.feature1'),
+        t('services.feature2'),
+        t('services.feature3'),
+        t('services.feature4'),
+        t('services.feature5'),
+        t('services.feature6')
       ],
       popular: true,
-      description: 'Serviciul nostru premium pentru transformarea completă a spațiului, de la concept la cheie în mână.'
+      description: t('services.completeDesignDesc')
     },
     {
       icon: Building,
-      title: 'Consultanță Design',
+      title: t('services.consultancyTitle'),
       features: [
-        'Analiză detaliată a spațiului',
-        'Concept de design personalizat',
-        'Lista de materiale și mobilier',
-        'Planuri tehnice detaliate',
-        'Suport pentru implementare',
-        '3 revizii incluse'
+        t('services.feature1'),
+        t('services.feature2'),
+        t('services.feature3'),
+        t('services.feature4'),
+        t('services.feature5'),
+        t('services.feature6')
       ],
       popular: false,
-      description: 'Perfect pentru clienții care doresc să implementeze proiectul prin resurse proprii.'
+      description: t('services.consultancyDesc')
     },
     {
       icon: ShoppingBag,
-      title: 'Achiziție Mobilier Premium',
+      title: t('services.furnitureTitle'),
       features: [
-        'Acces la branduri exclusive',
-        'Mobilier italian și european',
-        'Piese de artă și accesorii',
-        'Negociere preturi preferentiale',
-        'Livrare și instalare inclusă',
-        'Garantie extinsă'
+        t('services.feature1'),
+        t('services.feature2'),
+        t('services.feature3'),
+        t('services.feature4'),
+        t('services.feature5'),
+        t('services.feature6')
       ],
       popular: false,
-      description: 'Serviciu exclusiv de achiziție mobilier și accesorii de lux de la partenerii noștri selectați.'
+      description: t('services.furnitureDesc')
     }
   ];
 
   const process = [
     {
       step: '01',
-      title: 'Consultația Inițială',
-      description: 'Întâlnire la domiciliu pentru analiza spațiului și înțelegerea nevoilor tale',
+      title: t('services.step1Title'),
+      description: t('services.step1Desc'),
       duration: '2-3 ore',
     },
     {
       step: '02',
-      title: 'Dezvoltarea Conceptului',
-      description: 'Crearea conceptului de design și prezentarea propunerii detaliate',
+      title: t('services.step2Title'),
+      description: t('services.step2Desc'),
       duration: '1-2 săptămâni',
     },
     {
       step: '03',
-      title: 'Planificare Detaliată',
-      description: 'Planuri tehnice, lista de materiale și cronograma de implementare',
+      title: t('services.step3Title'),
+      description: t('services.step3Desc'),
       duration: '1 săptămână',
     },
     {
       step: '04',
-      title: 'Implementarea',
-      description: 'Execuția proiectului cu supravegherea constantă a echipei noastre',
+      title: t('services.step4Title'),
+      description: t('services.step4Desc'),
       duration: '4-12 săptămâni',
     },
   ];
@@ -81,14 +84,12 @@ const Services = () => {
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
-            Servicii <span className="text-luxury">Premium</span>
+            {t('services.heroTitle')} <span className="text-luxury">{t('services.heroHighlight')}</span>
           </h1>
           <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-3xl mx-auto leading-relaxed">
-            Experiența noastră începe acolo unde visul tău prinde formă.
-            Fiecare proiect este tratat cu atenția și eleganța pe care le merită, prin pachete complete de servicii, gândite să te însoțească în fiecare etapă — de la primele schițe până la ultimul detaliu de decor.
+            {t('services.heroDescription')}
             <br /><br />
-            Totul este personalizat: ritmul tău, stilul tău, povestea ta.<br />
-            Rezultatul? Un spațiu care nu doar arată bine, ci te face să simți că ești acasă.
+            {t('services.heroDescription2')}
           </p>
         </div>
       </section>
@@ -100,7 +101,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div 
                 key={index} 
-                 className={`relative bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 p-4 sm:p-6 md:p-8 animate-fade-in ${
+                className={`relative bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 p-4 sm:p-6 md:p-8 animate-fade-in ${
                   service.popular ? 'ring-2 ring-luxury lg:transform lg:scale-105' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -108,7 +109,7 @@ const Services = () => {
                 {service.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-luxury text-luxury-foreground px-6 py-2 rounded-full font-medium text-sm">
-                      Cel mai popular
+                      {t('services.mostPopular')}
                     </div>
                   </div>
                 )}
@@ -139,7 +140,7 @@ const Services = () => {
                   className="w-full"
                   size="lg"
                 >
-                  Solicită ofertă
+                  {t('services.requestQuote')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -153,10 +154,10 @@ const Services = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
-            Procesul Nostru de <span className="text-luxury">Lucru</span>
+              {t('services.processTitle')} <span className="text-luxury">{t('services.processHighlight')}</span>
             </h2>
             <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
-              Un proces structurat și transparent pentru rezultate excepționale
+              {t('services.processDescription')}
             </p>
           </div>
 
@@ -181,7 +182,7 @@ const Services = () => {
                   </p>
                   <div className="inline-flex items-center bg-luxury/10 text-luxury px-4 py-2 rounded-full font-medium text-sm">
                     <Star className="w-4 h-4 mr-2" />
-                    Durată: {phase.duration}
+                    {t('services.duration')}: {phase.duration}
                   </div>
                 </div>
               </div>
@@ -195,25 +196,25 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6">
-              Garanțiile <span className="text-luxury font-bold">Noastre</span>
+              {t('services.guaranteesTitle')} <span className="text-luxury font-bold">{t('services.guaranteesHighlight')}</span>
             </h2>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                title: 'Garanție Calitate',
-                description: '2 ani garanție completă pentru toate lucrările și materialele utilizate',
+                title: t('services.qualityGuarantee'),
+                description: t('services.qualityDesc'),
                 icon: '🛡️'
               },
               {
-                title: 'Respectarea Bugetului',
-                description: 'Preț fix stabilit de la început, fără costuri ascunse sau suplimentare',
+                title: t('services.budgetGuarantee'),
+                description: t('services.budgetDesc'),
                 icon: '💰'
               },
               {
-                title: 'Livrare la Timp',
-                description: 'Respectarea programului stabilit sau compensare pentru întârzieri',
+                title: t('services.deliveryGuarantee'),
+                description: t('services.deliveryDesc'),
                 icon: '⏰'
               }
             ].map((guarantee, index) => (
@@ -239,13 +240,13 @@ const Services = () => {
       <section className="py-24 bg-gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 animate-fade-in leading-tight">
-            Pregătit să Începi Proiectul?
+            {t('services.ctaTitle')}
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-fade-in-up max-w-2xl mx-auto">
-            Consultația inițială este gratuită și fără obligații. Descoperă cum putem transforma spațiul tău.
+            {t('services.ctaDescription')}
           </p>
           <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
-            Programează consultația gratuită
+            {t('services.scheduleFree')}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>

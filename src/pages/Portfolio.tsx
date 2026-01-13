@@ -2,20 +2,28 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 import heroInterior from '@/assets/hero-interior.jpg';
 import luxuryBedroom from '@/assets/luxury-bedroom.jpg';
 import luxuryKitchen from '@/assets/luxury-kitchen.jpg';
 
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState('Toate');
+  const { t } = useLanguage();
+  const [activeFilter, setActiveFilter] = useState(t('portfolio.all'));
   
-  const filters = ['Toate', 'Rezidențial', 'Comercial', 'Penthouse', 'Villa'];
+  const filters = [
+    t('portfolio.all'), 
+    t('portfolio.residential'), 
+    t('portfolio.commercial'), 
+    t('portfolio.penthouse'), 
+    t('portfolio.villa')
+  ];
   
   const projects = [
     {
       id: 1,
       title: 'Penthouse Exclusivist Herastrau',
-      category: 'Penthouse',
+      category: t('portfolio.penthouse'),
       area: '280 mp',
       year: '2023',
       image: heroInterior,
@@ -24,7 +32,7 @@ const Portfolio = () => {
     {
       id: 2,
       title: 'Villa Moderna Pipera',
-      category: 'Villa',
+      category: t('portfolio.villa'),
       area: '450 mp',
       year: '2023',
       image: luxuryBedroom,
@@ -33,7 +41,7 @@ const Portfolio = () => {
     {
       id: 3,
       title: 'Apartament de Lux Primaverii',
-      category: 'Rezidențial',
+      category: t('portfolio.residential'),
       area: '180 mp',
       year: '2022',
       image: luxuryKitchen,
@@ -41,7 +49,7 @@ const Portfolio = () => {
     },
   ];
 
-  const filteredProjects = activeFilter === 'Toate' 
+  const filteredProjects = activeFilter === t('portfolio.all') 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
@@ -51,10 +59,10 @@ const Portfolio = () => {
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
-            Portofoliu Premium
+            {t('portfolio.heroTitle')}
           </h1>
           <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
-            Colecția noastră de proiecte exclusive care redefinesc standardele de eleganță și rafinament
+            {t('portfolio.heroDescription')}
           </p>
         </div>
       </section>
@@ -111,7 +119,7 @@ const Portfolio = () => {
                     </p>
                     <Link to={`/proiecte/${project.id === 1 ? 'penthouse-herastrau' : project.id === 2 ? 'villa-pipera' : 'apartament-primaverii'}`}>
                       <Button variant="outline-light" size="sm" className="self-start">
-                        Vezi detalii
+                        {t('portfolio.viewDetails')}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
@@ -144,18 +152,18 @@ const Portfolio = () => {
       <section className="py-24 bg-premium">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 md:mb-8 animate-fade-in">
-            Procesul Nostru
+            {t('portfolio.processTitle')}
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground mb-12 md:mb-16 animate-fade-in-up max-w-2xl mx-auto">
-            Fiecare proiect urmează un proces riguros de la concept la finalizare
+            {t('portfolio.processDescription')}
           </p>
           
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { step: '01', title: 'Consultația', description: 'Analiză detaliată a nevoilor și visurilor tale' },
-              { step: '02', title: 'Conceptul', description: 'Dezvoltarea unei viziuni unice și personalizate' },
-              { step: '03', title: 'Execuția', description: 'Implementare precisă cu materiale premium' },
-              { step: '04', title: 'Finalizarea', description: 'Predarea unui spațiu perfect și funcțional' },
+              { step: '01', title: t('portfolio.consultation'), description: t('portfolio.consultationDesc') },
+              { step: '02', title: t('portfolio.concept'), description: t('portfolio.conceptDesc') },
+              { step: '03', title: t('portfolio.execution'), description: t('portfolio.executionDesc') },
+              { step: '04', title: t('portfolio.finalization'), description: t('portfolio.finalizationDesc') },
             ].map((phase, index) => (
               <div 
                 key={index} 
@@ -173,7 +181,7 @@ const Portfolio = () => {
           
           <div className="mt-16">
             <Button variant="luxury" size="lg">
-              Începe proiectul tău
+              {t('portfolio.startProject')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

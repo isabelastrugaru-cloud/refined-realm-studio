@@ -1,46 +1,52 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import heroInterior from '@/assets/hero-interior.jpg';
 import luxuryBedroom from '@/assets/luxury-bedroom.jpg';
 import luxuryKitchen from '@/assets/luxury-kitchen.jpg';
+
 const Home = () => {
+  const { t } = useLanguage();
+  
   const projects = [{
     id: 1,
     image: luxuryBedroom,
-    title: 'Penthouse Exclusivist',
-    category: 'Rezidențial'
+    title: t('home.penthouse'),
+    category: t('home.residential')
   }, {
     id: 2,
     image: luxuryKitchen,
-    title: 'Villa Contemporană',
-    category: 'Rezidențial'
+    title: t('home.villa'),
+    category: t('home.residential')
   }, {
     id: 3,
     image: heroInterior,
-    title: 'Showroom Premium',
-    category: 'Comercial'
+    title: t('home.showroom'),
+    category: t('home.commercial')
   }];
-  return <div className="min-h-screen">
+
+  return (
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroInterior})`
-    }}>
+        backgroundImage: `url(${heroInterior})`
+      }}>
         <div className="absolute inset-0 bg-primary/40"></div>
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
           <h1 className="font-playfair text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 animate-fade-in-up leading-tight px-4">
-            Design Interior București
+            {t('home.heroTitle')}
           </h1>
           <p className="font-inter text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-white/90 animate-fade-in-up px-4 max-w-2xl mx-auto" style={{
-          animationDelay: '0.2s'
-        }}>
-            Transformăm spațiile în opere de artă prin eleganță, rafinament și atenție la detalii
+            animationDelay: '0.2s'
+          }}>
+            {t('home.heroSubtitle')}
           </p>
           <div className="flex justify-center animate-fade-in-up" style={{
-          animationDelay: '0.4s'
-        }}>
+            animationDelay: '0.4s'
+          }}>
             <Button variant="luxury" size="xl" className="group">
-              Programează o consultație gratuită
+              {t('home.heroCta')}
             </Button>
           </div>
         </div>
@@ -52,26 +58,28 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
               <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
-                Excelența în<br />
-                <span className="text-luxury">Design Interior</span>
+                {t('home.aboutTitle')}<br />
+                <span className="text-luxury">{t('home.aboutHighlight')}</span>
               </h2>
-              <p className="font-inter text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">Cu peste 13 ani de experiență în crearea de spații exclusive, Jubilee Luxury Design îmbină artă, funcționalitate și eleganță pentru a realiza interioare care depășesc așteptările.</p>
+              <p className="font-inter text-base md:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
+                {t('home.aboutDescription')}
+              </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
-                  <span className="font-inter text-foreground">Design personalizat și exclusivist</span>
+                  <span className="font-inter text-foreground">{t('home.feature1')}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
-                  <span className="font-inter text-foreground">Materiale premium și mobilier de lux</span>
+                  <span className="font-inter text-foreground">{t('home.feature2')}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-luxury rounded-full mr-4"></div>
-                  <span className="font-inter text-foreground">Servicii complete turnkey</span>
+                  <span className="font-inter text-foreground">{t('home.feature3')}</span>
                 </div>
               </div>
               <Button variant="outline" size="lg">
-                Citește povestea noastră
+                {t('home.readStory')}
               </Button>
             </div>
             <div className="grid grid-cols-2 gap-3 md:gap-4 animate-scale-in">
@@ -92,17 +100,18 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in">
-              Proiecte <span className="text-luxury">Exclusive</span>
+              {t('home.projectsTitle')} <span className="text-luxury">{t('home.projectsHighlight')}</span>
             </h2>
             <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in px-4">
-              Fiecare proiect este o poveste unică de eleganță și rafinament, creată special pentru clienții noștri exigenți
+              {t('home.projectsDescription')}
             </p>
           </div>
           
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            {projects.map((project, index) => <div key={project.id} className="group cursor-pointer animate-fade-in" style={{
-            animationDelay: `${index * 0.1}s`
-          }}>
+            {projects.map((project, index) => (
+              <div key={project.id} className="group cursor-pointer animate-fade-in" style={{
+                animationDelay: `${index * 0.1}s`
+              }}>
                 <div className="relative overflow-hidden rounded-lg shadow-subtle group-hover:shadow-luxury transition-all duration-500">
                   <img src={project.image} alt={project.title} className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -111,12 +120,13 @@ const Home = () => {
                     <h3 className="font-playfair text-2xl font-bold">{project.title}</h3>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
           
           <div className="text-center mt-12">
             <Button variant="luxury" size="lg">
-              Vezi tot portofoliul
+              {t('home.viewPortfolio')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -127,15 +137,17 @@ const Home = () => {
       <section className="py-24 bg-gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 animate-fade-in px-2">
-            Pregătit să îți transformi spațiul?
+            {t('home.ctaTitle')}
           </h2>
           
           <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
-            Programează o consultație gratuită
+            {t('home.heroCta')}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Home;

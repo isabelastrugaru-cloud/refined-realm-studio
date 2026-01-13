@@ -2,40 +2,45 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
+
   const footerLinks = {
     servicii: [{
-      name: 'Design Interior Complet',
+      name: t('footer.completeDesign'),
       href: '/servicii'
     }, {
-      name: 'Consultanță Design',
+      name: t('footer.designConsultancy'),
       href: '/servicii'
     }, {
-      name: 'Mobilier Premium',
+      name: t('footer.premiumFurniture'),
       href: '/servicii'
     }, {
-      name: 'Design Comercial',
+      name: t('footer.commercialDesign'),
       href: '/servicii'
     }],
     despre: [{
-      name: 'Povestea noastră',
+      name: t('footer.ourStory'),
       href: '/despre'
     }],
     resurse: [{
-      name: 'Portofoliu',
+      name: t('footer.portfolio'),
       href: '/portofoliu'
     }, {
-      name: 'Testimoniale',
+      name: t('footer.testimonials'),
       href: '/testimoniale'
     }, {
-      name: 'Blog Design',
-      href: '#'
+      name: t('footer.designBlog'),
+      href: '/blog'
     }, {
-      name: 'Ghid Stiluri',
+      name: t('footer.styleGuide'),
       href: '#'
     }]
   };
+
   const socialLinks = [{
     icon: Instagram,
     href: '#',
@@ -49,21 +54,27 @@ const Footer = () => {
     href: '#',
     name: 'LinkedIn'
   }];
-  return <footer className="bg-primary text-white">
+
+  return (
+    <footer className="bg-primary text-white">
       {/* Newsletter Section */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="font-playfair text-2xl sm:text-3xl font-bold mb-3 md:mb-4">
-              Inspirație & <span className="text-luxury">Tendințe</span>
+              {t('footer.inspirationTitle')} <span className="text-luxury">{t('footer.inspirationHighlight')}</span>
             </h3>
             <p className="font-inter text-white/80 mb-6 md:mb-8 text-base sm:text-lg px-4">
-              Primește lunar idei exclusive de design interior, tendințe și sfaturi de la experții Jubilee Luxury Design
+              {t('footer.inspirationDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md mx-auto px-4">
-              <input type="email" placeholder="Adresa ta de email" className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm" />
+              <input 
+                type="email" 
+                placeholder={t('footer.emailPlaceholder')} 
+                className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm" 
+              />
               <Button variant="luxury" className="text-sm sm:text-base">
-                Abonează-te
+                {t('footer.subscribe')}
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </div>
@@ -81,7 +92,9 @@ const Footer = () => {
                 Design Interior București
               </h2>
             </Link>
-            <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">De peste 13 ani, creăm spații exclusive care îmbină eleganța cu funcționalitatea, oferind servicii complete de design interior de lux pentru clienți exigenți.</p>
+            <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">
+              {t('footer.brandDescription')}
+            </p>
 
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
@@ -103,51 +116,64 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              {socialLinks.map(social => <a key={social.name} href={social.href} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-luxury/20 transition-colors duration-300 group" aria-label={social.name}>
+              {socialLinks.map(social => (
+                <a 
+                  key={social.name} 
+                  href={social.href} 
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-luxury/20 transition-colors duration-300 group" 
+                  aria-label={social.name}
+                >
                   <social.icon className="w-5 h-5 text-white/80 group-hover:text-luxury transition-colors" />
-                </a>)}
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Services */}
           <div>
             <h4 className="font-playfair text-xl font-bold text-white mb-6">
-              Servicii
+              {t('footer.services')}
             </h4>
             <ul className="space-y-3">
-              {footerLinks.servicii.map(link => <li key={link.name}>
+              {footerLinks.servicii.map(link => (
+                <li key={link.name}>
                   <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
                     {link.name}
                   </Link>
-                </li>)}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* About */}
           <div>
             <h4 className="font-playfair text-xl font-bold text-white mb-6">
-              Despre noi
+              {t('footer.aboutUs')}
             </h4>
             <ul className="space-y-3">
-              {footerLinks.despre.map(link => <li key={link.name}>
+              {footerLinks.despre.map(link => (
+                <li key={link.name}>
                   <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
                     {link.name}
                   </Link>
-                </li>)}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Resources */}
           <div>
             <h4 className="font-playfair text-xl font-bold text-white mb-6">
-              Resurse
+              {t('footer.resources')}
             </h4>
             <ul className="space-y-3">
-              {footerLinks.resurse.map(link => <li key={link.name}>
+              {footerLinks.resurse.map(link => (
+                <li key={link.name}>
                   <Link to={link.href} className="font-inter text-white/80 hover:text-luxury transition-colors duration-300">
                     {link.name}
                   </Link>
-                </li>)}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -158,22 +184,24 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-inter text-white/60 text-xs sm:text-sm text-center md:text-left">
-              © {currentYear} Jubilee Luxury Design. Toate drepturile rezervate.
+              © {currentYear} Jubilee Luxury Design. {t('footer.allRights')}
             </p>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
               <Link to="/politica-confidentialitate" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
-                Politica de confidențialitate
+                {t('footer.privacyPolicy')}
               </Link>
               <Link to="/termeni-conditii" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
-                Termeni și condiții
+                {t('footer.termsConditions')}
               </Link>
               <Link to="/cookies" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
-                Politica cookies
+                {t('footer.cookiesPolicy')}
               </Link>
             </div>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
