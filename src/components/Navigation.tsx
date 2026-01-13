@@ -3,10 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
 import logo from '@/assets/logo.svg';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -14,25 +19,15 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const navigation = [{
-    name: 'Despre noi',
-    href: '/despre'
-  }, {
-    name: 'Portofoliu',
-    href: '/portofoliu'
-  }, {
-    name: 'Servicii',
-    href: '/servicii'
-  }, {
-    name: 'Blog',
-    href: '/blog'
-  }, {
-    name: 'Shop',
-    href: '/shop'
-  }, {
-    name: 'Contact',
-    href: '/contact'
-  }];
+
+  const navigation = [
+    { name: t('nav.about'), href: '/despre' },
+    { name: t('nav.portfolio'), href: '/portofoliu' },
+    { name: t('nav.services'), href: '/servicii' },
+    { name: t('nav.blog'), href: '/blog' },
+    { name: t('nav.shop'), href: '/shop' },
+    { name: t('nav.contact'), href: '/contact' }
+  ];
   const isActive = (href: string) => location.pathname === href;
   return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-subtle' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -55,20 +50,24 @@ const Navigation = () => {
               </Link>)}
           </div>
 
-          {/* CTA Button - Right side */}
-          <div className="hidden md:block absolute right-0">
+          {/* CTA Button & Language Selector - Right side */}
+          <div className="hidden md:flex items-center gap-3 absolute right-0">
+            <LanguageSelector />
             <Button variant="luxury" size="lg" asChild>
               <a href="tel:+40752490173">
                 <Phone className="mr-2 h-5 w-5" />
-                Sună acum
+                {t('nav.callNow')}
               </a>
             </Button>
           </div>
 
-          {/* Mobile menu button - Right side */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 text-foreground hover:text-luxury transition-colors absolute right-0">
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile menu button & Language - Right side */}
+          <div className="md:hidden flex items-center gap-2 absolute right-0">
+            <LanguageSelector />
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-foreground hover:text-luxury transition-colors">
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -81,7 +80,7 @@ const Navigation = () => {
                 <Button variant="luxury" size="lg" className="w-full text-base py-6" asChild>
                   <a href="tel:+40752490173">
                     <Phone className="mr-2 h-5 w-5" />
-                    Sună acum
+                    {t('nav.callNow')}
                   </a>
                 </Button>
               </div>
