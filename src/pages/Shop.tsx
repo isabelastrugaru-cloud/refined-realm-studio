@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, BookOpen, FileText, Layers, Package, Check, Star } from "lucide-react";
+import { useLanguage } from '@/contexts/LanguageContext';
 import shopHero from "@/assets/shop-hero.jpg";
 import architectureManual from "@/assets/architecture-manual.jpg";
 import { useState } from "react";
@@ -67,11 +68,20 @@ const products: Product[] = [
 ];
 
 const Shop = () => {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("toate");
 
   const filteredProducts = products.filter(product => 
     product.category.includes(activeCategory)
   );
+
+  const benefits = [
+    t('shop.benefit1'),
+    t('shop.benefit2'),
+    t('shop.benefit3'),
+    t('shop.benefit4'),
+    t('shop.benefit5')
+  ];
 
   return (
     <div className="min-h-screen">
@@ -86,16 +96,16 @@ const Shop = () => {
 
         <div className="relative z-10 container mx-auto px-4 text-center max-w-5xl">
           <h1 className="font-playfair text-5xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
-            Resurse premium pentru designeri și arhitecți
+            {t('shop.heroTitle')}
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Template-uri, ebook-uri și fișiere CAD care îți optimizează timpul, îți clarifică procesul și îți ridică prezentările la nivel profesionist.
+            {t('shop.heroDescription')}
           </p>
 
           <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button variant="luxury" size="xl" className="group" onClick={() => document.getElementById('categorii')?.scrollIntoView({ behavior: 'smooth' })}>
-              👉 Intră în Shop
+              {t('shop.enterShop')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
@@ -115,32 +125,32 @@ const Shop = () => {
       <section id="categorii" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-sm uppercase tracking-wider text-muted-foreground text-center mb-8">
-            Categorii
+            {t('shop.categories')}
           </h2>
           
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
             <TabsList className="grid w-full max-w-3xl mx-auto grid-cols-2 md:grid-cols-5 gap-2">
               <TabsTrigger value="toate" className="flex items-center gap-2">
                 <Layers className="w-4 h-4" />
-                <span className="hidden sm:inline">Toate produsele</span>
-                <span className="sm:hidden">Toate</span>
+                <span className="hidden sm:inline">{t('shop.allProducts')}</span>
+                <span className="sm:hidden">{t('blog.all')}</span>
               </TabsTrigger>
               <TabsTrigger value="ebook" className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4" />
-                Ebook-uri
+                {t('shop.ebooks')}
               </TabsTrigger>
               <TabsTrigger value="template" className="flex items-center gap-2">
                 <FileText className="w-4 h-4" />
-                Template-uri
+                {t('shop.templates')}
               </TabsTrigger>
               <TabsTrigger value="cad" className="flex items-center gap-2">
                 <Layers className="w-4 h-4" />
-                <span className="hidden sm:inline">Fișiere CAD</span>
+                <span className="hidden sm:inline">{t('shop.cadFiles')}</span>
                 <span className="sm:hidden">CAD</span>
               </TabsTrigger>
               <TabsTrigger value="pachete" className="flex items-center gap-2">
                 <Package className="w-4 h-4" />
-                <span className="hidden sm:inline">Pachete complete</span>
+                <span className="hidden sm:inline">{t('shop.packages')}</span>
                 <span className="sm:hidden">Pachete</span>
               </TabsTrigger>
             </TabsList>
@@ -165,7 +175,7 @@ const Shop = () => {
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline" className="w-full group">
-                    Vezi produsul
+                    {t('shop.viewProduct')}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardFooter>
@@ -179,17 +189,11 @@ const Shop = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12">
-            De ce funcționează aceste resurse?
+            {t('shop.whyWorksTitle')}
           </h2>
           
           <div className="space-y-6">
-            {[
-              "Te ajută să economisești ore întregi în procesul de lucru",
-              "Prezinți proiectele într-un mod profesionist și convingător",
-              "Te ajută să-ți organizezi clar tot fluxul cu clientul",
-              "Documente premium inspirate de studiouri internaționale",
-              "Rezultate mai bune și o experiență premium pentru client"
-            ].map((benefit, index) => (
+            {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-4 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-luxury/20 flex items-center justify-center mt-1">
                   <Check className="w-4 h-4 text-luxury" />
@@ -213,7 +217,7 @@ const Shop = () => {
                   ))}
                 </div>
                 <CardDescription className="text-base leading-relaxed text-foreground">
-                  "Documentele sunt superbe și intuitive. Mi-au schimbat complet modul în care prezint proiectele."
+                  "{t('shop.testimonial1')}"
                 </CardDescription>
               </CardHeader>
               <CardFooter>
@@ -229,7 +233,7 @@ const Shop = () => {
                   ))}
                 </div>
                 <CardDescription className="text-base leading-relaxed text-foreground">
-                  "Am simțit imediat cum arată o agenție premium. Template-urile sunt aur."
+                  "{t('shop.testimonial2')}"
                 </CardDescription>
               </CardHeader>
               <CardFooter>
@@ -244,15 +248,15 @@ const Shop = () => {
       <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
-            Găsește resursele care îți eficientizează munca
+            {t('shop.ctaTitle')}
           </h2>
           
           <p className="text-lg text-muted-foreground mb-8">
-            Documente premium pentru arhitecți și designeri care vor mai mult: ordine, profesionalism, eficiență.
+            {t('shop.ctaDescription')}
           </p>
 
           <Button variant="luxury" size="xl" className="group" onClick={() => document.getElementById('categorii')?.scrollIntoView({ behavior: 'smooth' })}>
-            👉 Cumpără acum
+            {t('shop.buyNow')}
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, Clock, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 import tendinte2024 from '@/assets/blog/tendinte-2024.jpg';
 import minimalism from '@/assets/blog/minimalismul-scandinav.jpg';
@@ -17,7 +18,8 @@ import finisaje from '@/assets/blog/finisaje-premium.jpg';
 import ecologic from '@/assets/blog/materiale-ecologice.jpg';
 
 const Blog = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Toate');
+  const { t } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState(t('blog.all'));
 
   const articles = [
     {
@@ -25,9 +27,9 @@ const Blog = () => {
       title: 'Tendințele în Design Interior pentru 2025',
       excerpt: 'Descoperă cele mai importante tendințe care vor defini designul interior în 2025 — de la culori îndrăznețe la materiale inovatoare.',
       date: '15 Ianuarie 2025',
-      category: 'Tendințe',
+      category: t('blog.trends'),
       image: tendinte2024,
-      readTime: '10 min citire',
+      readTime: `10 ${t('blog.readTime')}`,
       link: '/blog/tendinte-2025'
     },
     {
@@ -35,9 +37,9 @@ const Blog = () => {
       title: 'Casa Inteligentă în 2025: Design și Tehnologie',
       excerpt: 'Cum să integrezi tehnologia smart în designul interior fără a compromite estetica și confortul.',
       date: '22 Ianuarie 2025',
-      category: 'Tendințe',
+      category: t('blog.trends'),
       image: iluminat,
-      readTime: '8 min citire',
+      readTime: `8 ${t('blog.readTime')}`,
       link: '/blog/casa-inteligenta-2025'
     },
     {
@@ -45,9 +47,9 @@ const Blog = () => {
       title: 'Culori și Texturi Dominante în 2025',
       excerpt: 'Paleta cromatică și texturile care vor transforma interioarele în 2025 — de la tonuri pământii la accente metalice.',
       date: '5 Februarie 2025',
-      category: 'Tendințe',
+      category: t('blog.trends'),
       image: culori,
-      readTime: '7 min citire',
+      readTime: `7 ${t('blog.readTime')}`,
       link: '/blog/culori-texturi-2025'
     },
     {
@@ -55,9 +57,9 @@ const Blog = () => {
       title: 'Cum să Creezi un Spațiu de Lux cu Buget Limitat',
       excerpt: 'Ghid complet pentru transformarea locuinței tale într-un spațiu luxos fără a depăși bugetul planificat.',
       date: '10 Martie 2024',
-      category: 'Sfaturi',
+      category: t('blog.tips'),
       image: buget,
-      readTime: '9 min citire',
+      readTime: `9 ${t('blog.readTime')}`,
       link: '/blog/buget-limitat'
     },
     {
@@ -65,9 +67,9 @@ const Blog = () => {
       title: 'Maximizarea Spațiilor Mici: Trucuri și Soluții',
       excerpt: 'Cum să transformi un apartament mic într-un spațiu funcțional, luminos și elegant.',
       date: '6 Martie 2024',
-      category: 'Sfaturi',
+      category: t('blog.tips'),
       image: spatii,
-      readTime: '7 min citire',
+      readTime: `7 ${t('blog.readTime')}`,
       link: '/blog/spatii-mici'
     },
     {
@@ -75,9 +77,9 @@ const Blog = () => {
       title: 'Psihologia Culorilor în Design Interior',
       excerpt: 'Cum influențează culorile starea ta de spirit și cum să le folosești strategic în fiecare cameră.',
       date: '2 Martie 2024',
-      category: 'Sfaturi',
+      category: t('blog.tips'),
       image: culori,
-      readTime: '8 min citire',
+      readTime: `8 ${t('blog.readTime')}`,
       link: '/blog/psihologia-culorilor'
     },
     {
@@ -85,9 +87,9 @@ const Blog = () => {
       title: 'Ghidul Complet pentru Iluminatul Perfect',
       excerpt: 'Cum să folosești iluminatul pentru a crea atmosfera perfectă și a evidenția elementele de design.',
       date: '28 Februarie 2024',
-      category: 'Design',
+      category: t('blog.design'),
       image: iluminat,
-      readTime: '7 min citire',
+      readTime: `7 ${t('blog.readTime')}`,
       link: '/blog/iluminat-perfect'
     },
     {
@@ -95,9 +97,9 @@ const Blog = () => {
       title: 'Designul Open Space: Spațiu Fluid și Funcțional',
       excerpt: 'Cum să creezi un open space care să fie atât generos, cât și intim, atât social, cât și privat.',
       date: '24 Februarie 2024',
-      category: 'Design',
+      category: t('blog.design'),
       image: openspace,
-      readTime: '6 min citire',
+      readTime: `6 ${t('blog.readTime')}`,
       link: '/blog/open-space'
     },
     {
@@ -105,9 +107,9 @@ const Blog = () => {
       title: 'Art Deco: Glamour-ul Anilor \'20 în Casa Modernă',
       excerpt: 'Cum să integrezi eleganța timeless a Art Deco în designul contemporan.',
       date: '20 Februarie 2024',
-      category: 'Design',
+      category: t('blog.design'),
       image: artdeco,
-      readTime: '8 min citire',
+      readTime: `8 ${t('blog.readTime')}`,
       link: '/blog/art-deco'
     },
     {
@@ -115,9 +117,9 @@ const Blog = () => {
       title: 'Ghidul Materialelor Naturale Premium',
       excerpt: 'Tot ce trebuie să știi despre marmură, lemn masiv, piatră naturală și alte materiale de lux.',
       date: '18 Februarie 2024',
-      category: 'Materiale',
+      category: t('blog.materials'),
       image: materiale,
-      readTime: '7 min citire',
+      readTime: `7 ${t('blog.readTime')}`,
       link: '/blog/materiale-naturale'
     },
     {
@@ -125,9 +127,9 @@ const Blog = () => {
       title: 'Finisajele Premium: Investiție în Durabilitate',
       excerpt: 'Cum să alegi finisajele potrivite pentru fiecare cameră și buget.',
       date: '14 Februarie 2024',
-      category: 'Materiale',
+      category: t('blog.materials'),
       image: finisaje,
-      readTime: '6 min citire',
+      readTime: `6 ${t('blog.readTime')}`,
       link: '/blog/finisaje-premium'
     },
     {
@@ -135,16 +137,16 @@ const Blog = () => {
       title: 'Materiale Ecologice: Lux Sustenabil',
       excerpt: 'Designul responsabil fără compromisuri estetice sau de calitate.',
       date: '10 Februarie 2024',
-      category: 'Materiale',
+      category: t('blog.materials'),
       image: ecologic,
-      readTime: '7 min citire',
+      readTime: `7 ${t('blog.readTime')}`,
       link: '/blog/materiale-ecologice'
     }
   ];
 
-  const categories = ['Toate', 'Tendințe', 'Sfaturi', 'Design', 'Materiale'];
+  const categories = [t('blog.all'), t('blog.trends'), t('blog.tips'), t('blog.design'), t('blog.materials')];
 
-  const filteredArticles = selectedCategory === 'Toate' 
+  const filteredArticles = selectedCategory === t('blog.all') 
     ? articles 
     : articles.filter(article => article.category === selectedCategory);
 
@@ -154,10 +156,10 @@ const Blog = () => {
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
-            Blog <span className="text-luxury">Design</span>
+            {t('blog.heroTitle')} <span className="text-luxury">{t('blog.heroHighlight')}</span>
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
-            Inspirație, sfaturi și tendințe în design interior de la experții Design Interior București
+            {t('blog.heroDescription')}
           </p>
         </div>
       </section>
@@ -224,7 +226,7 @@ const Blog = () => {
                   
                   <Link to={article.link}>
                     <Button variant="ghost" size="sm" className="group-hover:text-luxury">
-                      Citește mai mult
+                      {t('blog.readMore')}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -239,19 +241,19 @@ const Blog = () => {
       <section className="py-24 bg-gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 animate-fade-in leading-tight">
-            Rămâi la curent cu noutățile
+            {t('blog.newsletterTitle')}
           </h2>
           <p className="font-inter text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-fade-in-up max-w-2xl mx-auto">
-            Abonează-te la newsletter-ul nostru pentru a primi cele mai noi articole și sfaturi de design.
+            {t('blog.newsletterDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Adresa ta de email"
+              placeholder={t('blog.emailPlaceholder')}
               className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
             />
             <Button variant="luxury" size="lg" className="text-sm sm:text-base">
-              Abonează-te
+              {t('blog.subscribe')}
             </Button>
           </div>
         </div>
