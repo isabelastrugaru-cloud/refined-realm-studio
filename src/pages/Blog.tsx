@@ -23,6 +23,36 @@ const Blog = () => {
 
   const articles = [
     {
+      id: 13,
+      title: 'Designul Sustenabil: Viitorul Luxului în 2026',
+      excerpt: 'Explorează cum materialele reciclate și tehnologiile eco-friendly redefinesc luxul în designul interior contemporan.',
+      date: '27 Ianuarie 2026',
+      category: t('blog.trends'),
+      image: ecologic,
+      readTime: `9 ${t('blog.readTime')}`,
+      link: '/blog/design-sustenabil-2026'
+    },
+    {
+      id: 14,
+      title: 'Integrarea AI în Designul Interior',
+      excerpt: 'Cum inteligența artificială transformă procesul de design și personalizează experiența locuirii.',
+      date: '19 Ianuarie 2026',
+      category: t('blog.trends'),
+      image: iluminat,
+      readTime: `8 ${t('blog.readTime')}`,
+      link: '/blog/ai-design-interior'
+    },
+    {
+      id: 15,
+      title: 'Materialele Viitorului: Inovații 2026',
+      excerpt: 'Descoperă noile materiale revolucionare care combină estetica premium cu durabilitatea extremă.',
+      date: '05 Ianuarie 2026',
+      category: t('blog.materials'),
+      image: finisaje,
+      readTime: `7 ${t('blog.readTime')}`,
+      link: '/blog/materiale-viitorului-2026'
+    },
+    {
       id: 1,
       title: 'Tendințele în Design Interior pentru 2025',
       excerpt: 'Descoperă cele mai importante tendințe care vor defini designul interior în 2025 — de la culori îndrăznețe la materiale inovatoare.',
