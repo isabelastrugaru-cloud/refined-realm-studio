@@ -174,9 +174,8 @@ const Shop = () => {
                   <p className="text-3xl font-bold text-luxury">{product.price}</p>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="w-full group">
-                    {t('shop.viewProduct')}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <Button variant="outline" className="w-full" disabled>
+                    {t('shop.comingSoon')}
                   </Button>
                 </CardFooter>
               </Card>
