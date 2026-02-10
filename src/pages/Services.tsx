@@ -191,51 +191,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Guarantees Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6">
-              {t('services.guaranteesTitle')} <span className="text-luxury font-bold">{t('services.guaranteesHighlight')}</span>
-            </h2>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                title: t('services.qualityGuarantee'),
-                description: t('services.qualityDesc'),
-                icon: '🛡️'
-              },
-              {
-                title: t('services.budgetGuarantee'),
-                description: t('services.budgetDesc'),
-                icon: '💰'
-              },
-              {
-                title: t('services.deliveryGuarantee'),
-                description: t('services.deliveryDesc'),
-                icon: '⏰'
-              }
-            ].map((guarantee, index) => (
-              <div 
-                key={index} 
-                className="text-center p-8 bg-card rounded-xl shadow-subtle animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-4xl mb-4">{guarantee.icon}</div>
-                <h3 className="font-playfair text-xl font-bold text-foreground mb-4">
-                  {guarantee.title}
-                </h3>
-                <p className="font-inter text-muted-foreground">
-                  {guarantee.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
