@@ -398,7 +398,7 @@ const translations: Record<Language, Record<string, any>> = {
     },
     seo: {
       homeTitle: 'Design Interior București',
-      homeDesc: 'Studio de design interior de lux în București. Transformăm spațiile în opere de artă cu peste 13 ani de experiență.',
+      homeDesc: 'Studio de design interior de lux în București. Servicii complete de amenajare premium, consultanță design și mobilier exclusivist. Jubilee Luxury Design — 13+ ani experiență.',
       aboutTitle: 'Despre Noi',
       aboutDesc: 'Povestea Jubilee Luxury Design — peste 13 ani de excelență în design interior de lux în București.',
       portfolioTitle: 'Portofoliu',
@@ -751,7 +751,7 @@ const translations: Record<Language, Record<string, any>> = {
     },
     seo: {
       homeTitle: 'Interior Design Bucharest',
-      homeDesc: 'Luxury interior design studio in Bucharest. We transform spaces into works of art with over 13 years of experience.',
+      homeDesc: 'Luxury interior design studio in Bucharest. Complete premium decoration services, design consultancy and exclusive furniture. Jubilee Luxury Design — 13+ years of experience.',
       aboutTitle: 'About Us',
       aboutDesc: 'The story of Jubilee Luxury Design — over 13 years of excellence in luxury interior design in Bucharest.',
       portfolioTitle: 'Portfolio',
@@ -1104,7 +1104,7 @@ const translations: Record<Language, Record<string, any>> = {
     },
     seo: {
       homeTitle: 'Diseño Interior Bucarest',
-      homeDesc: 'Estudio de diseño interior de lujo en Bucarest. Transformamos espacios en obras de arte con más de 13 años de experiencia.',
+      homeDesc: 'Estudio de diseño interior de lujo en Bucarest. Servicios completos de decoración premium, consultoría de diseño y mobiliario exclusivo. Jubilee Luxury Design — 13+ años de experiencia.',
       aboutTitle: 'Sobre Nosotros',
       aboutDesc: 'La historia de Jubilee Luxury Design — más de 13 años de excelencia en diseño interior de lujo en Bucarest.',
       portfolioTitle: 'Portafolio',

@@ -17,7 +17,7 @@ const SEO = ({ title, description, jsonLd }: SEOProps) => {
   const canonical = `${SITE_URL}${location.pathname}`;
 
   const fullTitle = title
-    ? `${title} | ${SITE_NAME}`
+    ? `${title} — ${SITE_NAME}`
     : `${SITE_NAME} — Design Interior București`;
 
   const jsonLdArray = jsonLd

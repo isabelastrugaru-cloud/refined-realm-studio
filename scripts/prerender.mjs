@@ -171,6 +171,23 @@ async function prerender() {
 
       let page = template;
 
+      // Strip tags from index.html that Helmet will replace (avoids duplicates)
+      if (helmet) {
+        // Remove original <title>
+        page = page.replace(/<title>[^<]*<\/title>\n?\s*/i, "");
+        // Remove original meta description
+        page = page.replace(/<meta\s+name="description"[^>]*\/?>[ \t]*\n?\s*/i, "");
+        // Remove original canonical link
+        page = page.replace(/<link\s+rel="canonical"[^>]*\/?>[ \t]*\n?\s*/i, "");
+        // Remove original OG tags that Helmet provides per-page
+        page = page.replace(/<meta\s+property="og:title"[^>]*\/?>[ \t]*\n?\s*/gi, "");
+        page = page.replace(/<meta\s+property="og:description"[^>]*\/?>[ \t]*\n?\s*/gi, "");
+        page = page.replace(/<meta\s+property="og:url"[^>]*\/?>[ \t]*\n?\s*/gi, "");
+        page = page.replace(/<meta\s+property="og:type"[^>]*\/?>[ \t]*\n?\s*/gi, "");
+        page = page.replace(/<meta\s+property="og:site_name"[^>]*\/?>[ \t]*\n?\s*/gi, "");
+        page = page.replace(/<meta\s+property="og:locale"[^>]*\/?>[ \t]*\n?\s*/gi, "");
+      }
+
       // Inject rendered HTML into root div
       page = page.replace(
         '<div id="root"></div>',
