@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ecologic from '@/assets/blog/materiale-ecologice.jpg';
+import ecologic from '@/assets/blog/materiale-ecologice.webp';
 
 const MaterialeEcologice = () => {
   return (

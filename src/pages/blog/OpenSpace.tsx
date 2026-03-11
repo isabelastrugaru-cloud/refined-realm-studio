@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import openspace from '@/assets/blog/open-space.jpg';
+import openspace from '@/assets/blog/open-space.webp';
 
 const OpenSpace = () => {
   return (

@@ -4,54 +4,24 @@ import { ArrowRight, Calendar, Clock, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-import tendinte2024 from '@/assets/blog/tendinte-2024.jpg';
-import minimalism from '@/assets/blog/minimalismul-scandinav.jpg';
-import biofil from '@/assets/blog/design-biofil.jpg';
-import buget from '@/assets/blog/buget-limitat.jpg';
-import spatii from '@/assets/blog/spatii-mici.jpg';
-import culori from '@/assets/blog/psihologia-culorilor.jpg';
-import iluminat from '@/assets/blog/iluminat-perfect.jpg';
-import openspace from '@/assets/blog/open-space.jpg';
-import artdeco from '@/assets/blog/art-deco.jpg';
-import materiale from '@/assets/blog/materiale-naturale.jpg';
-import finisaje from '@/assets/blog/finisaje-premium.jpg';
-import ecologic from '@/assets/blog/materiale-ecologice.jpg';
+import tendinte2024 from '@/assets/blog/tendinte-2024.webp';
+import minimalism from '@/assets/blog/minimalismul-scandinav.webp';
+import biofil from '@/assets/blog/design-biofil.webp';
+import buget from '@/assets/blog/buget-limitat.webp';
+import spatii from '@/assets/blog/spatii-mici.webp';
+import culori from '@/assets/blog/psihologia-culorilor.webp';
+import iluminat from '@/assets/blog/iluminat-perfect.webp';
+import openspace from '@/assets/blog/open-space.webp';
+import artdeco from '@/assets/blog/art-deco.webp';
+import materiale from '@/assets/blog/materiale-naturale.webp';
+import finisaje from '@/assets/blog/finisaje-premium.webp';
+import ecologic from '@/assets/blog/materiale-ecologice.webp';
 
 const Blog = () => {
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState(t('blog.all'));
 
   const articles = [
-    {
-      id: 13,
-      title: 'Designul Sustenabil: Viitorul Luxului în 2026',
-      excerpt: 'Explorează cum materialele reciclate și tehnologiile eco-friendly redefinesc luxul în designul interior contemporan.',
-      date: '27 Ianuarie 2026',
-      category: t('blog.trends'),
-      image: ecologic,
-      readTime: `9 ${t('blog.readTime')}`,
-      link: '/blog/design-sustenabil-2026'
-    },
-    {
-      id: 14,
-      title: 'Integrarea AI în Designul Interior',
-      excerpt: 'Cum inteligența artificială transformă procesul de design și personalizează experiența locuirii.',
-      date: '19 Ianuarie 2026',
-      category: t('blog.trends'),
-      image: iluminat,
-      readTime: `8 ${t('blog.readTime')}`,
-      link: '/blog/ai-design-interior'
-    },
-    {
-      id: 15,
-      title: 'Materialele Viitorului: Inovații 2026',
-      excerpt: 'Descoperă noile materiale revolucionare care combină estetica premium cu durabilitatea extremă.',
-      date: '05 Ianuarie 2026',
-      category: t('blog.materials'),
-      image: finisaje,
-      readTime: `7 ${t('blog.readTime')}`,
-      link: '/blog/materiale-viitorului-2026'
-    },
     {
       id: 1,
       title: 'Tendințele în Design Interior pentru 2025',
@@ -185,9 +155,9 @@ const Blog = () => {
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
+          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             {t('blog.heroTitle')} <span className="text-luxury">{t('blog.heroHighlight')}</span>
-          </h2>
+          </h1>
           <p className="font-inter text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in-up max-w-2xl mx-auto">
             {t('blog.heroDescription')}
           </p>
@@ -218,50 +188,52 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredArticles.map((article, index) => (
-              <article
+              <Link
                 key={article.id}
-                className="bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 overflow-hidden group animate-fade-in"
+                to={article.link}
+                className="block bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 overflow-hidden group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center bg-luxury/90 text-luxury-foreground px-3 py-1 rounded-full text-sm font-medium">
-                      <Tag className="w-3 h-3 mr-1" />
-                      {article.category}
-                    </span>
+                <article>
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      loading="lazy"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-flex items-center bg-luxury/90 text-luxury-foreground px-3 py-1 rounded-full text-sm font-medium">
+                        <Tag className="w-3 h-3 mr-1" />
+                        {article.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-muted-foreground mb-4">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span>{article.date}</span>
-                    <span className="mx-2">•</span>
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span>{article.readTime}</span>
-                  </div>
-                  
-                  <h3 className="font-playfair text-xl font-bold text-foreground mb-3 group-hover:text-luxury transition-colors">
-                    {article.title}
-                  </h3>
-                  
-                  <p className="font-inter text-muted-foreground mb-4 line-clamp-3">
-                    {article.excerpt}
-                  </p>
-                  
-                  <Link to={article.link}>
-                    <Button variant="ghost" size="sm" className="group-hover:text-luxury">
+
+                  <div className="p-6">
+                    <div className="flex items-center text-sm text-muted-foreground mb-4">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span>{article.date}</span>
+                      <span className="mx-2">•</span>
+                      <Clock className="w-4 h-4 mr-2" />
+                      <span>{article.readTime}</span>
+                    </div>
+
+                    <h3 className="font-playfair text-xl font-bold text-foreground mb-3 group-hover:text-luxury transition-colors">
+                      {article.title}
+                    </h3>
+
+                    <p className="font-inter text-muted-foreground mb-4 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+
+                    <Button variant="ghost" size="sm" className="group-hover:text-foreground" tabIndex={-1}>
                       {t('blog.readMore')}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                  </Link>
-                </div>
-              </article>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -280,6 +252,7 @@ const Blog = () => {
             <input
               type="email"
               placeholder={t('blog.emailPlaceholder')}
+              aria-label="Email newsletter"
               className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
             />
             <Button variant="luxury" size="lg" className="text-sm sm:text-base">

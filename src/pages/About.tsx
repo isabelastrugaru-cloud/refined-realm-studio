@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Award, Users, Clock, Star, Sparkles, Home, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
@@ -150,10 +151,12 @@ const About = () => {
               </p>
             </div>
           </div>
-          <Button variant="luxury" size="lg">
-            {t('about.startProject')}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/contact">
+            <Button variant="luxury" size="lg">
+              {t('about.startProject')}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

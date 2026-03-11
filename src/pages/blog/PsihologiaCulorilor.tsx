@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import culori from '@/assets/blog/psihologia-culorilor.jpg';
+import culori from '@/assets/blog/psihologia-culorilor.webp';
 
 const PsihologiaCulorilor = () => {
   return (

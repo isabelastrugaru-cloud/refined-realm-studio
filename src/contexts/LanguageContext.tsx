@@ -33,6 +33,10 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     localStorage.setItem('language', lang);
   };
 
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const t = (key: string): string => {
     const keys = key.split('.');
     let value: any = translations[language];
@@ -110,7 +114,8 @@ const translations: Record<Language, Record<string, any>> = {
       allRights: 'Toate drepturile rezervate.',
       privacyPolicy: 'Politica de confidențialitate',
       termsConditions: 'Termeni și condiții',
-      cookiesPolicy: 'Politica cookies'
+      cookiesPolicy: 'Politica cookies',
+      cookieSettings: 'Setări cookie-uri'
     },
     about: {
       heroTitle: 'Povestea',
@@ -166,15 +171,19 @@ const translations: Record<Language, Record<string, any>> = {
       duration: 'Durată',
       guaranteesTitle: 'Garanțiile',
       guaranteesHighlight: 'Noastre',
-      qualityGuarantee: '',
-      qualityDesc: '',
+      qualityGuarantee: 'Garanția Calității',
+      qualityDesc: 'Materiale premium certificate și manoperă de cea mai înaltă calitate, garantată',
       budgetGuarantee: 'Respectarea Bugetului',
       budgetDesc: 'Preț fix stabilit de la început, fără costuri ascunse sau suplimentare',
       deliveryGuarantee: 'Livrare la Timp',
       deliveryDesc: 'Respectarea programului stabilit sau compensare pentru întârzieri',
       ctaTitle: 'Pregătit să Începi Proiectul?',
       ctaDescription: 'Consultația inițială este gratuită și fără obligații. Descoperă cum putem transforma spațiul tău.',
-      scheduleFree: 'Programează consultația gratuită'
+      scheduleFree: 'Programează consultația gratuită',
+      duration1: '2-3 ore',
+      duration2: '1-2 săptămâni',
+      duration3: '1 săptămână',
+      duration4: '4-12 săptămâni'
     },
     portfolio: {
       heroTitle: 'Portofoliu Premium',
@@ -243,7 +252,20 @@ const translations: Record<Language, Record<string, any>> = {
       faq4A: 'Bugetul minim pentru un proiect complet este de 25.000€, inclusiv mobilier și execuție.',
       viewAllFaq: 'Vezi toate întrebările frecvente',
       successTitle: 'Mesaj trimis cu succes!',
-      successDescription: 'Vă vom contacta în maxim 24 de ore pentru programarea consultației.'
+      successDescription: 'Vă vom contacta în maxim 24 de ore pentru programarea consultației.',
+      gdprConsent: 'Sunt de acord cu',
+      gdprPrivacyLink: 'Politica de confidențialitate',
+      gdprAnd: 'și',
+      gdprTermsLink: 'Termenii și condițiile',
+      gdprRequired: 'Trebuie să acceptați politica de confidențialitate pentru a trimite formularul.',
+      errorTitle: 'Eroare la trimitere',
+      errorDescription: 'Nu am putut trimite mesajul. Vă rugăm să ne contactați telefonic.',
+      service1: 'Design Interior Complet',
+      service2: 'Consultanță Design',
+      service3: 'Renovare & Reamenajare',
+      service4: 'Achiziție Mobilier Premium',
+      service5: 'Design Comercial',
+      service6: 'Altele'
     },
     blog: {
       heroTitle: 'Blog',
@@ -282,7 +304,82 @@ const translations: Record<Language, Record<string, any>> = {
       testimonial2: 'Am simțit imediat cum arată o agenție premium. Template-urile sunt aur.',
       ctaTitle: 'Găsește resursele care îți eficientizează munca',
       ctaDescription: 'Documente premium pentru arhitecți și designeri care vor mai mult: ordine, profesionalism, eficiență.',
-      buyNow: '👉 Cumpără acum'
+      buyNow: '👉 Cumpără acum',
+      comingSoon: 'În curând',
+      backToShop: 'Înapoi la Shop',
+      buyProduct: 'Cumpără',
+      whatIsIncluded: 'Ce include',
+      securePayment: 'Plată securizată prin Stripe',
+      instantDelivery: 'Livrare instant după plată',
+      relatedProducts: 'Produse similare'
+    },
+    products: {
+      starterPack: {
+        title: 'Starter Pack Client',
+        description: 'Set profesional pentru prima interacțiune cu un client: ghiduri, chestionare și documente esențiale. Te ajută să creezi un proces clar, premium și coerent de la primul contact.',
+        longDescription: 'Starter Pack Client este resursa ideală pentru designeri și arhitecți care vor să facă o primă impresie impecabilă. Pachetul conține toate documentele necesare pentru a gestiona profesionist prima întâlnire cu clientul: de la chestionare detaliate la ghiduri de comunicare și șabloane de organizare. Fiecare element a fost creat pentru a te ajuta să economisești timp și să transmiți încredere din primul moment.',
+        feature1: 'Chestionar detaliat pentru prima întâlnire',
+        feature2: 'Ghid de comunicare profesională cu clientul',
+        feature3: 'Șabloane de organizare a proiectului',
+        feature4: 'Checklist pentru procesul de onboarding'
+      },
+      bathroomComplete: {
+        title: 'Bathroom eBook + CAD Files + Template',
+        description: 'Pachet complet pentru proiectarea băilor: ebook detaliat, fișiere CAD + template profesional. Tot ce ai nevoie pentru proiecte tehnic corecte și estetic impecabile.',
+        longDescription: 'Acest pachet all-in-one îți oferă tot ce ai nevoie pentru proiecte de băi impecabile. Ebook-ul acoperă detalii tehnice esențiale, dimensiuni standard și soluții de layout, fișierele CAD sunt gata de utilizat în proiectele tale, iar template-ul profesional îți permite să prezinți clientului un concept coerent și convingător.',
+        feature1: 'Ebook detaliat cu dimensiuni și layout-uri pentru băi',
+        feature2: 'Fișiere CAD editabile și organizate',
+        feature3: 'Template profesional pentru prezentări',
+        feature4: 'Exemple de proiecte finalizate'
+      },
+      beigeContract: {
+        title: 'BEIGE – Template Contract & Ofertă de Preț',
+        description: 'Document elegant și ușor de personalizat pentru contracte și oferte. Construit pentru a transmite profesionalism și consecvență în relația cu clientul.',
+        longDescription: 'Template-ul BEIGE este soluția perfectă pentru designeri care vor documente profesioniste fără efort. Creat cu atenție la detalii tipografice și vizuale, acest template îți permite să generezi rapid contracte și oferte de preț care inspiră încredere. Design-ul elegant și neutru se potrivește oricărui brand de design interior.',
+        feature1: 'Template contract complet și personalizabil',
+        feature2: 'Ofertă de preț cu design premium',
+        feature3: 'Format ușor de editat și adaptat',
+        feature4: 'Design elegant, potrivit pentru orice brand'
+      },
+      greenPresentation: {
+        title: 'GREEN – Template Prezentare Companie',
+        description: 'Template minimalist, perfect pentru pitch-uri, colaborări B2B, întâlniri corporate și prezentarea agenției tale.',
+        longDescription: 'Template-ul GREEN este creat pentru a prezenta agenția ta de design într-un mod profesionist și memorabil. Cu un design minimalist și modern, este perfect pentru pitch-uri, întâlniri B2B și prezentări corporate. Slide-urile sunt organizate strategic pentru a comunica eficient povestea, serviciile și portofoliul tău.',
+        feature1: 'Prezentare companie cu design minimalist',
+        feature2: 'Slide-uri strategice pentru pitch-uri',
+        feature3: 'Secțiuni pentru portofoliu și servicii',
+        feature4: 'Ușor de personalizat cu brandul tău'
+      },
+      kitchenEbook: {
+        title: 'Kitchen eBook + CAD Files',
+        description: 'Ghid complet pentru proiectarea bucătăriilor + fișiere CAD organizate. Ideal pentru proiecte rapide, corecte și super profesionale.',
+        longDescription: 'Ebook-ul de bucătărie este o resursă esențială pentru orice designer de interior. Acoperă tot ce trebuie să știi despre proiectarea bucătăriilor: de la ergonomie și dimensiuni standard, la tipuri de layout-uri și soluții de depozitare. Fișierele CAD incluse sunt organizate pe categorii și gata de integrat în proiectele tale.',
+        feature1: 'Ghid complet de ergonomie pentru bucătării',
+        feature2: 'Fișiere CAD organizate pe categorii',
+        feature3: 'Tipuri de layout-uri și dimensiuni standard',
+        feature4: 'Soluții de depozitare și optimizare a spațiului'
+      },
+      bathroomV2: {
+        title: 'Bathroom eBook + CAD Files + Template (V2)',
+        description: 'Pachet complet alternativ pentru proiecte de băi: detalii tehnice, fișiere CAD + template premium pentru prezentări.',
+        longDescription: 'Versiunea V2 a pachetului de băi aduce un design actualizat și conținut extins. Include un ebook revizuit cu cele mai noi tendințe, fișiere CAD actualizate și un template premium cu un look fresh. Ideal pentru designeri care vor să rămână la curent cu evoluțiile din industrie.',
+        feature1: 'Ebook revizuit cu tendințe actuale',
+        feature2: 'Fișiere CAD actualizate și extinse',
+        feature3: 'Template premium cu design fresh',
+        feature4: 'Conținut extins față de versiunea anterioară'
+      },
+      millworkGuide: {
+        title: 'Millwork – Ghid complet pentru mobilier custom',
+        description: 'Ghid premium cu dimensiuni standard, detalii tehnice, exemple concrete pentru bucătării, dressing-uri, biblioteci. Resursa perfectă pentru un flux de lucru mai rapid, mai coerent și mai sigur — fără erori, fără improvizații.',
+        longDescription: 'Ghidul Millwork este resursa definitivă pentru designeri care lucrează cu mobilier custom. Acoperă în detaliu dimensiuni standard, toleranțe, tipuri de îmbinări și materiale pentru bucătării, dressing-uri, biblioteci și alte piese de mobilier. Cu exemple concrete și diagrame tehnice, acest ghid elimină incertitudinea și reduce erorile din procesul de proiectare.',
+        feature1: 'Dimensiuni standard pentru toate tipurile de mobilier',
+        feature2: 'Detalii tehnice pentru bucătării și dressing-uri',
+        feature3: 'Exemple concrete și diagrame tehnice',
+        feature4: 'Ghid de materiale și tipuri de îmbinări'
+      }
+    },
+    legal: {
+      back: '← Înapoi'
     }
   },
   en: {
@@ -339,7 +436,8 @@ const translations: Record<Language, Record<string, any>> = {
       allRights: 'All rights reserved.',
       privacyPolicy: 'Privacy Policy',
       termsConditions: 'Terms and Conditions',
-      cookiesPolicy: 'Cookies Policy'
+      cookiesPolicy: 'Cookies Policy',
+      cookieSettings: 'Cookie Settings'
     },
     about: {
       heroTitle: 'The Story of',
@@ -395,15 +493,19 @@ const translations: Record<Language, Record<string, any>> = {
       duration: 'Duration',
       guaranteesTitle: 'Our',
       guaranteesHighlight: 'Guarantees',
-      qualityGuarantee: '',
-      qualityDesc: '',
+      qualityGuarantee: 'Quality Guarantee',
+      qualityDesc: 'Certified premium materials and the highest quality craftsmanship, guaranteed',
       budgetGuarantee: 'Budget Compliance',
       budgetDesc: 'Fixed price set from the start, no hidden or additional costs',
       deliveryGuarantee: 'On-Time Delivery',
       deliveryDesc: 'Adherence to established schedule or compensation for delays',
       ctaTitle: 'Ready to Start Your Project?',
       ctaDescription: 'The initial consultation is free and without obligation. Discover how we can transform your space.',
-      scheduleFree: 'Schedule free consultation'
+      scheduleFree: 'Schedule free consultation',
+      duration1: '2-3 hours',
+      duration2: '1-2 weeks',
+      duration3: '1 week',
+      duration4: '4-12 weeks'
     },
     portfolio: {
       heroTitle: 'Premium Portfolio',
@@ -472,7 +574,20 @@ const translations: Record<Language, Record<string, any>> = {
       faq4A: 'The minimum budget for a complete project is €25,000, including furniture and execution.',
       viewAllFaq: 'View all frequently asked questions',
       successTitle: 'Message sent successfully!',
-      successDescription: 'We will contact you within 24 hours to schedule the consultation.'
+      successDescription: 'We will contact you within 24 hours to schedule the consultation.',
+      gdprConsent: 'I agree to the',
+      gdprPrivacyLink: 'Privacy Policy',
+      gdprAnd: 'and',
+      gdprTermsLink: 'Terms and Conditions',
+      gdprRequired: 'You must accept the privacy policy to submit the form.',
+      errorTitle: 'Submission Error',
+      errorDescription: 'Could not send the message. Please contact us by phone.',
+      service1: 'Complete Interior Design',
+      service2: 'Design Consultancy',
+      service3: 'Renovation & Redesign',
+      service4: 'Premium Furniture Acquisition',
+      service5: 'Commercial Design',
+      service6: 'Other'
     },
     blog: {
       heroTitle: 'Design',
@@ -511,7 +626,82 @@ const translations: Record<Language, Record<string, any>> = {
       testimonial2: 'I immediately felt how a premium agency looks. The templates are gold.',
       ctaTitle: 'Find the resources that streamline your work',
       ctaDescription: 'Premium documents for architects and designers who want more: order, professionalism, efficiency.',
-      buyNow: '👉 Buy now'
+      buyNow: '👉 Buy now',
+      comingSoon: 'Coming Soon',
+      backToShop: 'Back to Shop',
+      buyProduct: 'Buy Now',
+      whatIsIncluded: "What's included",
+      securePayment: 'Secure payment via Stripe',
+      instantDelivery: 'Instant delivery after payment',
+      relatedProducts: 'Related products'
+    },
+    products: {
+      starterPack: {
+        title: 'Client Starter Pack',
+        description: 'Professional set for the first client interaction: guides, questionnaires and essential documents. Helps you create a clear, premium and coherent process from the first contact.',
+        longDescription: 'The Client Starter Pack is the ideal resource for designers and architects who want to make a flawless first impression. The package contains all the documents needed to professionally manage the first meeting with the client: from detailed questionnaires to communication guides and organizational templates. Each element was created to help you save time and convey confidence from the very first moment.',
+        feature1: 'Detailed questionnaire for the first meeting',
+        feature2: 'Professional client communication guide',
+        feature3: 'Project organization templates',
+        feature4: 'Onboarding process checklist'
+      },
+      bathroomComplete: {
+        title: 'Bathroom eBook + CAD Files + Template',
+        description: 'Complete package for bathroom design: detailed ebook, CAD files + professional template. Everything you need for technically correct and aesthetically impeccable projects.',
+        longDescription: 'This all-in-one package gives you everything you need for flawless bathroom projects. The ebook covers essential technical details, standard dimensions and layout solutions, the CAD files are ready to use in your projects, and the professional template allows you to present the client with a coherent and convincing concept.',
+        feature1: 'Detailed ebook with bathroom dimensions and layouts',
+        feature2: 'Editable and organized CAD files',
+        feature3: 'Professional presentation template',
+        feature4: 'Examples of completed projects'
+      },
+      beigeContract: {
+        title: 'BEIGE – Contract & Price Quote Template',
+        description: 'Elegant and easy-to-customize document for contracts and quotes. Built to convey professionalism and consistency in client relationships.',
+        longDescription: 'The BEIGE template is the perfect solution for designers who want professional documents without effort. Created with attention to typographic and visual details, this template allows you to quickly generate contracts and price quotes that inspire trust. The elegant and neutral design fits any interior design brand.',
+        feature1: 'Complete and customizable contract template',
+        feature2: 'Price quote with premium design',
+        feature3: 'Easy to edit and adapt format',
+        feature4: 'Elegant design suitable for any brand'
+      },
+      greenPresentation: {
+        title: 'GREEN – Company Presentation Template',
+        description: 'Minimalist template, perfect for pitches, B2B collaborations, corporate meetings and presenting your agency.',
+        longDescription: 'The GREEN template is designed to present your design agency in a professional and memorable way. With a minimalist and modern design, it is perfect for pitches, B2B meetings and corporate presentations. The slides are strategically organized to effectively communicate your story, services and portfolio.',
+        feature1: 'Company presentation with minimalist design',
+        feature2: 'Strategic slides for pitches',
+        feature3: 'Sections for portfolio and services',
+        feature4: 'Easy to customize with your brand'
+      },
+      kitchenEbook: {
+        title: 'Kitchen eBook + CAD Files',
+        description: 'Complete guide for kitchen design + organized CAD files. Ideal for fast, correct and super professional projects.',
+        longDescription: 'The Kitchen eBook is an essential resource for any interior designer. It covers everything you need to know about kitchen design: from ergonomics and standard dimensions, to layout types and storage solutions. The included CAD files are organized by category and ready to integrate into your projects.',
+        feature1: 'Complete ergonomics guide for kitchens',
+        feature2: 'CAD files organized by category',
+        feature3: 'Layout types and standard dimensions',
+        feature4: 'Storage and space optimization solutions'
+      },
+      bathroomV2: {
+        title: 'Bathroom eBook + CAD Files + Template (V2)',
+        description: 'Alternative complete package for bathroom projects: technical details, CAD files + premium template for presentations.',
+        longDescription: 'The V2 version of the bathroom package brings an updated design and expanded content. Includes a revised ebook with the latest trends, updated CAD files and a premium template with a fresh look. Ideal for designers who want to stay current with industry developments.',
+        feature1: 'Revised ebook with current trends',
+        feature2: 'Updated and expanded CAD files',
+        feature3: 'Premium template with fresh design',
+        feature4: 'Expanded content compared to previous version'
+      },
+      millworkGuide: {
+        title: 'Millwork – Complete Custom Furniture Guide',
+        description: 'Premium guide with standard dimensions, technical details, concrete examples for kitchens, closets, bookcases. The perfect resource for a faster, more coherent and safer workflow — no errors, no improvisation.',
+        longDescription: 'The Millwork Guide is the definitive resource for designers working with custom furniture. It covers in detail standard dimensions, tolerances, joint types and materials for kitchens, closets, bookcases and other furniture pieces. With concrete examples and technical diagrams, this guide eliminates uncertainty and reduces errors in the design process.',
+        feature1: 'Standard dimensions for all furniture types',
+        feature2: 'Technical details for kitchens and closets',
+        feature3: 'Concrete examples and technical diagrams',
+        feature4: 'Materials guide and joint types'
+      }
+    },
+    legal: {
+      back: '← Back'
     }
   },
   es: {
@@ -568,7 +758,8 @@ const translations: Record<Language, Record<string, any>> = {
       allRights: 'Todos los derechos reservados.',
       privacyPolicy: 'Política de Privacidad',
       termsConditions: 'Términos y Condiciones',
-      cookiesPolicy: 'Política de Cookies'
+      cookiesPolicy: 'Política de Cookies',
+      cookieSettings: 'Configuración de cookies'
     },
     about: {
       heroTitle: 'La Historia de',
@@ -624,15 +815,19 @@ const translations: Record<Language, Record<string, any>> = {
       duration: 'Duración',
       guaranteesTitle: 'Nuestras',
       guaranteesHighlight: 'Garantías',
-      qualityGuarantee: '',
-      qualityDesc: '',
+      qualityGuarantee: 'Garantía de Calidad',
+      qualityDesc: 'Materiales premium certificados y mano de obra de la más alta calidad, garantizada',
       budgetGuarantee: 'Cumplimiento del Presupuesto',
       budgetDesc: 'Precio fijo establecido desde el inicio, sin costos ocultos o adicionales',
       deliveryGuarantee: 'Entrega a Tiempo',
       deliveryDesc: 'Cumplimiento del programa establecido o compensación por retrasos',
       ctaTitle: '¿Listo para Iniciar tu Proyecto?',
       ctaDescription: 'La consulta inicial es gratuita y sin compromiso. Descubre cómo podemos transformar tu espacio.',
-      scheduleFree: 'Programa consulta gratuita'
+      scheduleFree: 'Programa consulta gratuita',
+      duration1: '2-3 horas',
+      duration2: '1-2 semanas',
+      duration3: '1 semana',
+      duration4: '4-12 semanas'
     },
     portfolio: {
       heroTitle: 'Portafolio Premium',
@@ -701,7 +896,20 @@ const translations: Record<Language, Record<string, any>> = {
       faq4A: 'El presupuesto mínimo para un proyecto completo es de €25,000, incluyendo mobiliario y ejecución.',
       viewAllFaq: 'Ver todas las preguntas frecuentes',
       successTitle: '¡Mensaje enviado con éxito!',
-      successDescription: 'Te contactaremos en máximo 24 horas para programar la consulta.'
+      successDescription: 'Te contactaremos en máximo 24 horas para programar la consulta.',
+      gdprConsent: 'Acepto la',
+      gdprPrivacyLink: 'Política de Privacidad',
+      gdprAnd: 'y los',
+      gdprTermsLink: 'Términos y Condiciones',
+      gdprRequired: 'Debe aceptar la política de privacidad para enviar el formulario.',
+      errorTitle: 'Error de envío',
+      errorDescription: 'No se pudo enviar el mensaje. Por favor contáctenos por teléfono.',
+      service1: 'Diseño Interior Completo',
+      service2: 'Consultoría de Diseño',
+      service3: 'Renovación y Rediseño',
+      service4: 'Adquisición de Mobiliario Premium',
+      service5: 'Diseño Comercial',
+      service6: 'Otros'
     },
     blog: {
       heroTitle: 'Blog de',
@@ -740,7 +948,82 @@ const translations: Record<Language, Record<string, any>> = {
       testimonial2: 'Inmediatamente sentí cómo se ve una agencia premium. Las plantillas son oro.',
       ctaTitle: 'Encuentra los recursos que optimizan tu trabajo',
       ctaDescription: 'Documentos premium para arquitectos y diseñadores que quieren más: orden, profesionalismo, eficiencia.',
-      buyNow: '👉 Comprar ahora'
+      buyNow: '👉 Comprar ahora',
+      comingSoon: 'Próximamente',
+      backToShop: 'Volver a la Tienda',
+      buyProduct: 'Comprar',
+      whatIsIncluded: 'Qué incluye',
+      securePayment: 'Pago seguro vía Stripe',
+      instantDelivery: 'Entrega instantánea después del pago',
+      relatedProducts: 'Productos similares'
+    },
+    products: {
+      starterPack: {
+        title: 'Starter Pack Cliente',
+        description: 'Set profesional para la primera interacción con un cliente: guías, cuestionarios y documentos esenciales. Te ayuda a crear un proceso claro, premium y coherente desde el primer contacto.',
+        longDescription: 'El Starter Pack Cliente es el recurso ideal para diseñadores y arquitectos que quieren causar una primera impresión impecable. El paquete contiene todos los documentos necesarios para gestionar profesionalmente la primera reunión con el cliente: desde cuestionarios detallados hasta guías de comunicación y plantillas de organización. Cada elemento fue creado para ayudarte a ahorrar tiempo y transmitir confianza desde el primer momento.',
+        feature1: 'Cuestionario detallado para la primera reunión',
+        feature2: 'Guía profesional de comunicación con el cliente',
+        feature3: 'Plantillas de organización del proyecto',
+        feature4: 'Checklist para el proceso de onboarding'
+      },
+      bathroomComplete: {
+        title: 'Bathroom eBook + Archivos CAD + Plantilla',
+        description: 'Paquete completo para el diseño de baños: ebook detallado, archivos CAD + plantilla profesional. Todo lo que necesitas para proyectos técnicamente correctos y estéticamente impecables.',
+        longDescription: 'Este paquete todo-en-uno te ofrece todo lo que necesitas para proyectos de baños impecables. El ebook cubre detalles técnicos esenciales, dimensiones estándar y soluciones de layout, los archivos CAD están listos para usar en tus proyectos, y la plantilla profesional te permite presentar al cliente un concepto coherente y convincente.',
+        feature1: 'Ebook detallado con dimensiones y layouts para baños',
+        feature2: 'Archivos CAD editables y organizados',
+        feature3: 'Plantilla profesional para presentaciones',
+        feature4: 'Ejemplos de proyectos finalizados'
+      },
+      beigeContract: {
+        title: 'BEIGE – Plantilla Contrato y Oferta de Precio',
+        description: 'Documento elegante y fácil de personalizar para contratos y ofertas. Construido para transmitir profesionalismo y consistencia en la relación con el cliente.',
+        longDescription: 'La plantilla BEIGE es la solución perfecta para diseñadores que quieren documentos profesionales sin esfuerzo. Creada con atención a los detalles tipográficos y visuales, esta plantilla te permite generar rápidamente contratos y ofertas de precio que inspiran confianza. El diseño elegante y neutro se adapta a cualquier marca de diseño interior.',
+        feature1: 'Plantilla de contrato completa y personalizable',
+        feature2: 'Oferta de precio con diseño premium',
+        feature3: 'Formato fácil de editar y adaptar',
+        feature4: 'Diseño elegante, adecuado para cualquier marca'
+      },
+      greenPresentation: {
+        title: 'GREEN – Plantilla Presentación de Empresa',
+        description: 'Plantilla minimalista, perfecta para pitches, colaboraciones B2B, reuniones corporativas y la presentación de tu agencia.',
+        longDescription: 'La plantilla GREEN está diseñada para presentar tu agencia de diseño de manera profesional y memorable. Con un diseño minimalista y moderno, es perfecta para pitches, reuniones B2B y presentaciones corporativas. Las diapositivas están organizadas estratégicamente para comunicar eficazmente tu historia, servicios y portafolio.',
+        feature1: 'Presentación de empresa con diseño minimalista',
+        feature2: 'Diapositivas estratégicas para pitches',
+        feature3: 'Secciones para portafolio y servicios',
+        feature4: 'Fácil de personalizar con tu marca'
+      },
+      kitchenEbook: {
+        title: 'Kitchen eBook + Archivos CAD',
+        description: 'Guía completa para el diseño de cocinas + archivos CAD organizados. Ideal para proyectos rápidos, correctos y super profesionales.',
+        longDescription: 'El eBook de cocina es un recurso esencial para cualquier diseñador de interiores. Cubre todo lo que necesitas saber sobre el diseño de cocinas: desde ergonomía y dimensiones estándar, hasta tipos de layouts y soluciones de almacenamiento. Los archivos CAD incluidos están organizados por categoría y listos para integrar en tus proyectos.',
+        feature1: 'Guía completa de ergonomía para cocinas',
+        feature2: 'Archivos CAD organizados por categoría',
+        feature3: 'Tipos de layouts y dimensiones estándar',
+        feature4: 'Soluciones de almacenamiento y optimización del espacio'
+      },
+      bathroomV2: {
+        title: 'Bathroom eBook + Archivos CAD + Plantilla (V2)',
+        description: 'Paquete completo alternativo para proyectos de baños: detalles técnicos, archivos CAD + plantilla premium para presentaciones.',
+        longDescription: 'La versión V2 del paquete de baños trae un diseño actualizado y contenido ampliado. Incluye un ebook revisado con las últimas tendencias, archivos CAD actualizados y una plantilla premium con un look fresco. Ideal para diseñadores que quieren mantenerse al día con las novedades de la industria.',
+        feature1: 'Ebook revisado con tendencias actuales',
+        feature2: 'Archivos CAD actualizados y ampliados',
+        feature3: 'Plantilla premium con diseño fresco',
+        feature4: 'Contenido ampliado respecto a la versión anterior'
+      },
+      millworkGuide: {
+        title: 'Millwork – Guía completa de mobiliario custom',
+        description: 'Guía premium con dimensiones estándar, detalles técnicos, ejemplos concretos para cocinas, vestidores, bibliotecas. El recurso perfecto para un flujo de trabajo más rápido, coherente y seguro — sin errores, sin improvisaciones.',
+        longDescription: 'La Guía Millwork es el recurso definitivo para diseñadores que trabajan con mobiliario custom. Cubre en detalle dimensiones estándar, tolerancias, tipos de uniones y materiales para cocinas, vestidores, bibliotecas y otras piezas de mobiliario. Con ejemplos concretos y diagramas técnicos, esta guía elimina la incertidumbre y reduce los errores en el proceso de diseño.',
+        feature1: 'Dimensiones estándar para todos los tipos de mobiliario',
+        feature2: 'Detalles técnicos para cocinas y vestidores',
+        feature3: 'Ejemplos concretos y diagramas técnicos',
+        feature4: 'Guía de materiales y tipos de uniones'
+      }
+    },
+    legal: {
+      back: '← Volver'
     }
   }
 };

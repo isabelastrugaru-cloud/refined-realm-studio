@@ -11,7 +11,12 @@ import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
+import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
+import PoliticaConfidentialitate from "./pages/PoliticaConfidentialitate";
+import TermeniConditii from "./pages/TermeniConditii";
+import PoliticaCookies from "./pages/PoliticaCookies";
+import CookieConsent from "./components/CookieConsent";
 import PenthouseHerastrau from "./pages/projects/PenthouseHerastrau";
 import VillaPipera from "./pages/projects/VillaPipera";
 import ApartamentPrimaverii from "./pages/projects/ApartamentPrimaverii";
@@ -66,10 +71,15 @@ const App = () => (
             <Route path="blog/materiale-ecologice" element={<MaterialeEcologice />} />
             <Route path="contact" element={<Contact />} />
             <Route path="shop" element={<Shop />} />
+            <Route path="shop/:productId" element={<ProductDetail />} />
+            <Route path="politica-confidentialitate" element={<PoliticaConfidentialitate />} />
+            <Route path="termeni-conditii" element={<TermeniConditii />} />
+            <Route path="cookies" element={<PoliticaCookies />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

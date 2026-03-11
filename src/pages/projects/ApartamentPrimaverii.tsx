@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, MapPin, Calendar, Maximize } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import apartment1 from '@/assets/apartment-1.jpg';
-import apartment2 from '@/assets/apartment-2.jpg';
-import apartment3 from '@/assets/apartment-3.jpg';
-import apartment4 from '@/assets/apartment-4.jpg';
+import apartment1 from '@/assets/apartment-1.webp';
+import apartment2 from '@/assets/apartment-2.webp';
+import apartment3 from '@/assets/apartment-3.webp';
+import apartment4 from '@/assets/apartment-4.webp';
 
 const ApartamentPrimaverii = () => {
   const images = [

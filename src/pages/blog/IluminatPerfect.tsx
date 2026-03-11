@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import iluminat from '@/assets/blog/iluminat-perfect.jpg';
+import iluminat from '@/assets/blog/iluminat-perfect.webp';
 
 const IluminatPerfect = () => {
   return (

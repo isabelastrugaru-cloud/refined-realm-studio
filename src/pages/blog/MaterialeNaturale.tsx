@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import materiale from '@/assets/blog/materiale-naturale.jpg';
+import materiale from '@/assets/blog/materiale-naturale.webp';
 
 const MaterialeNaturale = () => {
   return (

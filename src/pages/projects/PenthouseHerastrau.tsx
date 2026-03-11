@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, MapPin, Calendar, Maximize } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import penthouse1 from '@/assets/penthouse-1.jpg';
-import penthouse2 from '@/assets/penthouse-2.jpg';
-import penthouse3 from '@/assets/penthouse-3.jpg';
-import penthouse4 from '@/assets/penthouse-4.jpg';
+import penthouse1 from '@/assets/penthouse-1.webp';
+import penthouse2 from '@/assets/penthouse-2.webp';
+import penthouse3 from '@/assets/penthouse-3.webp';
+import penthouse4 from '@/assets/penthouse-4.webp';
 
 const PenthouseHerastrau = () => {
   const images = [

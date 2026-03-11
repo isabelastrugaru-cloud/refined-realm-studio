@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import finisaje from '@/assets/blog/finisaje-premium.jpg';
+import finisaje from '@/assets/blog/finisaje-premium.webp';
 
 const FinisajePremium = () => {
   return (

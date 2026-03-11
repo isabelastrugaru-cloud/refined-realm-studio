@@ -1,26 +1,30 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroInterior from '@/assets/hero-interior.jpg';
-import luxuryBedroom from '@/assets/luxury-bedroom.jpg';
-import luxuryKitchen from '@/assets/luxury-kitchen.jpg';
+import heroInterior from '@/assets/hero-interior.webp';
+import luxuryBedroom from '@/assets/luxury-bedroom.webp';
+import luxuryKitchen from '@/assets/luxury-kitchen.webp';
 
 const Home = () => {
   const { t } = useLanguage();
   
   const projects = [{
     id: 1,
+    slug: 'penthouse-herastrau',
     image: luxuryBedroom,
     title: t('home.penthouse'),
     category: t('home.residential')
   }, {
     id: 2,
+    slug: 'villa-pipera',
     image: luxuryKitchen,
     title: t('home.villa'),
     category: t('home.residential')
   }, {
     id: 3,
+    slug: 'apartament-primaverii',
     image: heroInterior,
     title: t('home.showroom'),
     category: t('home.commercial')
@@ -45,9 +49,11 @@ const Home = () => {
           <div className="flex justify-center animate-fade-in-up" style={{
             animationDelay: '0.4s'
           }}>
-            <Button variant="luxury" size="xl" className="group">
-              {t('home.heroCta')}
-            </Button>
+            <Link to="/contact">
+              <Button variant="luxury" size="xl" className="group">
+                {t('home.heroCta')}
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -78,17 +84,19 @@ const Home = () => {
                   <span className="font-inter text-foreground">{t('home.feature3')}</span>
                 </div>
               </div>
-              <Button variant="outline" size="lg">
-                {t('home.readStory')}
-              </Button>
+              <Link to="/despre">
+                <Button variant="outline" size="lg">
+                  {t('home.readStory')}
+                </Button>
+              </Link>
             </div>
             <div className="grid grid-cols-2 gap-3 md:gap-4 animate-scale-in">
               <div className="space-y-3 md:space-y-4">
-                <img src={luxuryBedroom} alt="Interior design luxury bedroom" className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
-                <img src={luxuryKitchen} alt="Luxury kitchen interior design" className="w-full h-36 sm:h-40 md:h-48 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src={luxuryBedroom} alt="Interior design luxury bedroom" loading="lazy" className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src={luxuryKitchen} alt="Luxury kitchen interior design" loading="lazy" className="w-full h-36 sm:h-40 md:h-48 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
               </div>
               <div className="mt-6 sm:mt-8">
-                <img src={heroInterior} alt="Modern luxury interior design living room" className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src={heroInterior} alt="Modern luxury interior design living room" loading="lazy" className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
               </div>
             </div>
           </div>
@@ -109,26 +117,28 @@ const Home = () => {
           
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
-              <div key={project.id} className="group cursor-pointer animate-fade-in" style={{
+              <Link key={project.id} to={`/proiecte/${project.slug}`} className="group block animate-fade-in" style={{
                 animationDelay: `${index * 0.1}s`
               }}>
                 <div className="relative overflow-hidden rounded-lg shadow-subtle group-hover:shadow-luxury transition-all duration-500">
-                  <img src={project.image} alt={project.title} className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={project.image} alt={project.title} loading="lazy" className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                     <p className="font-inter text-sm text-luxury mb-1">{project.category}</p>
                     <h3 className="font-playfair text-2xl font-bold">{project.title}</h3>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="luxury" size="lg">
-              {t('home.viewPortfolio')}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/portofoliu">
+              <Button variant="luxury" size="lg">
+                {t('home.viewPortfolio')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -140,10 +150,12 @@ const Home = () => {
             {t('home.ctaTitle')}
           </h2>
           
-          <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
-            {t('home.heroCta')}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/contact">
+            <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
+              {t('home.heroCta')}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

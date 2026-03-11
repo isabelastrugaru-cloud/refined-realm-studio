@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import minimalism from '@/assets/blog/minimalismul-scandinav.jpg';
+import minimalism from '@/assets/blog/minimalismul-scandinav.webp';
 
 const MinimalismulScandinav = () => {
   return (

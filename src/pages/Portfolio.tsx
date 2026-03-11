@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroInterior from '@/assets/hero-interior.jpg';
-import luxuryBedroom from '@/assets/luxury-bedroom.jpg';
-import luxuryKitchen from '@/assets/luxury-kitchen.jpg';
+import heroInterior from '@/assets/hero-interior.webp';
+import luxuryBedroom from '@/assets/luxury-bedroom.webp';
+import luxuryKitchen from '@/assets/luxury-kitchen.webp';
 
 const Portfolio = () => {
   const { t } = useLanguage();
@@ -22,6 +22,7 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      slug: 'penthouse-herastrau',
       title: 'Penthouse Exclusivist Herastrau',
       category: t('portfolio.penthouse'),
       area: '280 mp',
@@ -31,6 +32,7 @@ const Portfolio = () => {
     },
     {
       id: 2,
+      slug: 'villa-pipera',
       title: 'Villa Moderna Pipera',
       category: t('portfolio.villa'),
       area: '450 mp',
@@ -40,6 +42,7 @@ const Portfolio = () => {
     },
     {
       id: 3,
+      slug: 'apartament-primaverii',
       title: 'Apartament de Lux Primaverii',
       category: t('portfolio.residential'),
       area: '180 mp',
@@ -91,19 +94,21 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredProjects.map((project, index) => (
-              <div 
-                key={project.id} 
-                className="group cursor-pointer animate-fade-in"
+              <Link
+                key={project.id}
+                to={`/proiecte/${project.slug}`}
+                className="block group cursor-pointer animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-700">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   {/* Project Info Overlay */}
                   <div className="absolute inset-0 p-6 flex flex-col justify-end text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                     <div className="flex items-center gap-4 text-sm mb-2">
@@ -117,12 +122,10 @@ const Portfolio = () => {
                     <p className="font-inter text-white/90 mb-4 leading-relaxed">
                       {project.description}
                     </p>
-                    <Link to={`/proiecte/${project.id === 1 ? 'penthouse-herastrau' : project.id === 2 ? 'villa-pipera' : 'apartament-primaverii'}`}>
-                      <Button variant="outline-light" size="sm" className="self-start">
-                        {t('portfolio.viewDetails')}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                    <Button variant="outline-light" size="sm" className="self-start" tabIndex={-1}>
+                      {t('portfolio.viewDetails')}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </div>
                 </div>
 
@@ -142,7 +145,7 @@ const Portfolio = () => {
                     {project.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -170,8 +173,8 @@ const Portfolio = () => {
                 className="text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-luxury/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="font-playfair text-2xl font-bold text-luxury">{phase.step}</span>
+                <div className="w-16 h-16 bg-luxury/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="font-playfair text-2xl font-bold text-luxury-dark">{phase.step}</span>
                 </div>
                 <h3 className="font-playfair text-xl font-bold text-foreground mb-3">{phase.title}</h3>
                 <p className="font-inter text-muted-foreground">{phase.description}</p>
@@ -180,10 +183,12 @@ const Portfolio = () => {
           </div>
           
           <div className="mt-16">
-            <Button variant="luxury" size="lg">
-              {t('portfolio.startProject')}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/contact">
+              <Button variant="luxury" size="lg">
+                {t('portfolio.startProject')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

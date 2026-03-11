@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check, Star, Home, Building, ShoppingBag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
@@ -8,6 +9,7 @@ const Services = () => {
 
   const services = [
     {
+      id: 'design-interior-complet',
       icon: Home,
       title: t('services.completeDesignTitle'),
       features: [
@@ -22,6 +24,7 @@ const Services = () => {
       description: t('services.completeDesignDesc')
     },
     {
+      id: 'consultanta-design',
       icon: Building,
       title: t('services.consultancyTitle'),
       features: [
@@ -36,6 +39,7 @@ const Services = () => {
       description: t('services.consultancyDesc')
     },
     {
+      id: 'mobilier-premium',
       icon: ShoppingBag,
       title: t('services.furnitureTitle'),
       features: [
@@ -56,25 +60,25 @@ const Services = () => {
       step: '01',
       title: t('services.step1Title'),
       description: t('services.step1Desc'),
-      duration: '2-3 ore',
+      duration: t('services.duration1'),
     },
     {
       step: '02',
       title: t('services.step2Title'),
       description: t('services.step2Desc'),
-      duration: '1-2 săptămâni',
+      duration: t('services.duration2'),
     },
     {
       step: '03',
       title: t('services.step3Title'),
       description: t('services.step3Desc'),
-      duration: '1 săptămână',
+      duration: t('services.duration3'),
     },
     {
       step: '04',
       title: t('services.step4Title'),
       description: t('services.step4Desc'),
-      duration: '4-12 săptămâni',
+      duration: t('services.duration4'),
     },
   ];
 
@@ -99,9 +103,10 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
-              <div 
-                key={index} 
-                className={`relative bg-card rounded-2xl shadow-subtle hover:shadow-luxury transition-all duration-500 p-4 sm:p-6 md:p-8 animate-fade-in ${
+              <div
+                key={index}
+                id={service.id}
+                className={`relative bg-card rounded-2xl scroll-mt-32 shadow-subtle hover:shadow-luxury transition-all duration-500 p-4 sm:p-6 md:p-8 animate-fade-in ${
                   service.popular ? 'ring-2 ring-luxury lg:transform lg:scale-105' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -113,7 +118,7 @@ const Services = () => {
                     </div>
                   </div>
                 )}
-                
+
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 bg-luxury/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <service.icon className="w-8 h-8 text-luxury" />
@@ -135,14 +140,16 @@ const Services = () => {
                   ))}
                 </div>
 
-                <Button 
-                  variant={service.popular ? "luxury" : "outline"} 
-                  className="w-full"
-                  size="lg"
-                >
-                  {t('services.requestQuote')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <Link to={`/contact?service=${service.id}`}>
+                  <Button
+                    variant={service.popular ? "luxury" : "outline"}
+                    className="w-full"
+                    size="lg"
+                  >
+                    {t('services.requestQuote')}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
@@ -163,14 +170,14 @@ const Services = () => {
 
           <div className="space-y-8 md:space-y-12">
             {process.map((phase, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-luxury/20 rounded-full flex items-center justify-center">
-                    <span className="font-playfair text-xl sm:text-2xl font-bold text-luxury">{phase.step}</span>
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-luxury/10 rounded-full flex items-center justify-center">
+                    <span className="font-playfair text-xl sm:text-2xl font-bold text-luxury-dark">{phase.step}</span>
                   </div>
                 </div>
                 <div className="flex-1 text-center sm:text-left">
@@ -180,7 +187,7 @@ const Services = () => {
                   <p className="font-inter text-base sm:text-lg text-muted-foreground mb-2">
                     {phase.description}
                   </p>
-                  <div className="inline-flex items-center bg-luxury/10 text-luxury px-4 py-2 rounded-full font-medium text-sm">
+                  <div className="inline-flex items-center bg-white/70 text-foreground px-4 py-2 rounded-full font-medium text-sm">
                     <Star className="w-4 h-4 mr-2" />
                     {t('services.duration')}: {phase.duration}
                   </div>
@@ -200,10 +207,12 @@ const Services = () => {
           <p className="font-inter text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-fade-in-up max-w-2xl mx-auto">
             {t('services.ctaDescription')}
           </p>
-          <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
-            {t('services.scheduleFree')}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/contact">
+            <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
+              {t('services.scheduleFree')}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

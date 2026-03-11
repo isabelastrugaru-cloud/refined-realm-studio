@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import culori from '@/assets/blog/psihologia-culorilor.jpg';
+import culori from '@/assets/blog/psihologia-culorilor.webp';
 
 const CuloriSiTexturi2025 = () => {
   return (

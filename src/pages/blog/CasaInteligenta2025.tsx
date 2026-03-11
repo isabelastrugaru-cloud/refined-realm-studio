@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import iluminat from '@/assets/blog/iluminat-perfect.jpg';
+import iluminat from '@/assets/blog/iluminat-perfect.webp';
 
 const CasaInteligenta2025 = () => {
   return (

@@ -12,6 +12,14 @@ export default {
         "2xl": "1400px",
       },
     },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'nav': '1100px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -49,6 +57,7 @@ export default {
         },
         luxury: {
           DEFAULT: "hsl(var(--luxury))",
+          dark: "hsl(var(--luxury-dark))",
           foreground: "hsl(var(--luxury-foreground))",
         },
         premium: {
@@ -122,11 +131,11 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.3s ease-out",
         "accordion-up": "accordion-up 0.3s ease-out",
-        "fade-in": "fade-in 0.6s ease-out",
-        "fade-in-up": "fade-in-up 0.8s ease-out",
+        "fade-in": "fade-in 0.6s ease-out both",
+        "fade-in-up": "fade-in-up 0.8s ease-out both",
         "slide-in-right": "slide-in-right 0.5s ease-out",
-        "scale-in": "scale-in 0.4s ease-out",
-        "luxury-glow": "luxury-glow 3s ease-in-out infinite",
+        "scale-in": "scale-in 0.4s ease-out both",
+        "luxury-glow": "luxury-glow 5s ease-in-out infinite",
       },
     },
   },

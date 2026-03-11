@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import spatii from '@/assets/blog/spatii-mici.jpg';
+import spatii from '@/assets/blog/spatii-mici.webp';
 
 const SpatiiMici = () => {
   return (

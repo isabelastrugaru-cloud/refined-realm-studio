@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import tendinte2024 from '@/assets/blog/tendinte-2024.jpg';
+import tendinte2024 from '@/assets/blog/tendinte-2024.webp';
 
 const TendinteDesign2024 = () => {
   return (

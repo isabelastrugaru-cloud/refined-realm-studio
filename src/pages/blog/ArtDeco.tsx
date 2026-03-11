@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import artdeco from '@/assets/blog/art-deco.jpg';
+import artdeco from '@/assets/blog/art-deco.webp';
 
 const ArtDeco = () => {
   return (

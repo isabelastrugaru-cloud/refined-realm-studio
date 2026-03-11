@@ -2,70 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, BookOpen, FileText, Layers, Package, Check, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from '@/contexts/LanguageContext';
-import shopHero from "@/assets/shop-hero.jpg";
-import architectureManual from "@/assets/architecture-manual.jpg";
+import { products } from '@/data/products';
+import shopHero from "@/assets/shop-hero.webp";
+import architectureManual from "@/assets/architecture-manual.webp";
 import { useState } from "react";
-
-interface Product {
-  id: string;
-  title: string;
-  description: string;
-  price: string;
-  category: string[];
-}
-
-const products: Product[] = [
-  {
-    id: "starter-pack",
-    title: "Starter Pack Client",
-    description: "Set profesional pentru prima interacțiune cu un client: ghiduri, chestionare și documente esențiale. Te ajută să creezi un proces clar, premium și coerent de la primul contact.",
-    price: "€20",
-    category: ["toate", "pachete"]
-  },
-  {
-    id: "bathroom-complete",
-    title: "Bathroom eBook + CAD Files + Template",
-    description: "Pachet complet pentru proiectarea băilor: ebook detaliat, fișiere CAD + template profesional. Tot ce ai nevoie pentru proiecte tehnic corecte și estetic impecabile.",
-    price: "€50",
-    category: ["toate", "pachete", "ebook", "cad", "template"]
-  },
-  {
-    id: "beige-contract",
-    title: "BEIGE – Template Contract & Ofertă de Preț",
-    description: "Document elegant și ușor de personalizat pentru contracte și oferte. Construit pentru a transmite profesionalism și consecvență în relația cu clientul.",
-    price: "€20",
-    category: ["toate", "template"]
-  },
-  {
-    id: "green-presentation",
-    title: "GREEN – Template Prezentare Companie",
-    description: "Template minimalist, perfect pentru pitch-uri, colaborări B2B, întâlniri corporate și prezentarea agenției tale.",
-    price: "€20",
-    category: ["toate", "template"]
-  },
-  {
-    id: "kitchen-ebook",
-    title: "Kitchen eBook + CAD Files",
-    description: "Ghid complet pentru proiectarea bucătăriilor + fișiere CAD organizate. Ideal pentru proiecte rapide, corecte și super profesionale.",
-    price: "€50",
-    category: ["toate", "ebook", "cad"]
-  },
-  {
-    id: "bathroom-v2",
-    title: "Bathroom eBook + CAD Files + Template (V2)",
-    description: "Pachet complet alternativ pentru proiecte de băi: detalii tehnice, fișiere CAD + template premium pentru prezentări.",
-    price: "€50",
-    category: ["toate", "pachete", "ebook", "cad", "template"]
-  },
-  {
-    id: "millwork-guide",
-    title: "Millwork – Ghid complet pentru mobilier custom",
-    description: "Ghid premium cu dimensiuni standard, detalii tehnice, exemple concrete pentru bucătării, dressing-uri, biblioteci. Resursa perfectă pentru un flux de lucru mai rapid, mai coerent și mai sigur — fără erori, fără improvizații.",
-    price: "€50",
-    category: ["toate", "ebook"]
-  }
-];
 
 const Shop = () => {
   const { t } = useLanguage();
@@ -163,22 +105,25 @@ const Shop = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
-              <Card key={product.id} className="flex flex-col hover:shadow-luxury transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="font-playfair text-2xl">{product.title}</CardTitle>
-                  <CardDescription className="text-base leading-relaxed mt-4">
-                    {product.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <p className="text-3xl font-bold text-luxury">{product.price}</p>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" className="w-full" disabled>
-                    {t('shop.comingSoon')}
-                  </Button>
-                </CardFooter>
-              </Card>
+              <Link key={product.id} to={`/shop/${product.id}`} className="flex">
+                <Card className="flex flex-col hover:shadow-luxury transition-shadow duration-300 w-full">
+                  <CardHeader>
+                    <CardTitle className="font-playfair text-2xl">{t(`products.${product.translationKey}.title`)}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed mt-4">
+                      {t(`products.${product.translationKey}.description`)}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <p className="text-3xl font-bold text-luxury">{product.price}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button variant="outline" className="w-full">
+                      {t('shop.viewProduct')}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -205,7 +150,7 @@ const Shop = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20">
+      <section id="testimonials" className="py-20 scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="bg-muted/50">

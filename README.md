@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Design Interior București — Jubilee Luxury Design
 
-## Project info
+Luxury interior design studio website for [designinteriorbucuresti.ro](https://designinteriorbucuresti.ro).
 
-**URL**: https://lovable.dev/projects/14528980-be40-44ac-a7da-34093cfd3466
+## Tech Stack
 
-## How can I edit this code?
+React 18 | TypeScript | Vite | Tailwind CSS | shadcn/ui | React Router v6 | TanStack Query
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/14528980-be40-44ac-a7da-34093cfd3466) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+**Prerequisites**: Node.js (v18+) and npm
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server (localhost:8080)
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── App.tsx                  # Routing configuration
+├── index.css                # Design system (CSS variables)
+├── assets/                  # Images (project photos, blog, logo)
+├── components/
+│   ├── Navigation.tsx       # Responsive nav bar
+│   ├── Footer.tsx           # Site footer
+│   ├── Layout.tsx           # Page layout wrapper
+│   ├── LanguageSelector.tsx # RO/EN/ES switcher
+│   ├── CookieConsent.tsx    # GDPR cookie banner
+│   └── ui/                  # 49 shadcn/ui components
+├── contexts/
+│   └── LanguageContext.tsx   # i18n translations (ro/en/es)
+├── data/
+│   └── products.ts          # Shop product definitions
+├── hooks/                   # Custom hooks (use-mobile, use-toast)
+├── lib/
+│   └── utils.ts             # cn() utility
+└── pages/
+    ├── Home.tsx, About.tsx, Portfolio.tsx, Services.tsx,
+    │   Blog.tsx, Contact.tsx, Shop.tsx, ProductDetail.tsx
+    ├── blog/                # 15 blog article pages
+    ├── projects/            # 3 project detail pages
+    └── PoliticaConfidentialitate.tsx, TermeniConditii.tsx, PoliticaCookies.tsx
+```
 
-**Use GitHub Codespaces**
+## Available Scripts
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+| Script | Command | Description |
+|---|---|---|
+| `dev` | `npm run dev` | Start dev server on port 8080 |
+| `build` | `npm run build` | Production build |
+| `build:dev` | `npm run build:dev` | Development build |
+| `lint` | `npm run lint` | Run ESLint |
+| `preview` | `npm run preview` | Preview production build |
 
-## What technologies are used for this project?
+## Key Features
 
-This project is built with:
+- **Multilingual**: Romanian (default), English, Spanish — all UI text translated
+- **Luxury design system**: Gold accent palette, Playfair Display + Inter fonts, custom animations
+- **Digital products shop**: 7 products with Stripe checkout integration
+- **Contact form**: Netlify Forms integration (no backend needed)
+- **Blog**: 15 articles on interior design trends and tips
+- **Portfolio**: 3 detailed project showcases with image galleries
+- **Responsive**: Custom `nav` breakpoint at 1100px for navigation
+- **SEO**: Open Graph tags, Twitter Cards, canonical URLs, structured metadata
+- **GDPR**: Cookie consent banner, privacy policy, terms & conditions
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+Deployed on **Netlify** with built-in form processing. The site is a static SPA — no backend server or database required.
 
-Simply open [Lovable](https://lovable.dev/projects/14528980-be40-44ac-a7da-34093cfd3466) and click on Share -> Publish.
+## Documentation
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+See [`docs/IMPLEMENTATION.md`](docs/IMPLEMENTATION.md) for full implementation details including routing, design system, components, and architecture.

@@ -11,13 +11,13 @@ const Footer = () => {
   const footerLinks = {
     servicii: [{
       name: t('footer.completeDesign'),
-      href: '/servicii'
+      href: '/servicii#design-interior-complet'
     }, {
       name: t('footer.designConsultancy'),
-      href: '/servicii'
+      href: '/servicii#consultanta-design'
     }, {
       name: t('footer.premiumFurniture'),
-      href: '/servicii'
+      href: '/servicii#mobilier-premium'
     }, {
       name: t('footer.commercialDesign'),
       href: '/servicii'
@@ -30,14 +30,14 @@ const Footer = () => {
       name: t('footer.portfolio'),
       href: '/portofoliu'
     }, {
-      name: t('footer.testimonials'),
-      href: '/testimoniale'
-    }, {
       name: t('footer.designBlog'),
       href: '/blog'
     }, {
-      name: t('footer.styleGuide'),
-      href: '#'
+      name: t('nav.shop'),
+      href: '/shop'
+    }, {
+      name: t('footer.testimonials'),
+      href: '/shop#testimonials'
     }]
   };
 
@@ -67,13 +67,14 @@ const Footer = () => {
             <p className="font-inter text-white/80 mb-6 md:mb-8 text-base sm:text-lg px-4">
               {t('footer.inspirationDescription')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md mx-auto px-4">
-              <input 
-                type="email" 
-                placeholder={t('footer.emailPlaceholder')} 
-                className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm" 
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 max-w-md mx-auto px-4 sm:items-stretch">
+              <input
+                type="email"
+                placeholder={t('footer.emailPlaceholder')}
+                aria-label="Email newsletter"
+                className="flex-1 px-4 py-3 text-sm sm:text-base rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-luxury backdrop-blur-sm"
               />
-              <Button variant="luxury" className="text-sm sm:text-base">
+              <Button variant="luxury" className="text-sm sm:text-base h-auto py-3">
                 {t('footer.subscribe')}
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
@@ -98,20 +99,20 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-center">
+              <a href="tel:+40752490173" className="flex items-center hover:text-luxury transition-colors duration-300">
                 <Phone className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
                 <span className="font-inter text-white/90">+40 752 490 173</span>
-              </div>
-              <div className="flex items-center">
+              </a>
+              <a href="mailto:office@designinteriorbucuresti.ro" className="flex items-center hover:text-luxury transition-colors duration-300">
                 <Mail className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
                 <span className="font-inter text-white/90">office@designinteriorbucuresti.ro</span>
-              </div>
-              <div className="flex items-start">
+              </a>
+              <a href="https://maps.app.goo.gl/rYLqVRsjxr6eKiVRA" target="_blank" rel="noopener noreferrer" className="flex items-start hover:text-luxury transition-colors duration-300">
                 <MapPin className="w-5 h-5 text-luxury mr-3 flex-shrink-0 mt-0.5" />
                 <span className="font-inter text-white/90">
                   Str. Erou Iancu Nicolae 61, București
                 </span>
-              </div>
+              </a>
             </div>
 
             {/* Social Links */}
@@ -146,7 +147,7 @@ const Footer = () => {
           </div>
 
           {/* About */}
-          <div>
+          <div className="lg:text-center">
             <h4 className="font-playfair text-xl font-bold text-white mb-6">
               {t('footer.aboutUs')}
             </h4>
@@ -162,7 +163,7 @@ const Footer = () => {
           </div>
 
           {/* Resources */}
-          <div>
+          <div className="lg:text-right">
             <h4 className="font-playfair text-xl font-bold text-white mb-6">
               {t('footer.resources')}
             </h4>
@@ -184,7 +185,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-inter text-white/60 text-xs sm:text-sm text-center md:text-left">
-              © {currentYear} Jubilee Luxury Design. {t('footer.allRights')}
+              © {currentYear} Jubilee Luxury Design SRL. {t('footer.allRights')}
             </p>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
               <Link to="/politica-confidentialitate" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
@@ -196,6 +197,8 @@ const Footer = () => {
               <Link to="/cookies" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">
                 {t('footer.cookiesPolicy')}
               </Link>
+              <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="noopener noreferrer" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">ANPC - SAL</a>
+              <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer" className="font-inter text-white/60 hover:text-luxury text-sm transition-colors duration-300">ANPC - SOL</a>
             </div>
           </div>
         </div>

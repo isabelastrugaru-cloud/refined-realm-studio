@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, MapPin, Calendar, Maximize } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import villa1 from '@/assets/villa-1.jpg';
-import villa2 from '@/assets/villa-2.jpg';
-import villa3 from '@/assets/villa-3.jpg';
-import villa4 from '@/assets/villa-4.jpg';
+import villa1 from '@/assets/villa-1.webp';
+import villa2 from '@/assets/villa-2.webp';
+import villa3 from '@/assets/villa-3.webp';
+import villa4 from '@/assets/villa-4.webp';
 
 const VillaPipera = () => {
   const images = [

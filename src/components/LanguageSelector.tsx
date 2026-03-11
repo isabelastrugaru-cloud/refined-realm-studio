@@ -21,7 +21,7 @@ const LanguageSelector: React.FC = () => {
   const currentLang = languages.find(l => l.code === language);
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="flex items-center gap-2 hover:bg-luxury/10">
           <Globe className="h-4 w-4" />
