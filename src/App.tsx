@@ -6,8 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import CookieConsent from "./components/CookieConsent";
+import Home from "./pages/Home";
 
-const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Services = lazy(() => import("./pages/Services"));
