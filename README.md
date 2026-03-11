@@ -55,7 +55,7 @@ src/
 | Script | Command | Description |
 |---|---|---|
 | `dev` | `npm run dev` | Start dev server on port 8080 |
-| `build` | `npm run build` | Production build |
+| `build` | `npm run build` | Production build (includes prerendering 35 routes) |
 | `build:dev` | `npm run build:dev` | Development build |
 | `lint` | `npm run lint` | Run ESLint |
 | `preview` | `npm run preview` | Preview production build |
@@ -69,12 +69,12 @@ src/
 - **Blog**: 15 articles on interior design trends and tips
 - **Portfolio**: 3 detailed project showcases with image galleries
 - **Responsive**: Custom `nav` breakpoint at 1100px for navigation
-- **SEO**: Open Graph tags, Twitter Cards, canonical URLs, structured metadata
+- **SEO**: 35 routes prerendered at build time, per-page meta tags, hreflang, JSON-LD, Open Graph, Twitter Cards
 - **GDPR**: Cookie consent banner, privacy policy, terms & conditions
 
 ## Deployment
 
-Deployed on **Netlify** with built-in form processing. The site is a static SPA — no backend server or database required.
+Deployed on **Netlify** with built-in form processing. All 35 routes are prerendered at build time (Vite SSR + `renderToString`) so crawlers receive full HTML. No backend server or database required.
 
 ## Documentation
 

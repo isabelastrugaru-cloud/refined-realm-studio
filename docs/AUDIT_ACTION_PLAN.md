@@ -13,10 +13,10 @@ A comprehensive website audit was performed on 5 March 2026 covering 10 categori
 **Critical blockers identified:**
 - Zero legal pages (GDPR non-compliant) — **FIXED**
 - Contact form was decorative (no backend) — **FIXED**
-- SPA renders empty `<div id="root"></div>` to crawlers — **NOT FIXED** (requires SSR/prerendering)
+- SPA renders empty `<div id="root"></div>` to crawlers — **FIXED** (35 routes prerendered at build time)
 - All social links pointed to `#` — **NEEDS EXTERNAL INPUT**
 
-**Post-remediation estimate:** ~65–70 / 103 after all code fixes are applied; remaining points require external input (real images, testimonials, social URLs, legal data, Stripe links).
+**Post-remediation estimate:** ~75–80 / 103 after all code fixes applied (including SPA prerendering); remaining points require external input (real images, testimonials, social URLs, legal data, Stripe links).
 
 ---
 
@@ -141,20 +141,20 @@ A comprehensive website audit was performed on 5 March 2026 covering 10 categori
 
 ### Phase 1 — Infrastructure (Highest Impact)
 
-#### 3.1 SPA Prerendering / SSR
+#### 3.1 SPA Prerendering / SSR — **FIXED**
 
-**Problem:** Google crawlers receive an empty `<div id="root"></div>` — no indexable content for any of the 28+ pages.
+**Problem:** Google crawlers received an empty `<div id="root"></div>` — no indexable content for any of the 28+ pages.
 
-**Impact:** This single issue blocks nearly all SEO scoring.
+**Resolution:** Vite SSR build + `renderToString` (no Puppeteer or headless browser needed).
 
-**Options (in order of complexity):**
-1. **`prerender-spa-plugin`** — Static prerendering at build time. Easiest for current Vite + React setup. Generates static HTML for each route.
-2. **`vite-plugin-ssr` (Vike)** — Full SSR with Vite. More complex but enables dynamic meta tags per route.
-3. **Next.js migration** — Most robust but requires full rewrite of routing and data fetching.
-
-**Recommendation:** Option 1 for immediate SEO gains; Option 2 if dynamic per-page meta is a priority.
-
-**Files affected:** `vite.config.ts`, `package.json`, potentially all page components for meta tags.
+- **Approach:** Custom prerender script using React's `renderToString` with `StaticRouter` and `HelmetProvider`
+- **Files added/modified:**
+  - `src/entry-server.tsx` — server-side render function exporting `render(url)`
+  - `scripts/prerender.mjs` — build-time prerender script that generates static HTML for all routes
+  - `src/main.tsx` — updated to use `hydrateRoot` instead of `createRoot` when prerendered HTML is present
+  - `package.json` — build pipeline: `vite build` → `vite build --ssr` → `node scripts/prerender.mjs`
+- **Result:** 35 routes prerendered with full HTML content, including Helmet meta tags (title, canonical, hreflang, OG, JSON-LD structured data)
+- `dist/server/` cleaned up automatically after prerender step
 
 #### 3.2 sitemap.xml
 
@@ -416,7 +416,7 @@ These are lower-priority optimizations that improve performance and maintainabil
 After implementing remaining fixes, verify with:
 
 ### Automated
-- [ ] `npm run build` — zero errors
+- [x] `npm run build` — zero errors (35/35 routes prerendered)
 - [ ] `npm run lint` — zero warnings
 - [ ] Lighthouse audit — target 90+ on all categories
 - [ ] axe DevTools — zero accessibility violations

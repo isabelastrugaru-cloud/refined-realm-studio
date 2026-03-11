@@ -17,7 +17,7 @@
 | TanStack Query | 5.83 | Async state management |
 | Lucide React | 0.462 | Icons |
 | React Hook Form + Zod | 7.61 / 3.25 | Form handling & validation |
-| Recharts | 2.15 | Charts |
+| react-helmet-async | 2.0 | Per-page meta tags (SSR-compatible) |
 | Embla Carousel | 8.6 | Carousel component |
 
 ## Project Structure
@@ -25,7 +25,8 @@
 ```
 src/
 ├── App.tsx                     # Root component, routing configuration
-├── main.tsx                    # Entry point, LanguageProvider wrap
+├── main.tsx                    # Entry point — hydrateRoot (prerendered) or createRoot (dev)
+├── entry-server.tsx            # SSR render function for build-time prerendering
 ├── index.css                   # Design system CSS variables, Tailwind layers
 ├── vite-env.d.ts
 ├── assets/                     # Images (project photos, blog, shop hero, logo)
@@ -111,6 +112,8 @@ Root files:
 ```
 ├── index.html                  # HTML entry point (OG tags, fonts, Netlify form)
 ├── package.json
+├── scripts/
+│   └── prerender.mjs           # Build-time prerender script (35 routes)
 ├── vite.config.ts              # Dev server on port 8080, @ alias
 ├── tailwind.config.ts          # Custom theme, nav breakpoint, animations
 ├── tsconfig.json               # Path aliases, relaxed strict mode
@@ -370,10 +373,27 @@ Supabase was previously integrated but has been **removed**. The project has no 
 
 ## SEO
 
-Configured in `index.html`:
+### SPA Prerendering
+
+All 35 routes are prerendered at build time so crawlers receive full HTML content instead of an empty `<div id="root">`.
+
+**Build pipeline:** `vite build` → `vite build --ssr` → `node scripts/prerender.mjs`
+
+- `src/entry-server.tsx` — exports a `render(url)` function using `renderToString` + `StaticRouter` + `HelmetProvider`
+- `scripts/prerender.mjs` — iterates all routes, calls `render()`, injects HTML + Helmet tags into `index.html`, writes static files
+- `src/main.tsx` — uses `hydrateRoot` when prerendered content is detected, `createRoot` otherwise (dev mode)
+- `dist/server/` is cleaned up automatically after prerendering
+
+Each prerendered page includes per-page `<title>`, `<meta description>`, canonical URL, hreflang tags, Open Graph tags, and JSON-LD structured data via `react-helmet-async`.
+
+### Meta Tags
+
+Configured in `index.html` (defaults) and per-page via `<SEO>` component (`react-helmet-async`):
 - Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`)
 - Twitter Card tags (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`)
 - Canonical URL
+- Hreflang tags (ro, en, es, x-default)
+- JSON-LD structured data (LocalBusiness, Service)
 - Robots meta tag
 - Romanian language attribute (`lang="ro"`)
 - Favicon and apple-touch-icon

@@ -22,7 +22,7 @@ Quick-reference checklist of remaining items. See `docs/AUDIT_ACTION_PLAN.md` fo
 
 ## Infrastructure
 
-- [ ] **SPA prerendering** — crawlers get empty `<div id="root">` (critical for SEO)
+- [x] **SPA prerendering** — 35 routes prerendered at build time via Vite SSR + `renderToString`
 - [x] **sitemap.xml** — `public/sitemap.xml` with 36 routes
 - [x] **Security headers** — CSP, X-Frame-Options, etc. via `netlify.toml`
 - [x] **Netlify config** — build settings, SPA redirects in `netlify.toml`
@@ -70,9 +70,7 @@ Quick-reference checklist of remaining items. See `docs/AUDIT_ACTION_PLAN.md` fo
 ## Post-Launch Optimization
 
 - [x] Image optimization — all images converted to WebP
-- [ ] AVIF conversion for further compression (optional)
 - [x] Lazy loading for below-fold images (project galleries, shop)
-- [ ] Font loading optimization (reduce Google Fonts variants, self-host)
 - [ ] Translation architecture (split 750+ line file into per-language JSON)
 - [ ] Conversion tracking setup
 - [ ] Uptime monitoring
