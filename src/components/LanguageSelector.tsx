@@ -23,7 +23,7 @@ const LanguageSelector: React.FC = () => {
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="flex items-center gap-2 hover:bg-luxury/10">
+        <Button variant="ghost" size="sm" className="flex items-center gap-2 hover:bg-luxury/10" aria-label="Select language">
           <Globe className="h-4 w-4" />
           <span className="hidden sm:inline">{currentLang?.flag}</span>
         </Button>

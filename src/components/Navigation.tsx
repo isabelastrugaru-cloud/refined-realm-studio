@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
-import logo from '@/assets/logo.svg';
+const logo = '/logo.svg';
 import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -38,12 +38,12 @@ const Navigation = () => {
         <div className="flex items-center justify-center h-20 relative z-50">
           {/* Mobile Logo - Centered */}
           <Link to="/" className="nav:hidden flex items-center hover:opacity-80 transition-opacity duration-300 absolute left-0">
-            <img src={logo} alt="Design Interior Bucuresti" className="h-14 w-auto" />
+            <img src={logo} alt="Design Interior Bucuresti" className="h-14 w-auto" fetchPriority="high" />
           </Link>
 
           {/* Desktop - Logo on the left */}
           <Link to="/" className="hidden nav:flex items-center hover:opacity-80 transition-opacity duration-300 absolute left-0">
-            <img src={logo} alt="Design Interior Bucuresti" className="h-20 w-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] brightness-105" />
+            <img src={logo} alt="Design Interior Bucuresti" className="h-20 w-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] brightness-105" fetchPriority="high" />
           </Link>
 
           {/* Desktop Navigation - Centered */}

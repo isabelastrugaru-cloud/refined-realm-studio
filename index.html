@@ -9,10 +9,15 @@
     <meta name="keywords" content="design interior bucuresti, design interior lux, amenajari premium, mobilier exclusivist, consultant design interior, jubilee luxury design" />
     <link rel="icon" href="/favicon.ico" />
 
-    <!-- Fonts -->
+    <!-- LCP: preload logo -->
+    <link rel="preload" as="image" href="/logo.svg" fetchpriority="high">
+
+    <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
     <meta property="og:title" content="Design Interior București — Jubilee Luxury Design" />
     <meta property="og:description" content="Studio de design interior de lux în București. Servicii complete de amenajare premium, consultanță și mobilier exclusivist." />
