@@ -398,7 +398,7 @@ const translations: Record<Language, Record<string, any>> = {
     },
     seo: {
       homeTitle: 'Design Interior București',
-      homeDesc: 'Studio de design interior de lux în București. Servicii complete de amenajare premium, consultanță design și mobilier exclusivist. Jubilee Luxury Design — 13+ ani experiență.',
+      homeDesc: 'Studio de design interior de lux în București. Servicii complete de amenajare premium, consultanță design și mobilier exclusivist.',
       aboutTitle: 'Despre Noi',
       aboutDesc: 'Povestea Jubilee Luxury Design — peste 13 ani de excelență în design interior de lux în București.',
       portfolioTitle: 'Portofoliu',
