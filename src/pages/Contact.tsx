@@ -8,6 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ArrowRight, Phone, Mail, MapPin, Clock, MessageSquare, Calendar } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEO from '@/components/SEO';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -123,6 +124,7 @@ const Contact = () => {
 
   return (
     <div className="pt-20">
+      <SEO title={t('seo.contactTitle')} description={t('seo.contactDesc')} />
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

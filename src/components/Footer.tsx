@@ -132,9 +132,9 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-playfair text-xl font-bold text-white mb-6">
+            <h3 className="font-playfair text-xl font-bold text-white mb-6">
               {t('footer.services')}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {footerLinks.servicii.map(link => (
                 <li key={link.name}>
@@ -148,9 +148,9 @@ const Footer = () => {
 
           {/* About */}
           <div className="lg:text-center">
-            <h4 className="font-playfair text-xl font-bold text-white mb-6">
+            <h3 className="font-playfair text-xl font-bold text-white mb-6">
               {t('footer.aboutUs')}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {footerLinks.despre.map(link => (
                 <li key={link.name}>
@@ -164,9 +164,9 @@ const Footer = () => {
 
           {/* Resources */}
           <div className="lg:text-right">
-            <h4 className="font-playfair text-xl font-bold text-white mb-6">
+            <h3 className="font-playfair text-xl font-bold text-white mb-6">
               {t('footer.resources')}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {footerLinks.resurse.map(link => (
                 <li key={link.name}>

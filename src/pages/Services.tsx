@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Check, Star, Home, Building, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEO from '@/components/SEO';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -13,12 +14,12 @@ const Services = () => {
       icon: Home,
       title: t('services.completeDesignTitle'),
       features: [
-        t('services.feature1'),
-        t('services.feature2'),
-        t('services.feature3'),
-        t('services.feature4'),
-        t('services.feature5'),
-        t('services.feature6')
+        t('services.completeFeature1'),
+        t('services.completeFeature2'),
+        t('services.completeFeature3'),
+        t('services.completeFeature4'),
+        t('services.completeFeature5'),
+        t('services.completeFeature6')
       ],
       popular: true,
       description: t('services.completeDesignDesc')
@@ -28,12 +29,12 @@ const Services = () => {
       icon: Building,
       title: t('services.consultancyTitle'),
       features: [
-        t('services.feature1'),
-        t('services.feature2'),
-        t('services.feature3'),
-        t('services.feature4'),
-        t('services.feature5'),
-        t('services.feature6')
+        t('services.consultancyFeature1'),
+        t('services.consultancyFeature2'),
+        t('services.consultancyFeature3'),
+        t('services.consultancyFeature4'),
+        t('services.consultancyFeature5'),
+        t('services.consultancyFeature6')
       ],
       popular: false,
       description: t('services.consultancyDesc')
@@ -43,12 +44,12 @@ const Services = () => {
       icon: ShoppingBag,
       title: t('services.furnitureTitle'),
       features: [
-        t('services.feature1'),
-        t('services.feature2'),
-        t('services.feature3'),
-        t('services.feature4'),
-        t('services.feature5'),
-        t('services.feature6')
+        t('services.furnitureFeature1'),
+        t('services.furnitureFeature2'),
+        t('services.furnitureFeature3'),
+        t('services.furnitureFeature4'),
+        t('services.furnitureFeature5'),
+        t('services.furnitureFeature6')
       ],
       popular: false,
       description: t('services.furnitureDesc')
@@ -84,6 +85,18 @@ const Services = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title={t('seo.servicesTitle')}
+        description={t('seo.servicesDesc')}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          provider: { '@id': 'https://designinteriorbucuresti.ro/#organization' },
+          name: 'Design Interior de Lux',
+          description: t('seo.servicesDesc'),
+          areaServed: { '@type': 'Country', name: 'Romania' }
+        }}
+      />
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

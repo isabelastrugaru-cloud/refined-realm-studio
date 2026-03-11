@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Award, Users, Clock, Star, Sparkles, Home, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEO from '@/components/SEO';
 
 const About = () => {
   const { t } = useLanguage();
@@ -21,15 +22,9 @@ const About = () => {
     value: '150+'
   }];
 
-  const team = [{
-    name: 'Alexandra Popescu',
-    role: 'Fondator & Design Director',
-    description: 'Cu peste 15 ani de experiență în design interior de lux, Alexandra a studiat la Milano și a lucrat cu cele mai prestigioase studiouri din Europa.',
-    credentials: ['Interior Design Institute Milano', 'ASID Member', 'BIID Certified']
-  }];
-
   return (
     <div className="pt-20">
+      <SEO title={t('seo.aboutTitle')} description={t('seo.aboutDesc')} />
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -91,24 +86,6 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto">
-              {t('about.teamDescription')}
-            </p>
-          </div>
-
-          {team.map((member, index) => (
-            <div key={index} className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-              <div className="relative animate-scale-in">
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 

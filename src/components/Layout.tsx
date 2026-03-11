@@ -1,7 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import ErrorBoundary from './ErrorBoundary';
+
+const LoadingSpinner = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-luxury/30 border-t-luxury rounded-full animate-spin" />
+  </div>
+);
 
 const Layout = () => {
   const location = useLocation();
@@ -23,7 +30,11 @@ const Layout = () => {
     <div className="min-h-screen bg-background font-inter">
       <Navigation />
       <main id="main-content">
-        <Outlet />
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
     </div>

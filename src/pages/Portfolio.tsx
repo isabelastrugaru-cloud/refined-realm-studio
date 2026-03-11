@@ -3,28 +3,23 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEO from '@/components/SEO';
 import heroInterior from '@/assets/hero-interior.webp';
 import luxuryBedroom from '@/assets/luxury-bedroom.webp';
 import luxuryKitchen from '@/assets/luxury-kitchen.webp';
 
 const Portfolio = () => {
   const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState(t('portfolio.all'));
-  
-  const filters = [
-    t('portfolio.all'), 
-    t('portfolio.residential'), 
-    t('portfolio.commercial'), 
-    t('portfolio.penthouse'), 
-    t('portfolio.villa')
-  ];
-  
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filterKeys = ['all', 'residential', 'commercial', 'penthouse', 'villa'];
+
   const projects = [
     {
       id: 1,
       slug: 'penthouse-herastrau',
       title: 'Penthouse Exclusivist Herastrau',
-      category: t('portfolio.penthouse'),
+      category: 'penthouse',
       area: '280 mp',
       year: '2023',
       image: heroInterior,
@@ -34,7 +29,7 @@ const Portfolio = () => {
       id: 2,
       slug: 'villa-pipera',
       title: 'Villa Moderna Pipera',
-      category: t('portfolio.villa'),
+      category: 'villa',
       area: '450 mp',
       year: '2023',
       image: luxuryBedroom,
@@ -44,7 +39,7 @@ const Portfolio = () => {
       id: 3,
       slug: 'apartament-primaverii',
       title: 'Apartament de Lux Primaverii',
-      category: t('portfolio.residential'),
+      category: 'residential',
       area: '180 mp',
       year: '2022',
       image: luxuryKitchen,
@@ -52,12 +47,13 @@ const Portfolio = () => {
     },
   ];
 
-  const filteredProjects = activeFilter === t('portfolio.all') 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   return (
     <div className="pt-20">
+      <SEO title={t('seo.portfolioTitle')} description={t('seo.portfolioDesc')} />
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -74,15 +70,15 @@ const Portfolio = () => {
       <section className="py-8 md:py-12 bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-            {filters.map((filter) => (
+            {filterKeys.map((key) => (
               <Button
-                key={filter}
-                variant={activeFilter === filter ? "luxury" : "outline"}
-                onClick={() => setActiveFilter(filter)}
+                key={key}
+                variant={activeFilter === key ? "luxury" : "outline"}
+                onClick={() => setActiveFilter(key)}
                 className="transition-all duration-300"
               >
                 <Filter className="mr-2 h-4 w-4" />
-                {filter}
+                {t(`portfolio.${key}`)}
               </Button>
             ))}
           </div>
@@ -113,7 +109,7 @@ const Portfolio = () => {
                   <div className="absolute inset-0 p-6 flex flex-col justify-end text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                     <div className="flex items-center gap-4 text-sm mb-2">
                       <span className="bg-luxury/20 backdrop-blur-sm px-3 py-1 rounded-full text-luxury">
-                        {project.category}
+                        {t(`portfolio.${project.category}`)}
                       </span>
                       <span>{project.area}</span>
                       <span>{project.year}</span>
@@ -133,7 +129,7 @@ const Portfolio = () => {
                 <div className="pt-6">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground mb-2">
                     <span className="bg-luxury/10 text-luxury px-3 py-1 rounded-full font-medium">
-                      {project.category}
+                      {t(`portfolio.${project.category}`)}
                     </span>
                     <span>{project.area}</span>
                     <span>{project.year}</span>

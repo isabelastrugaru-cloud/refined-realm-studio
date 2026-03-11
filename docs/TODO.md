@@ -23,46 +23,47 @@ Quick-reference checklist of remaining items. See `docs/AUDIT_ACTION_PLAN.md` fo
 ## Infrastructure
 
 - [ ] **SPA prerendering** — crawlers get empty `<div id="root">` (critical for SEO)
-- [ ] **sitemap.xml** — 28+ pages with no sitemap
-- [ ] **Security headers** — CSP, X-Frame-Options via `netlify.toml`
-- [ ] **Netlify config** — verify SPA redirects, build settings
+- [x] **sitemap.xml** — `public/sitemap.xml` with 36 routes
+- [x] **Security headers** — CSP, X-Frame-Options, etc. via `netlify.toml`
+- [x] **Netlify config** — build settings, SPA redirects in `netlify.toml`
 - [ ] **Analytics** — no tracking installed
 
 ---
 
 ## Code Fixes
 
-- [ ] **Portfolio filter bug** — `useState(t('portfolio.all'))` breaks on language switch (`src/pages/Portfolio.tsx`)
-- [ ] **Empty team section** — renders blank cards (`src/pages/About.tsx` ~lines 106–110)
-- [ ] **Identical service features** — all 3 tiers show same 6 features (`src/pages/Services.tsx` ~lines 13–51)
-- [ ] **Code splitting** — no `React.lazy()`, full bundle on first load (`src/App.tsx`)
-- [ ] **Error boundaries** — component errors = white screen (`src/App.tsx`)
-- [ ] **Remove unused deps** — ~290KB: recharts, react-day-picker, date-fns, input-otp, react-resizable-panels, next-themes, cmdk (`package.json`)
-- [ ] **Empty quality guarantee strings** — `qualityGuarantee`, `qualityDesc` empty (`src/contexts/LanguageContext.tsx`)
+- [x] **Portfolio filter bug** — uses language-agnostic keys (`src/pages/Portfolio.tsx`)
+- [x] **Blog filter bug** — uses language-agnostic keys (`src/pages/Blog.tsx`)
+- [x] **Empty team section** — hidden until real photos/bios arrive (`src/pages/About.tsx`)
+- [x] **Identical service features** — 3 tiers now have distinct features (`src/pages/Services.tsx`)
+- [x] **Code splitting** — all pages use `React.lazy()` (`src/App.tsx`)
+- [x] **Error boundaries** — `ErrorBoundary` wraps `<Outlet />` in Layout
+- [x] **Remove unused deps** — removed recharts, react-day-picker, date-fns, input-otp, react-resizable-panels, next-themes, cmdk and their UI components
+- [x] **Empty quality guarantee strings** — `qualityGuarantee`, `qualityDesc` populated in all 3 languages
 
 ---
 
 ## SEO
 
-- [ ] **Per-page meta tags** — all pages share same title/description (install `react-helmet-async`)
-- [ ] **JSON-LD structured data** — zero structured data (LocalBusiness, Service, Product, BlogPosting)
-- [ ] **Hreflang tags** — 3 languages, no `<link rel="alternate" hreflang>` tags
+- [x] **Per-page meta tags** — `react-helmet-async` with `<SEO>` component on all main pages
+- [x] **JSON-LD structured data** — LocalBusiness on home, Service on services page
+- [x] **Hreflang tags** — ro, en, es, x-default on all pages via `<SEO>` component
 
 ---
 
 ## Accessibility
 
-- [ ] **Footer heading hierarchy** — H2 → H4 skip, should be H3 (`src/components/Footer.tsx` lines 135, 151, 167)
-- [ ] **Image alt text in English** — should be Romanian or trilingual via `t()` (Home, Portfolio, About pages)
-- [ ] **Prefers-reduced-motion** — animations ignore user preference (`src/index.css`)
+- [x] **Footer heading hierarchy** — H4 → H3 (`src/components/Footer.tsx`)
+- [x] **Image alt text i18n** — trilingual via `t()` on Home page images
+- [x] **Prefers-reduced-motion** — respects user preference (`src/index.css`)
 
 ---
 
 ## Content
 
 - [ ] **Image deduplication** — 3 unique images across 8 slots (62.5% duplication, needs real photos)
-- [ ] **Missing testimonials** — footer links to nonexistent section
-- [ ] **Missing Testimoniale link target** — `/shop#testimonials` anchor doesn't exist
+- [x] **Testimonials section** — `/shop#testimonials` exists and is functional (needs real content from business owner)
+- [x] **Testimoniale link target** — `/shop#testimonials` anchor exists in Shop.tsx
 
 ---
 
@@ -70,7 +71,7 @@ Quick-reference checklist of remaining items. See `docs/AUDIT_ACTION_PLAN.md` fo
 
 - [x] Image optimization — all images converted to WebP
 - [ ] AVIF conversion for further compression (optional)
-- [ ] Lazy loading for below-fold images
+- [x] Lazy loading for below-fold images (project galleries, shop)
 - [ ] Font loading optimization (reduce Google Fonts variants, self-host)
 - [ ] Translation architecture (split 750+ line file into per-language JSON)
 - [ ] Conversion tracking setup

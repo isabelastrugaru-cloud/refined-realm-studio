@@ -149,6 +149,7 @@ const ApartamentPrimaverii = () => {
                   <img 
                     src={image.src} 
                     alt={image.alt}
+                    loading="lazy"
                     className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>

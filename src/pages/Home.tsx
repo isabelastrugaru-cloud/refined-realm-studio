@@ -3,13 +3,14 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEO, { localBusinessJsonLd } from '@/components/SEO';
 import heroInterior from '@/assets/hero-interior.webp';
 import luxuryBedroom from '@/assets/luxury-bedroom.webp';
 import luxuryKitchen from '@/assets/luxury-kitchen.webp';
 
 const Home = () => {
   const { t } = useLanguage();
-  
+
   const projects = [{
     id: 1,
     slug: 'penthouse-herastrau',
@@ -32,6 +33,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title={t('seo.homeTitle')}
+        description={t('seo.homeDesc')}
+        jsonLd={localBusinessJsonLd}
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{
         backgroundImage: `url(${heroInterior})`
@@ -92,11 +98,11 @@ const Home = () => {
             </div>
             <div className="grid grid-cols-2 gap-3 md:gap-4 animate-scale-in">
               <div className="space-y-3 md:space-y-4">
-                <img src={luxuryBedroom} alt="Interior design luxury bedroom" loading="lazy" className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
-                <img src={luxuryKitchen} alt="Luxury kitchen interior design" loading="lazy" className="w-full h-36 sm:h-40 md:h-48 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src={luxuryBedroom} alt={t('home.altBedroom')} loading="lazy" className="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src={luxuryKitchen} alt={t('home.altKitchen')} loading="lazy" className="w-full h-36 sm:h-40 md:h-48 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
               </div>
               <div className="mt-6 sm:mt-8">
-                <img src={heroInterior} alt="Modern luxury interior design living room" loading="lazy" className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src={heroInterior} alt={t('home.altLiving')} loading="lazy" className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
               </div>
             </div>
           </div>

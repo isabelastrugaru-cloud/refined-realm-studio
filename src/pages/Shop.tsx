@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, BookOpen, FileText, Layers, Package, Check, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEO from '@/components/SEO';
 import { products } from '@/data/products';
 import shopHero from "@/assets/shop-hero.webp";
 import architectureManual from "@/assets/architecture-manual.webp";
@@ -27,6 +28,7 @@ const Shop = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO title={t('seo.shopTitle')} description={t('seo.shopDesc')} />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
@@ -58,7 +60,8 @@ const Shop = () => {
       <section className="w-full">
         <img 
           src={architectureManual} 
-          alt="Manual de arhitectură" 
+          alt="Manual de arhitectură"
+          loading="lazy"
           className="w-full h-[400px] md:h-[600px] object-cover"
         />
       </section>

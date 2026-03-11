@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
+  <url><loc>https://designinteriorbucuresti.ro/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/despre</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/portofoliu</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/servicii</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/contact</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/shop</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Projects -->
+  <url><loc>https://designinteriorbucuresti.ro/proiecte/penthouse-herastrau</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/proiecte/villa-pipera</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/proiecte/apartament-primaverii</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Blog Articles -->
+  <url><loc>https://designinteriorbucuresti.ro/blog/tendinte-design-2024</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/tendinte-2025</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/casa-inteligenta-2025</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/culori-texturi-2025</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/minimalismul-scandinav</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/design-biofil</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/buget-limitat</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/spatii-mici</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/psihologia-culorilor</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/iluminat-perfect</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/open-space</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/art-deco</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/materiale-naturale</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/finisaje-premium</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/blog/materiale-ecologice</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Shop Products -->
+  <url><loc>https://designinteriorbucuresti.ro/shop/starter-pack</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/shop/bathroom-complete</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/shop/beige-contract</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/shop/green-presentation</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/shop/kitchen-ebook</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/shop/bathroom-v2</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/shop/millwork-guide</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Legal Pages -->
+  <url><loc>https://designinteriorbucuresti.ro/politica-confidentialitate</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/termeni-conditii</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://designinteriorbucuresti.ro/cookies</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+</urlset>
