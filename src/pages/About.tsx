@@ -53,7 +53,7 @@ const About = () => {
             </div>
             <div className="relative animate-scale-in grid grid-cols-2 gap-3 md:gap-4">
               <div className="space-y-3 md:space-y-4">
-                <img src="/isabela-1.webp" alt="Isabela — fondator Jubilee Luxury Design" loading="lazy" className="w-full h-48 sm:h-64 md:h-72 object-cover object-[center_20%] rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src="/isabela-1.webp" alt="Isabela — fondator Jubilee Luxury Design" fetchPriority="high" className="w-full h-48 sm:h-64 md:h-72 object-cover object-[center_20%] rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
                 <div className="bg-premium rounded-lg shadow-luxury p-5 text-center">
                   <div className="w-14 h-14 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-3">
                     <Award className="w-7 h-7 text-luxury-foreground" />
@@ -67,7 +67,7 @@ const About = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <img src="/isabela-2.webp" alt="Isabela — designer interior Jubilee Luxury Design" loading="lazy" className="w-full h-72 sm:h-80 md:h-[24rem] object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
+                <img src="/isabela-2.webp" alt="Isabela — designer interior Jubilee Luxury Design" fetchPriority="high" className="w-full h-72 sm:h-80 md:h-[24rem] object-cover rounded-lg shadow-subtle hover:shadow-luxury transition-all duration-500" />
               </div>
             </div>
           </div>

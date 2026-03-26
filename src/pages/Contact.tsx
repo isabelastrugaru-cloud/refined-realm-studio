@@ -128,7 +128,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="py-24 bg-gradient-beige">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <img src="/isabela-2.webp" alt="Isabela — designer interior Jubilee Luxury Design" loading="lazy" className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover object-[center_60%] rounded-full mx-auto mb-10 shadow-luxury animate-scale-in" />
+          <img src="/isabela-2.webp" alt="Isabela — designer interior Jubilee Luxury Design" fetchPriority="high" className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover object-[center_60%] rounded-full mx-auto mb-10 shadow-luxury animate-scale-in" />
           <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 animate-fade-in leading-tight">
             {t('contact.heroTitle')} <span className="text-luxury">{t('contact.heroHighlight')}</span>
           </h1>
