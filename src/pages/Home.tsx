@@ -152,10 +152,11 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <img src="/isabela-3.webp" alt="Isabela — Designer Jubilee Luxury Design" loading="lazy" className="w-96 h-96 sm:w-[28rem] sm:h-[28rem] md:w-[34rem] md:h-[34rem] object-cover object-[center_20%] rounded-full mx-auto mb-10 shadow-luxury animate-scale-in" />
           <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 animate-fade-in px-2">
             {t('home.ctaTitle')}
           </h2>
-          
+
           <Link to="/contact">
             <Button variant="luxury" size="lg" className="animate-luxury-glow text-sm sm:text-base">
               {t('home.heroCta')}
