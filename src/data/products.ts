@@ -1,3 +1,5 @@
+import { productsCatalog } from "./productsCatalog.js";
+
 export interface Product {
   id: string;
   translationKey: string;
@@ -6,47 +8,16 @@ export interface Product {
   stripeLink?: string;
 }
 
-export const products: Product[] = [
-  {
-    id: "starter-pack",
-    translationKey: "starterPack",
-    price: "€20",
-    category: ["toate", "pachete"],
-  },
-  {
-    id: "bathroom-complete",
-    translationKey: "bathroomComplete",
-    price: "€50",
-    category: ["toate", "pachete", "ebook", "cad", "template"],
-  },
-  {
-    id: "beige-contract",
-    translationKey: "beigeContract",
-    price: "€20",
-    category: ["toate", "template"],
-  },
-  {
-    id: "green-presentation",
-    translationKey: "greenPresentation",
-    price: "€20",
-    category: ["toate", "template"],
-  },
-  {
-    id: "kitchen-ebook",
-    translationKey: "kitchenEbook",
-    price: "€50",
-    category: ["toate", "ebook", "cad"],
-  },
-  {
-    id: "bathroom-v2",
-    translationKey: "bathroomV2",
-    price: "€50",
-    category: ["toate", "pachete", "ebook", "cad", "template"],
-  },
-  {
-    id: "millwork-guide",
-    translationKey: "millworkGuide",
-    price: "€50",
-    category: ["toate", "ebook"],
-  },
-];
+const getStripeLink = (envVar: string) => {
+  const value = import.meta.env[envVar];
+
+  return typeof value === "string" && value.length > 0 ? value : undefined;
+};
+
+export const products: Product[] = productsCatalog.map(
+  ({ priceDisplay, stripeEnvVar, ...product }) => ({
+    ...product,
+    price: priceDisplay,
+    stripeLink: getStripeLink(stripeEnvVar),
+  }),
+);

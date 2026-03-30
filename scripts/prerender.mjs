@@ -117,6 +117,7 @@ const routes = [
   "/blog",
   "/contact",
   "/shop",
+  "/success",
   // Projects
   "/proiecte/penthouse-herastrau",
   "/proiecte/villa-pipera",

@@ -15,6 +15,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Shop = lazy(() => import("./pages/Shop"));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+const Success = lazy(() => import("./pages/Success"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PoliticaConfidentialitate = lazy(() => import("./pages/PoliticaConfidentialitate"));
 const TermeniConditii = lazy(() => import("./pages/TermeniConditii"));
@@ -74,6 +75,7 @@ const App = () => (
             <Route path="contact" element={<Contact />} />
             <Route path="shop" element={<Shop />} />
             <Route path="shop/:productId" element={<ProductDetail />} />
+            <Route path="success" element={<Success />} />
             <Route path="politica-confidentialitate" element={<PoliticaConfidentialitate />} />
             <Route path="termeni-conditii" element={<TermeniConditii />} />
             <Route path="cookies" element={<PoliticaCookies />} />

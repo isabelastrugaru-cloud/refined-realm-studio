@@ -58,6 +58,7 @@ src/
 | `build` | `npm run build` | Production build (includes prerendering 35 routes) |
 | `build:dev` | `npm run build:dev` | Development build |
 | `lint` | `npm run lint` | Run ESLint |
+| `stripe:setup` | `npm run stripe:setup` | Create/reuse Stripe products, prices, and payment links from the shop catalog |
 | `preview` | `npm run preview` | Preview production build |
 
 ## Key Features
@@ -79,3 +80,4 @@ Deployed on **Netlify** with built-in form processing. All 35 routes are prerend
 ## Documentation
 
 See [`docs/IMPLEMENTATION.md`](docs/IMPLEMENTATION.md) for full implementation details including routing, design system, components, and architecture.
+See [`docs/STRIPE_SETUP.md`](docs/STRIPE_SETUP.md) for Stripe product setup, Payment Links, and Netlify environment variable steps.

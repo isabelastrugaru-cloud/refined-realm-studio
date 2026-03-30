@@ -21,6 +21,7 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
+import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 import PoliticaConfidentialitate from "./pages/PoliticaConfidentialitate";
 import TermeniConditii from "./pages/TermeniConditii";
@@ -84,6 +85,7 @@ export function render(url: string) {
                   <Route path="contact" element={<Contact />} />
                   <Route path="shop" element={<Shop />} />
                   <Route path="shop/:productId" element={<ProductDetail />} />
+                  <Route path="success" element={<Success />} />
                   <Route path="politica-confidentialitate" element={<PoliticaConfidentialitate />} />
                   <Route path="termeni-conditii" element={<TermeniConditii />} />
                   <Route path="cookies" element={<PoliticaCookies />} />
