@@ -9,6 +9,7 @@ import { ArrowRight, Phone, Mail, MapPin, Clock, MessageSquare, Calendar } from 
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
+import { site } from '@/config/sites';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -90,27 +91,27 @@ const Contact = () => {
   const contactInfo = [{
     icon: Phone,
     title: t('contact.phoneTitle'),
-    details: ['+40 752 490 173'],
+    details: [site.phoneDisplay],
     action: t('contact.callNow'),
-    href: 'tel:+40752490173'
+    href: `tel:${site.phone}`
   }, {
     icon: Mail,
     title: t('contact.emailTitle'),
-    details: ['isabela@designinteriorbucuresti.ro'],
+    details: [site.email],
     action: t('contact.sendEmail'),
-    href: 'mailto:isabela@designinteriorbucuresti.ro'
+    href: `mailto:${site.email}`
   }, {
     icon: MapPin,
     title: t('contact.officeTitle'),
-    details: ['Str. Erou Iancu Nicolae 61', 'București'],
+    details: [site.address.street, site.address.locality],
     action: t('contact.viewOnMap'),
-    href: 'https://maps.app.goo.gl/rYLqVRsjxr6eKiVRA'
+    href: site.mapsLink
   }, {
     icon: Clock,
     title: t('contact.scheduleTitle'),
-    details: ['Lun-Vin: 10:00 - 19:00', 'Sâm: 10:00 - 16:00'],
+    details: site.schedule,
     action: t('contact.scheduleVisit'),
-    href: 'tel:+40752490173'
+    href: `tel:${site.phone}`
   }];
 
   const services = [
@@ -352,7 +353,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-8">
-                <a href="tel:+40752490173">
+                <a href={`tel:${site.phone}`}>
                   <Button variant="luxury" size="lg">
                     {t('contact.scheduleOfficeVisit')}
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -364,7 +365,7 @@ const Contact = () => {
             <div className="relative animate-scale-in">
               <div className="aspect-video rounded-2xl shadow-luxury overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps?q=Str.+Erou+Iancu+Nicolae+61,+Bucuresti&output=embed"
+                  src={`https://www.google.com/maps?q=${site.mapsQuery}&output=embed`}
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: '350px' }}

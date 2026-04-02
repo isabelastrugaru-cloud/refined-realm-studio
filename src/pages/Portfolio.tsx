@@ -4,9 +4,7 @@ import { ArrowRight, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
-import heroInterior from '@/assets/hero-interior.webp';
-import luxuryBedroom from '@/assets/luxury-bedroom.webp';
-import luxuryKitchen from '@/assets/luxury-kitchen.webp';
+import { siteProjects } from '@/data/projectsData';
 
 const Portfolio = () => {
   const { t } = useLanguage();
@@ -14,38 +12,11 @@ const Portfolio = () => {
 
   const filterKeys = ['all', 'residential', 'commercial', 'penthouse', 'villa'];
 
-  const projects = [
-    {
-      id: 1,
-      slug: 'penthouse-herastrau',
-      title: 'Penthouse Exclusivist Herastrau',
-      category: 'penthouse',
-      area: '280 mp',
-      year: '2023',
-      image: heroInterior,
-      description: 'Design contemporan cu accente aurii, mobilier italian premium și vedere panoramică.',
-    },
-    {
-      id: 2,
-      slug: 'villa-pipera',
-      title: 'Villa Moderna Pipera',
-      category: 'villa',
-      area: '450 mp',
-      year: '2023',
-      image: luxuryBedroom,
-      description: 'Eleganță atemporală cu materiale naturale și tehnologie smart home integrată.',
-    },
-    {
-      id: 3,
-      slug: 'apartament-primaverii',
-      title: 'Apartament de Lux Primaverii',
-      category: 'residential',
-      area: '180 mp',
-      year: '2022',
-      image: luxuryKitchen,
-      description: 'Combinația perfectă între clasic și modern, cu atenție la fiecare detaliu.',
-    },
-  ];
+  const projects = siteProjects.map(p => ({
+    ...p,
+    title: t(`projectsList.${p.translationKey}.title`),
+    description: t(`projectsList.${p.translationKey}.description`),
+  }));
 
   const filteredProjects = activeFilter === 'all'
     ? projects

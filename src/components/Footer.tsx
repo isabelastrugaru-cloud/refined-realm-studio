@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { site } from '@/config/sites';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -90,7 +91,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
               <h2 className="font-playfair text-3xl font-bold text-white">
-                Design Interior București
+                Design Interior {site.city}
               </h2>
             </Link>
             <p className="font-inter text-white/80 leading-relaxed mb-8 max-w-md">
@@ -99,18 +100,18 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
-              <a href="tel:+40752490173" className="flex items-center hover:text-luxury transition-colors duration-300">
+              <a href={`tel:${site.phone}`} className="flex items-center hover:text-luxury transition-colors duration-300">
                 <Phone className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
-                <span className="font-inter text-white/90">+40 752 490 173</span>
+                <span className="font-inter text-white/90">{site.phoneDisplay}</span>
               </a>
-              <a href="mailto:isabela@designinteriorbucuresti.ro" className="flex items-center hover:text-luxury transition-colors duration-300">
+              <a href={`mailto:${site.email}`} className="flex items-center hover:text-luxury transition-colors duration-300">
                 <Mail className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
-                <span className="font-inter text-white/90">isabela@designinteriorbucuresti.ro</span>
+                <span className="font-inter text-white/90">{site.email}</span>
               </a>
-              <a href="https://maps.app.goo.gl/rYLqVRsjxr6eKiVRA" target="_blank" rel="noopener noreferrer" className="flex items-start hover:text-luxury transition-colors duration-300">
+              <a href={site.mapsLink} target="_blank" rel="noopener noreferrer" className="flex items-start hover:text-luxury transition-colors duration-300">
                 <MapPin className="w-5 h-5 text-luxury mr-3 flex-shrink-0 mt-0.5" />
                 <span className="font-inter text-white/90">
-                  Str. Erou Iancu Nicolae 61, București
+                  {site.address.full}
                 </span>
               </a>
             </div>

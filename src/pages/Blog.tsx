@@ -23,127 +23,24 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const articles = [
-    {
-      id: 1,
-      title: 'Tendințele în Design Interior pentru 2025',
-      excerpt: 'Descoperă cele mai importante tendințe care vor defini designul interior în 2025 — de la culori îndrăznețe la materiale inovatoare.',
-      date: '15 Ianuarie 2025',
-      category: 'trends',
-      image: tendinte2024,
-      readTime: `10 ${t('blog.readTime')}`,
-      link: '/blog/tendinte-2025'
-    },
-    {
-      id: 2,
-      title: 'Casa Inteligentă în 2025: Design și Tehnologie',
-      excerpt: 'Cum să integrezi tehnologia smart în designul interior fără a compromite estetica și confortul.',
-      date: '22 Ianuarie 2025',
-      category: 'trends',
-      image: iluminat,
-      readTime: `8 ${t('blog.readTime')}`,
-      link: '/blog/casa-inteligenta-2025'
-    },
-    {
-      id: 3,
-      title: 'Culori și Texturi Dominante în 2025',
-      excerpt: 'Paleta cromatică și texturile care vor transforma interioarele în 2025 — de la tonuri pământii la accente metalice.',
-      date: '5 Februarie 2025',
-      category: 'trends',
-      image: culori,
-      readTime: `7 ${t('blog.readTime')}`,
-      link: '/blog/culori-texturi-2025'
-    },
-    {
-      id: 4,
-      title: 'Cum să Creezi un Spațiu de Lux cu Buget Limitat',
-      excerpt: 'Ghid complet pentru transformarea locuinței tale într-un spațiu luxos fără a depăși bugetul planificat.',
-      date: '10 Martie 2024',
-      category: 'tips',
-      image: buget,
-      readTime: `9 ${t('blog.readTime')}`,
-      link: '/blog/buget-limitat'
-    },
-    {
-      id: 5,
-      title: 'Maximizarea Spațiilor Mici: Trucuri și Soluții',
-      excerpt: 'Cum să transformi un apartament mic într-un spațiu funcțional, luminos și elegant.',
-      date: '6 Martie 2024',
-      category: 'tips',
-      image: spatii,
-      readTime: `7 ${t('blog.readTime')}`,
-      link: '/blog/spatii-mici'
-    },
-    {
-      id: 6,
-      title: 'Psihologia Culorilor în Design Interior',
-      excerpt: 'Cum influențează culorile starea ta de spirit și cum să le folosești strategic în fiecare cameră.',
-      date: '2 Martie 2024',
-      category: 'tips',
-      image: culori,
-      readTime: `8 ${t('blog.readTime')}`,
-      link: '/blog/psihologia-culorilor'
-    },
-    {
-      id: 7,
-      title: 'Ghidul Complet pentru Iluminatul Perfect',
-      excerpt: 'Cum să folosești iluminatul pentru a crea atmosfera perfectă și a evidenția elementele de design.',
-      date: '28 Februarie 2024',
-      category: 'design',
-      image: iluminat,
-      readTime: `7 ${t('blog.readTime')}`,
-      link: '/blog/iluminat-perfect'
-    },
-    {
-      id: 8,
-      title: 'Designul Open Space: Spațiu Fluid și Funcțional',
-      excerpt: 'Cum să creezi un open space care să fie atât generos, cât și intim, atât social, cât și privat.',
-      date: '24 Februarie 2024',
-      category: 'design',
-      image: openspace,
-      readTime: `6 ${t('blog.readTime')}`,
-      link: '/blog/open-space'
-    },
-    {
-      id: 9,
-      title: 'Art Deco: Glamour-ul Anilor \'20 în Casa Modernă',
-      excerpt: 'Cum să integrezi eleganța timeless a Art Deco în designul contemporan.',
-      date: '20 Februarie 2024',
-      category: 'design',
-      image: artdeco,
-      readTime: `8 ${t('blog.readTime')}`,
-      link: '/blog/art-deco'
-    },
-    {
-      id: 10,
-      title: 'Ghidul Materialelor Naturale Premium',
-      excerpt: 'Tot ce trebuie să știi despre marmură, lemn masiv, piatră naturală și alte materiale de lux.',
-      date: '18 Februarie 2024',
-      category: 'materials',
-      image: materiale,
-      readTime: `7 ${t('blog.readTime')}`,
-      link: '/blog/materiale-naturale'
-    },
-    {
-      id: 11,
-      title: 'Finisajele Premium: Investiție în Durabilitate',
-      excerpt: 'Cum să alegi finisajele potrivite pentru fiecare cameră și buget.',
-      date: '14 Februarie 2024',
-      category: 'materials',
-      image: finisaje,
-      readTime: `6 ${t('blog.readTime')}`,
-      link: '/blog/finisaje-premium'
-    },
-    {
-      id: 12,
-      title: 'Materiale Ecologice: Lux Sustenabil',
-      excerpt: 'Designul responsabil fără compromisuri estetice sau de calitate.',
-      date: '10 Februarie 2024',
-      category: 'materials',
-      image: ecologic,
-      readTime: `7 ${t('blog.readTime')}`,
-      link: '/blog/materiale-ecologice'
-    }
-  ];
+    { id: 1, translationKey: 'tendinte2025', category: 'trends', image: tendinte2024, readTime: `10 ${t('blog.readTime')}`, link: '/blog/tendinte-2025' },
+    { id: 2, translationKey: 'casaInteligenta2025', category: 'trends', image: iluminat, readTime: `8 ${t('blog.readTime')}`, link: '/blog/casa-inteligenta-2025' },
+    { id: 3, translationKey: 'culoriTexturi2025', category: 'trends', image: culori, readTime: `7 ${t('blog.readTime')}`, link: '/blog/culori-texturi-2025' },
+    { id: 4, translationKey: 'bugetLimitat', category: 'tips', image: buget, readTime: `9 ${t('blog.readTime')}`, link: '/blog/buget-limitat' },
+    { id: 5, translationKey: 'spatiiMici', category: 'tips', image: spatii, readTime: `7 ${t('blog.readTime')}`, link: '/blog/spatii-mici' },
+    { id: 6, translationKey: 'psihologiaCulorilor', category: 'tips', image: culori, readTime: `8 ${t('blog.readTime')}`, link: '/blog/psihologia-culorilor' },
+    { id: 7, translationKey: 'iluminatPerfect', category: 'design', image: iluminat, readTime: `7 ${t('blog.readTime')}`, link: '/blog/iluminat-perfect' },
+    { id: 8, translationKey: 'openSpace', category: 'design', image: openspace, readTime: `6 ${t('blog.readTime')}`, link: '/blog/open-space' },
+    { id: 9, translationKey: 'artDeco', category: 'design', image: artdeco, readTime: `8 ${t('blog.readTime')}`, link: '/blog/art-deco' },
+    { id: 10, translationKey: 'materialeNaturale', category: 'materials', image: materiale, readTime: `7 ${t('blog.readTime')}`, link: '/blog/materiale-naturale' },
+    { id: 11, translationKey: 'finisajePremium', category: 'materials', image: finisaje, readTime: `6 ${t('blog.readTime')}`, link: '/blog/finisaje-premium' },
+    { id: 12, translationKey: 'materialeEcologice', category: 'materials', image: ecologic, readTime: `7 ${t('blog.readTime')}`, link: '/blog/materiale-ecologice' },
+  ].map(a => ({
+    ...a,
+    title: t(`blog.articles.${a.translationKey}.title`),
+    excerpt: t(`blog.articles.${a.translationKey}.excerpt`),
+    date: t(`blog.articles.${a.translationKey}.date`),
+  }));
 
   const categoryKeys = ['all', 'trends', 'tips', 'design', 'materials'];
 

@@ -13,7 +13,7 @@ const TermeniConditii = () => {
       sections: [
         {
           title: '1. Informații Generale',
-          text: 'Prezentele Termeni și Condiții reglementează utilizarea site-ului designinteriorbucuresti.ro, operat de Jubilee Luxury Design SRL, cu sediul în Str. Erou Iancu Nicolae 61, București. Prin accesarea și utilizarea site-ului, sunteți de acord cu acești termeni.'
+          text: 'Prezentele Termeni și Condiții reglementează utilizarea site-ului {{domain}}, operat de Jubilee Luxury Design SRL, cu sediul în {{address}}. Prin accesarea și utilizarea site-ului, sunteți de acord cu acești termeni.'
         },
         {
           title: '2. Serviciile Noastre',
@@ -41,11 +41,11 @@ const TermeniConditii = () => {
         },
         {
           title: '8. Legislația Aplicabilă',
-          text: 'Acești termeni sunt guvernați de legislația română. Orice litigiu va fi soluționat de instanțele competente din București, România.'
+          text: 'Acești termeni sunt guvernați de legislația din {{country}}. Orice litigiu va fi soluționat de instanțele competente din {{city}}, {{country}}.'
         },
         {
           title: '9. Contact',
-          text: 'Pentru orice întrebări legate de acești Termeni și Condiții, ne puteți contacta la: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, București, Email: isabela@designinteriorbucuresti.ro, Telefon: +40 752 490 173.'
+          text: 'Pentru orice întrebări legate de acești Termeni și Condiții, ne puteți contacta la: Jubilee Luxury Design SRL, {{address}}, Email: {{email}}, Telefon: +40 752 490 173.'
         }
       ]
     },
@@ -55,7 +55,7 @@ const TermeniConditii = () => {
       sections: [
         {
           title: '1. General Information',
-          text: 'These Terms and Conditions govern the use of the website designinteriorbucuresti.ro, operated by Jubilee Luxury Design SRL, headquartered at Str. Erou Iancu Nicolae 61, Bucharest. By accessing and using the site, you agree to these terms.'
+          text: 'These Terms and Conditions govern the use of the website {{domain}}, operated by Jubilee Luxury Design SRL, headquartered at {{address}}. By accessing and using the site, you agree to these terms.'
         },
         {
           title: '2. Our Services',
@@ -83,11 +83,11 @@ const TermeniConditii = () => {
         },
         {
           title: '8. Applicable Law',
-          text: 'These terms are governed by Romanian law. Any dispute will be resolved by the competent courts in Bucharest, Romania.'
+          text: 'These terms are governed by the laws of {{country}}. Any dispute will be resolved by the competent courts in {{city}}, {{country}}.'
         },
         {
           title: '9. Contact',
-          text: 'For any questions regarding these Terms and Conditions, you can contact us at: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucharest, Email: isabela@designinteriorbucuresti.ro, Phone: +40 752 490 173.'
+          text: 'For any questions regarding these Terms and Conditions, you can contact us at: Jubilee Luxury Design SRL, {{address}}, Email: {{email}}, Phone: +40 752 490 173.'
         }
       ]
     },
@@ -97,7 +97,7 @@ const TermeniConditii = () => {
       sections: [
         {
           title: '1. Información General',
-          text: 'Estos Términos y Condiciones regulan el uso del sitio web designinteriorbucuresti.ro, operado por Jubilee Luxury Design SRL, con sede en Str. Erou Iancu Nicolae 61, Bucarest. Al acceder y utilizar el sitio, acepta estos términos.'
+          text: 'Estos Términos y Condiciones regulan el uso del sitio web {{domain}}, operado por Jubilee Luxury Design SRL, con sede en {{address}}. Al acceder y utilizar el sitio, acepta estos términos.'
         },
         {
           title: '2. Nuestros Servicios',
@@ -125,11 +125,11 @@ const TermeniConditii = () => {
         },
         {
           title: '8. Legislación Aplicable',
-          text: 'Estos términos se rigen por la legislación rumana. Cualquier disputa será resuelta por los tribunales competentes de Bucarest, Rumanía.'
+          text: 'Estos términos se rigen por la legislación de {{country}}. Cualquier disputa será resuelta por los tribunales competentes de {{city}}, {{country}}.'
         },
         {
           title: '9. Contacto',
-          text: 'Para cualquier pregunta sobre estos Términos y Condiciones, puede contactarnos en: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucarest, Email: isabela@designinteriorbucuresti.ro, Teléfono: +40 752 490 173.'
+          text: 'Para cualquier pregunta sobre estos Términos y Condiciones, puede contactarnos en: Jubilee Luxury Design SRL, {{address}}, Email: {{email}}, Teléfono: +40 752 490 173.'
         }
       ]
     }
@@ -160,9 +160,9 @@ const TermeniConditii = () => {
           <div className="p-6 bg-premium rounded-lg mb-8">
             <p className="font-inter text-sm text-muted-foreground leading-relaxed">
               <strong>Jubilee Luxury Design SRL</strong><br />
-              Str. Erou Iancu Nicolae 61, București<br />
+              {{address}}<br />
               CUI: [de completat] | J40/[de completat]<br />
-              Email: isabela@designinteriorbucuresti.ro | Tel: +40 752 490 173
+              Email: {{email}} | Tel: +40 752 490 173
             </p>
           </div>
 

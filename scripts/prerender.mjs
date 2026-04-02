@@ -6,6 +6,20 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
 const serverDir = path.resolve(distDir, "server");
 
+// Site configuration for prerender
+const siteId = process.env.VITE_SITE || "bucuresti";
+const siteConfigs = {
+  bucuresti: {
+    defaultLanguage: "ro",
+    url: "https://designinteriorbucuresti.ro",
+  },
+  marbella: {
+    defaultLanguage: "en",
+    url: "https://designinteriormarbella.com",
+  },
+};
+const siteConfig = siteConfigs[siteId] || siteConfigs.bucuresti;
+
 // Browser API mocks for Node environment
 const noop = () => {};
 const noopElement = {
@@ -33,13 +47,13 @@ const noopElement = {
 };
 
 globalThis.localStorage = {
-  getItem: () => "ro",
+  getItem: () => siteConfig.defaultLanguage,
   setItem: noop,
   removeItem: noop,
 };
 
 globalThis.document = {
-  documentElement: { lang: "ro", setAttribute: noop, getAttribute: () => null },
+  documentElement: { lang: siteConfig.defaultLanguage, setAttribute: noop, getAttribute: () => null },
   getElementById: () => null,
   querySelector: () => null,
   querySelectorAll: () => [],
@@ -64,7 +78,7 @@ globalThis.window = {
   scrollTo: noop,
   addEventListener: noop,
   removeEventListener: noop,
-  location: { pathname: "/", href: "https://designinteriorbucuresti.ro/", origin: "https://designinteriorbucuresti.ro" },
+  location: { pathname: "/", href: `${siteConfig.url}/`, origin: siteConfig.url },
   dispatchEvent: noop,
   matchMedia: () => ({ matches: false, addListener: noop, removeListener: noop, addEventListener: noop, removeEventListener: noop }),
   getComputedStyle: () => ({}),

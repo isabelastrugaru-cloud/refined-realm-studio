@@ -4,6 +4,7 @@ import { ArrowRight, Check, Star, Home, Building, ShoppingBag } from 'lucide-rea
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEO from '@/components/SEO';
+import { site } from '@/config/sites';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -91,7 +92,7 @@ const Services = () => {
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
-          provider: { '@id': 'https://designinteriorbucuresti.ro/#organization' },
+          provider: { '@id': `${site.url}/#organization` },
           name: 'Design Interior de Lux',
           description: t('seo.servicesDesc'),
           areaServed: { '@type': 'Country', name: 'Romania' }

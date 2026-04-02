@@ -8,12 +8,15 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Globe } from 'lucide-react';
+import { site } from '@/config/sites';
 
-const languages: { code: Language; label: string; flag: string }[] = [
+const allLanguages: { code: Language; label: string; flag: string }[] = [
   { code: 'ro', label: 'Română', flag: '🇷🇴' },
   { code: 'en', label: 'English', flag: '🇬🇧' },
   { code: 'es', label: 'Español', flag: '🇪🇸' },
 ];
+
+const languages = allLanguages.filter(l => site.languages.includes(l.code));
 
 const LanguageSelector: React.FC = () => {
   const { language, setLanguage } = useLanguage();

@@ -2,7 +2,7 @@
 
 ## Project Identity
 
-Romanian luxury interior design studio website — **Jubilee Luxury Design** brand. Domain: designinteriorbucuresti.ro. Deployed on Netlify.
+Luxury interior design studio website — **Jubilee Luxury Design** brand. Multi-site: `designinteriorbucuresti.ro` (RO/EN/ES) and `designinteriormarbella.com` (EN/ES). Deployed on Netlify.
 
 ## Commands
 
@@ -13,6 +13,8 @@ Romanian luxury interior design studio website — **Jubilee Luxury Design** bra
 ## Architecture
 
 - SPA with React Router v6, no backend/database
+- **Multi-site**: `VITE_SITE=bucuresti|marbella` env var selects site at build time
+- Site config: `src/config/sites.ts` — domain, city, languages, phone, email, address, maps, etc.
 - Contact form: Netlify Forms (POST to `/` with `form-name` field)
 - Shop checkout: external Stripe links (no server-side Stripe)
 - Supabase was removed — do not add database dependencies
@@ -43,9 +45,13 @@ Navigation uses a `nav` breakpoint at **1100px** (defined in tailwind.config.ts 
 ## Translations / i18n
 
 - All user-facing text must use the `t()` function from `useLanguage()` hook
-- 3 languages: Romanian (`ro`, default), English (`en`), Spanish (`es`)
+- 3 languages: Romanian (`ro`), English (`en`), Spanish (`es`) — available languages filtered per site
 - Dot-notation keys: e.g., `t('nav.home')`, `t('products.starterPack.title')`
-- Translations defined in `src/contexts/LanguageContext.tsx`
+- Core translations: `src/translations/{ro,en,es}.ts`
+- Blog translations: `src/translations/blog/{ro,en,es}.ts`
+- Merged in `src/contexts/LanguageContext.tsx` via `deepMerge`
+- **Interpolation**: use `{{city}}`, `{{email}}`, `{{address}}`, `{{domain}}`, `{{country}}` in translation strings — `t()` replaces them with values from `src/config/sites.ts`
+- `{{country}}` is language-aware (e.g., "România" in RO, "Romania" in EN)
 - Language persisted in localStorage, HTML `lang` attribute updated automatically
 - When adding new text, add translations for all 3 languages
 
@@ -78,6 +84,13 @@ Contact form uses Netlify Forms:
 - Public static assets in `public/` (favicon, OG image)
 - Source design files in root `assets/` (logo PSD, etc.)
 
+## Projects
+
+- Defined in `src/data/projectsData.ts` with `sites[]` tags (e.g., `['bucuresti']`)
+- `siteProjects` export filters by current site — used in `Portfolio.tsx` and `Home.tsx`
+- Project titles/descriptions use `t('projectsList.{key}.title')`
+- To add a site-specific project, tag it with the site ID
+
 ## Legal Pages
 
-Privacy policy (`/politica-confidentialitate`), terms (`/termeni-conditii`), cookies (`/cookies`) — all trilingual, content in page components.
+Privacy policy (`/politica-confidentialitate`), terms (`/termeni-conditii`), cookies (`/cookies`) — all trilingual, content in page components. Hardcoded city/email/domain/address replaced with `{{interpolation}}` placeholders.

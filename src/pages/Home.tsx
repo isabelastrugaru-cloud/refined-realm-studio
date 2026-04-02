@@ -7,29 +7,18 @@ import SEO, { localBusinessJsonLd } from '@/components/SEO';
 import heroInterior from '@/assets/hero-interior.webp';
 import luxuryBedroom from '@/assets/luxury-bedroom.webp';
 import luxuryKitchen from '@/assets/luxury-kitchen.webp';
+import { siteProjects } from '@/data/projectsData';
 
 const Home = () => {
   const { t } = useLanguage();
 
-  const projects = [{
-    id: 1,
-    slug: 'penthouse-herastrau',
-    image: luxuryBedroom,
-    title: t('home.penthouse'),
-    category: t('home.residential')
-  }, {
-    id: 2,
-    slug: 'villa-pipera',
-    image: luxuryKitchen,
-    title: t('home.villa'),
-    category: t('home.residential')
-  }, {
-    id: 3,
-    slug: 'apartament-primaverii',
-    image: heroInterior,
-    title: t('home.showroom'),
-    category: t('home.commercial')
-  }];
+  const projects = siteProjects.map(p => ({
+    id: p.id,
+    slug: p.slug,
+    image: p.image,
+    title: t(`projectsList.${p.translationKey}.title`),
+    category: t(`portfolio.${p.category}`)
+  }));
 
   return (
     <div className="min-h-screen">

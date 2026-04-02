@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { site } from '@/config/sites';
 
 interface SEOProps {
   title?: string;
@@ -8,8 +9,8 @@ interface SEOProps {
   jsonLd?: Record<string, any> | Record<string, any>[];
 }
 
-const SITE_URL = 'https://designinteriorbucuresti.ro';
-const SITE_NAME = 'Jubilee Luxury Design';
+const SITE_URL = site.url;
+const SITE_NAME = site.name;
 
 const SEO = ({ title, description, jsonLd }: SEOProps) => {
   const { language } = useLanguage();
@@ -29,9 +30,9 @@ const SEO = ({ title, description, jsonLd }: SEOProps) => {
       <title>{fullTitle}</title>
       {description && <meta name="description" content={description} />}
       <link rel="canonical" href={canonical} />
-      <link rel="alternate" hrefLang="ro" href={canonical} />
-      <link rel="alternate" hrefLang="en" href={canonical} />
-      <link rel="alternate" hrefLang="es" href={canonical} />
+      {site.languages.map(lang => (
+        <link key={lang} rel="alternate" hrefLang={lang} href={canonical} />
+      ))}
       <link rel="alternate" hrefLang="x-default" href={canonical} />
       <meta property="og:title" content={fullTitle} />
       {description && <meta property="og:description" content={description} />}
@@ -56,15 +57,15 @@ export const localBusinessJsonLd = {
   '@id': `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
-  telephone: '+40752490173',
-  email: 'isabela@designinteriorbucuresti.ro',
+  telephone: site.phone,
+  email: site.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Str. Erou Iancu Nicolae 61',
-    addressLocality: 'București',
-    addressCountry: 'RO'
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    addressCountry: site.countryCode
   },
-  image: `${SITE_URL}/og-image.png`,
+  image: `${SITE_URL}${site.ogImage}`,
   priceRange: '€€€',
-  description: 'Studio de design interior de lux în București cu peste 13 ani de experiență.'
+  description: `Studio de design interior de lux în ${site.city} cu peste 13 ani de experiență.`
 };

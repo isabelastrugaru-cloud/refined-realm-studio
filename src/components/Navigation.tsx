@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
-const logo = '/logo.svg';
 import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { site } from '@/config/sites';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,12 +38,12 @@ const Navigation = () => {
         <div className="flex items-center justify-center h-20 relative z-50">
           {/* Mobile Logo - Centered */}
           <Link to="/" className="nav:hidden flex items-center hover:opacity-80 transition-opacity duration-300 absolute left-0">
-            <img src={logo} alt="Design Interior Bucuresti" className="h-14 w-auto" fetchPriority="high" />
+            <img src={site.logo} alt={`Design Interior ${site.city}`} className="h-14 w-auto" fetchPriority="high" />
           </Link>
 
           {/* Desktop - Logo on the left */}
           <Link to="/" className="hidden nav:flex items-center hover:opacity-80 transition-opacity duration-300 absolute left-0">
-            <img src={logo} alt="Design Interior Bucuresti" className="h-20 w-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] brightness-105" fetchPriority="high" />
+            <img src={site.logo} alt={`Design Interior ${site.city}`} className="h-20 w-auto drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] brightness-105" fetchPriority="high" />
           </Link>
 
           {/* Desktop Navigation - Centered */}
@@ -58,7 +58,7 @@ const Navigation = () => {
           <div className="hidden nav:flex items-center gap-3 absolute right-0">
             <LanguageSelector />
             <Button variant="luxury" size="lg" asChild>
-              <a href="tel:+40752490173">
+              <a href={`tel:${site.phone}`}>
                 <Phone className="mr-2 h-5 w-5" />
                 {t('nav.callNow')}
               </a>
@@ -82,7 +82,7 @@ const Navigation = () => {
                 </Link>)}
               <div className="pt-6">
                 <Button variant="luxury" size="lg" className="w-full text-base py-6" asChild>
-                  <a href="tel:+40752490173">
+                  <a href={`tel:${site.phone}`}>
                     <Phone className="mr-2 h-5 w-5" />
                     {t('nav.callNow')}
                   </a>
