@@ -88,9 +88,9 @@ Add these in Netlify:
 ```env
 MAILJET_API_KEY=...
 MAILJET_API_SECRET=...
-MAILJET_FROM_EMAIL=office@designinteriorbucuresti.ro
+MAILJET_FROM_EMAIL=isabela@designinteriorbucuresti.ro
 MAILJET_FROM_NAME=Jubilee Luxury Design
-FULFILLMENT_SUPPORT_EMAIL=office@designinteriorbucuresti.ro
+FULFILLMENT_SUPPORT_EMAIL=isabela@designinteriorbucuresti.ro
 ```
 
 ### Payment Link Env Vars Used By The Frontend

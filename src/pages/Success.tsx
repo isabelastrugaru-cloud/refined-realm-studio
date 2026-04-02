@@ -236,14 +236,14 @@ const Success = () => {
             <div className="mt-6 flex justify-center">
               <a
                 href={`mailto:${
-                  state.status === "ready" ? state.data.supportEmail : "office@designinteriorbucuresti.ro"
+                  state.status === "ready" ? state.data.supportEmail : "isabela@designinteriorbucuresti.ro"
                 }`}
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-luxury transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 {state.status === "ready"
                   ? state.data.supportEmail
-                  : "office@designinteriorbucuresti.ro"}
+                  : "isabela@designinteriorbucuresti.ro"}
               </a>
             </div>
           </CardContent>

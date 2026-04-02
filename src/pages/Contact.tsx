@@ -96,9 +96,9 @@ const Contact = () => {
   }, {
     icon: Mail,
     title: t('contact.emailTitle'),
-    details: ['office@designinteriorbucuresti.ro'],
+    details: ['isabela@designinteriorbucuresti.ro'],
     action: t('contact.sendEmail'),
-    href: 'mailto:office@designinteriorbucuresti.ro'
+    href: 'mailto:isabela@designinteriorbucuresti.ro'
   }, {
     icon: MapPin,
     title: t('contact.officeTitle'),

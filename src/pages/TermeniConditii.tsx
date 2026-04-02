@@ -45,7 +45,7 @@ const TermeniConditii = () => {
         },
         {
           title: '9. Contact',
-          text: 'Pentru orice întrebări legate de acești Termeni și Condiții, ne puteți contacta la: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, București, Email: office@designinteriorbucuresti.ro, Telefon: +40 752 490 173.'
+          text: 'Pentru orice întrebări legate de acești Termeni și Condiții, ne puteți contacta la: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, București, Email: isabela@designinteriorbucuresti.ro, Telefon: +40 752 490 173.'
         }
       ]
     },
@@ -87,7 +87,7 @@ const TermeniConditii = () => {
         },
         {
           title: '9. Contact',
-          text: 'For any questions regarding these Terms and Conditions, you can contact us at: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucharest, Email: office@designinteriorbucuresti.ro, Phone: +40 752 490 173.'
+          text: 'For any questions regarding these Terms and Conditions, you can contact us at: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucharest, Email: isabela@designinteriorbucuresti.ro, Phone: +40 752 490 173.'
         }
       ]
     },
@@ -129,7 +129,7 @@ const TermeniConditii = () => {
         },
         {
           title: '9. Contacto',
-          text: 'Para cualquier pregunta sobre estos Términos y Condiciones, puede contactarnos en: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucarest, Email: office@designinteriorbucuresti.ro, Teléfono: +40 752 490 173.'
+          text: 'Para cualquier pregunta sobre estos Términos y Condiciones, puede contactarnos en: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucarest, Email: isabela@designinteriorbucuresti.ro, Teléfono: +40 752 490 173.'
         }
       ]
     }
@@ -162,7 +162,7 @@ const TermeniConditii = () => {
               <strong>Jubilee Luxury Design SRL</strong><br />
               Str. Erou Iancu Nicolae 61, București<br />
               CUI: [de completat] | J40/[de completat]<br />
-              Email: office@designinteriorbucuresti.ro | Tel: +40 752 490 173
+              Email: isabela@designinteriorbucuresti.ro | Tel: +40 752 490 173
             </p>
           </div>
 

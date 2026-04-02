@@ -1,7 +1,7 @@
 import { productsCatalog } from "../../../src/data/productsCatalog.js";
 
 const fallbackSiteUrl = "https://designinteriorbucuresti.ro";
-const fallbackSupportEmail = "office@designinteriorbucuresti.ro";
+const fallbackSupportEmail = "isabela@designinteriorbucuresti.ro";
 
 export const getEnv = (name) => {
   const netlifyValue =

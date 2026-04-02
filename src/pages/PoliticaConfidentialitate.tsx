@@ -33,7 +33,7 @@ const PoliticaConfidentialitate = () => {
         },
         {
           title: '6. Drepturile Dumneavoastră',
-          text: 'Conform GDPR, aveți dreptul de: acces la datele personale, rectificare a datelor inexacte, ștergere a datelor ("dreptul de a fi uitat"), restricționare a prelucrării, portabilitate a datelor și opoziție la prelucrare. Pentru exercitarea acestor drepturi, contactați-ne la office@designinteriorbucuresti.ro.'
+          text: 'Conform GDPR, aveți dreptul de: acces la datele personale, rectificare a datelor inexacte, ștergere a datelor ("dreptul de a fi uitat"), restricționare a prelucrării, portabilitate a datelor și opoziție la prelucrare. Pentru exercitarea acestor drepturi, contactați-ne la isabela@designinteriorbucuresti.ro.'
         },
         {
           title: '7. Securitatea Datelor',
@@ -41,7 +41,7 @@ const PoliticaConfidentialitate = () => {
         },
         {
           title: '8. Contact',
-          text: 'Pentru orice întrebări legate de prelucrarea datelor personale, ne puteți contacta la: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, București, Email: office@designinteriorbucuresti.ro, Telefon: +40 752 490 173.'
+          text: 'Pentru orice întrebări legate de prelucrarea datelor personale, ne puteți contacta la: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, București, Email: isabela@designinteriorbucuresti.ro, Telefon: +40 752 490 173.'
         }
       ]
     },
@@ -71,7 +71,7 @@ const PoliticaConfidentialitate = () => {
         },
         {
           title: '6. Your Rights',
-          text: 'Under GDPR, you have the right to: access personal data, rectify inaccurate data, erase data ("right to be forgotten"), restrict processing, data portability, and object to processing. To exercise these rights, contact us at office@designinteriorbucuresti.ro.'
+          text: 'Under GDPR, you have the right to: access personal data, rectify inaccurate data, erase data ("right to be forgotten"), restrict processing, data portability, and object to processing. To exercise these rights, contact us at isabela@designinteriorbucuresti.ro.'
         },
         {
           title: '7. Data Security',
@@ -79,7 +79,7 @@ const PoliticaConfidentialitate = () => {
         },
         {
           title: '8. Contact',
-          text: 'For any questions regarding the processing of personal data, you can contact us at: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucharest, Email: office@designinteriorbucuresti.ro, Phone: +40 752 490 173.'
+          text: 'For any questions regarding the processing of personal data, you can contact us at: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucharest, Email: isabela@designinteriorbucuresti.ro, Phone: +40 752 490 173.'
         }
       ]
     },
@@ -109,7 +109,7 @@ const PoliticaConfidentialitate = () => {
         },
         {
           title: '6. Sus Derechos',
-          text: 'Según el GDPR, tiene derecho a: acceder a sus datos personales, rectificar datos inexactos, borrar datos ("derecho al olvido"), restringir el procesamiento, portabilidad de datos y oponerse al procesamiento. Para ejercer estos derechos, contáctenos en office@designinteriorbucuresti.ro.'
+          text: 'Según el GDPR, tiene derecho a: acceder a sus datos personales, rectificar datos inexactos, borrar datos ("derecho al olvido"), restringir el procesamiento, portabilidad de datos y oponerse al procesamiento. Para ejercer estos derechos, contáctenos en isabela@designinteriorbucuresti.ro.'
         },
         {
           title: '7. Seguridad de los Datos',
@@ -117,7 +117,7 @@ const PoliticaConfidentialitate = () => {
         },
         {
           title: '8. Contacto',
-          text: 'Para cualquier pregunta sobre el procesamiento de datos personales, puede contactarnos en: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucarest, Email: office@designinteriorbucuresti.ro, Teléfono: +40 752 490 173.'
+          text: 'Para cualquier pregunta sobre el procesamiento de datos personales, puede contactarnos en: Jubilee Luxury Design SRL, Str. Erou Iancu Nicolae 61, Bucarest, Email: isabela@designinteriorbucuresti.ro, Teléfono: +40 752 490 173.'
         }
       ]
     }
@@ -150,7 +150,7 @@ const PoliticaConfidentialitate = () => {
               <strong>Jubilee Luxury Design SRL</strong><br />
               Str. Erou Iancu Nicolae 61, București<br />
               CUI: [de completat] | J40/[de completat]<br />
-              Email: office@designinteriorbucuresti.ro | Tel: +40 752 490 173
+              Email: isabela@designinteriorbucuresti.ro | Tel: +40 752 490 173
             </p>
           </div>
 

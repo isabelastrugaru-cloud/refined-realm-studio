@@ -103,9 +103,9 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
                 <span className="font-inter text-white/90">+40 752 490 173</span>
               </a>
-              <a href="mailto:office@designinteriorbucuresti.ro" className="flex items-center hover:text-luxury transition-colors duration-300">
+              <a href="mailto:isabela@designinteriorbucuresti.ro" className="flex items-center hover:text-luxury transition-colors duration-300">
                 <Mail className="w-5 h-5 text-luxury mr-3 flex-shrink-0" />
-                <span className="font-inter text-white/90">office@designinteriorbucuresti.ro</span>
+                <span className="font-inter text-white/90">isabela@designinteriorbucuresti.ro</span>
               </a>
               <a href="https://maps.app.goo.gl/rYLqVRsjxr6eKiVRA" target="_blank" rel="noopener noreferrer" className="flex items-start hover:text-luxury transition-colors duration-300">
                 <MapPin className="w-5 h-5 text-luxury mr-3 flex-shrink-0 mt-0.5" />

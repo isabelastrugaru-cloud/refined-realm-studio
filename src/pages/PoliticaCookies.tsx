@@ -33,7 +33,7 @@ const PoliticaCookies = () => {
         },
         {
           title: '6. Contact',
-          text: 'Pentru orice întrebări legate de politica de cookie-uri, ne puteți contacta la: office@designinteriorbucuresti.ro.'
+          text: 'Pentru orice întrebări legate de politica de cookie-uri, ne puteți contacta la: isabela@designinteriorbucuresti.ro.'
         }
       ]
     },
@@ -63,7 +63,7 @@ const PoliticaCookies = () => {
         },
         {
           title: '6. Contact',
-          text: 'For any questions about the cookie policy, you can contact us at: office@designinteriorbucuresti.ro.'
+          text: 'For any questions about the cookie policy, you can contact us at: isabela@designinteriorbucuresti.ro.'
         }
       ]
     },
@@ -93,7 +93,7 @@ const PoliticaCookies = () => {
         },
         {
           title: '6. Contacto',
-          text: 'Para cualquier pregunta sobre la política de cookies, puede contactarnos en: office@designinteriorbucuresti.ro.'
+          text: 'Para cualquier pregunta sobre la política de cookies, puede contactarnos en: isabela@designinteriorbucuresti.ro.'
         }
       ]
     }

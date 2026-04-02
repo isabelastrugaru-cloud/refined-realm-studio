@@ -57,7 +57,7 @@ export const localBusinessJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   telephone: '+40752490173',
-  email: 'office@designinteriorbucuresti.ro',
+  email: 'isabela@designinteriorbucuresti.ro',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Str. Erou Iancu Nicolae 61',
