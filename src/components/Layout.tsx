@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import ErrorBoundary from './ErrorBoundary';
+import DevSiteToggle from './DevSiteToggle';
 
 const LoadingSpinner = () => (
   <div className="min-h-[60vh] flex items-center justify-center">
@@ -37,6 +38,7 @@ const Layout = () => {
         </ErrorBoundary>
       </main>
       <Footer />
+      <DevSiteToggle />
     </div>
   );
 };

@@ -80,5 +80,17 @@ const sites: Record<string, SiteConfig> = {
   },
 };
 
-const siteId = import.meta.env.VITE_SITE || 'bucuresti';
+function getSiteId(): string {
+  const envSite = import.meta.env.VITE_SITE || 'bucuresti';
+  if (import.meta.env.DEV) {
+    try {
+      const override = localStorage.getItem('dev_site');
+      if (override && sites[override]) return override;
+    } catch {}
+  }
+  return envSite;
+}
+
+export const siteId = getSiteId();
 export const site: SiteConfig = sites[siteId];
+export const allSiteIds = Object.keys(sites);
